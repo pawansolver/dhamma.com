@@ -133,23 +133,29 @@ export default function Footer() {
                 <p className="text-[10px] text-white/70 font-bold">&amp; Research Institute</p>
               </div>
             </Link>
-            <p className="text-xs text-white/60 leading-relaxed mb-4">
+            <p className="text-xs text-white/60 leading-relaxed mb-2">
               Buddha Hospital &amp; Research Institute is a multi-Specialty hospital in Gaya
               offering world-class healthcare with the motto &ldquo;सेवा परमो धर्म:&rdquo;
+            </p>
+            <p className="text-[11px] text-white/50 mb-1">
+              Website: <a href="https://bhrimedicalcollege.com" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition">bhrimedicalcollege.com</a>
+            </p>
+            <p className="text-[11px] text-white/50 mb-4">
+              Reg. No.: CE/GAY/2025/NH-0504
             </p>
 
             <ul className="space-y-2.5 mb-4">
               <li className="flex items-start gap-2 text-xs text-white/60">
                 <MapPin size={14} className="mt-0.5 flex-shrink-0 text-white/80" />
-                <span>Durway, Gaya-Rajganj Road, Near FCI Godown, Gaya-823001</span>
+                <span>Gaya-Dobhi Road, NH-22, Kharanti More, Tikuna Farm, Gaya (Bihar)-823004</span>
               </li>
               <li className="flex items-center gap-2 text-xs text-white/60">
                 <Mail size={14} className="flex-shrink-0 text-white/80" />
-                <a href="mailto:bhrigaya@gmail.com" className="hover:text-white transition">bhrigaya@gmail.com</a>
+                <a href="mailto:bhribodhgaya@gmail.com" className="hover:text-white transition">bhribodhgaya@gmail.com</a>
               </li>
               <li className="flex items-center gap-2 text-xs text-white/60">
                 <Phone size={14} className="flex-shrink-0 text-white/80" />
-                <span>9162845503 / 9162845504</span>
+                <span>8603048174 / 9060646592</span>
               </li>
             </ul>
           </div>

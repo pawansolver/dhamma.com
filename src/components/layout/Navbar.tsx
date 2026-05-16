@@ -141,21 +141,21 @@ export default function Navbar() {
           <div className="flex flex-wrap items-center gap-x-6 gap-y-1">
             <span className="flex items-center gap-1.5">
               <Phone size={11} className="text-white/80" />
-              OPD / Appointment Enquiry :- +91-7479628194 / 9241824960
+              OPD / Appointment Enquiry :- +91-8603048174 / 9060646592
             </span>
             <span className="flex items-center gap-1.5">
               <Phone size={11} className="text-white/80" />
-              Emergency Helpline :- +91 7260949469
+              Emergency Helpline :- +91-8603048174
             </span>
           </div>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-1">
             <span className="flex items-center gap-1.5">
               <Phone size={11} className="text-white/80" />
-              Admission Enquiry :- +91-9229341560 / 9229342489
+              Admission Enquiry :- +91-8603048174 / 9060646592
             </span>
             <span className="flex items-center gap-1.5">
               <Phone size={11} className="text-white/80" />
-              Anti-Ragging Helpline :- +91 9386467618
+              Anti-Ragging Helpline :- +91-9060646592
             </span>
           </div>
         </div>
@@ -166,10 +166,10 @@ export default function Navbar() {
         <div className="container-custom flex items-center justify-between py-1.5">
           <div className="hidden md:flex items-center gap-5">
             <span className="flex items-center gap-1.5">
-              <Phone size={12} /> +91-7479628194 / 9241824960
+              <Phone size={12} /> +91-8603048174 / 9060646592
             </span>
             <span className="flex items-center gap-1.5">
-              <Mail size={12} /> info@bhri.ac.in
+              <Mail size={12} /> bhribodhgaya@gmail.com
             </span>
           </div>
           <div className="flex items-center gap-3 ml-auto">
