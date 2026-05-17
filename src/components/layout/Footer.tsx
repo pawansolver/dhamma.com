@@ -122,8 +122,8 @@ export default function Footer() {
         <div className="absolute top-[20%] right-[30%] w-32 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
       </div>
 
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-10 py-10 md:py-14">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-10">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-10 py-6 md:py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-10">
           {/* Column 1, 2, 3 — Menu Items with arrow toggle */}
           {[
             MENU.slice(0, 4),
