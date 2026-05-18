@@ -101,7 +101,7 @@ const AboutOverview = () => {
     return (
         <div className="bg-white" style={{ fontFamily: 'Montserrat, sans-serif' }}>
             {/* ===== HERO SECTION ===== */}
-            <section className="relative bg-slate-50 pt-10 pb-16 lg:pb-24 overflow-hidden">
+            <section className="relative bg-slate-50 pt-8 pb-10 lg:pb-14 overflow-hidden">
                 {/* Decorative Background Elements */}
                 <div className="absolute inset-0 z-0">
                     <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-50/40 -skew-x-12 translate-x-20" />
@@ -170,7 +170,7 @@ const AboutOverview = () => {
             </section>
 
             {/* ===== ABOUT SECTION ===== */}
-            <section className="py-10 lg:py-16 bg-white">
+            <section className="py-8 lg:py-12 bg-white">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <motion.div
@@ -216,75 +216,235 @@ const AboutOverview = () => {
                 </div>
             </section>
 
-            {/* ===== MISSION & VISION ===== */}
-            <section className="pt-4 pb-12 lg:pt-6 lg:pb-20 bg-gray-50">
+            {/* ===== MISSION & VISION (Hanging Lanyard Card Stack Design) ===== */}
+            <section className="pt-0 pb-10 lg:pb-14 bg-gradient-to-b from-gray-55 to-white overflow-hidden relative">
+                
+                {/* Desktop Unified Straight Suspension Cable (hidden on mobile) */}
+                <div className="hidden md:block absolute inset-x-0 top-[48px] h-6 z-10 pointer-events-none">
+                    <div className="max-w-7xl mx-auto px-6 lg:px-8 h-full relative">
+                        {/* Straight tensioned rope starting exactly at left 25% and ending at right 25% */}
+                        <div className="absolute left-[25%] right-[25%] top-1/2 -translate-y-1/2 h-1.5 z-10">
+                            <svg className="w-full h-full" viewBox="0 0 100 8" preserveAspectRatio="none">
+                                <line x1="0" y1="4" x2="100" y2="4" stroke="#121212" strokeWidth="6" strokeDasharray="1.5,1.5" />
+                                <line x1="0" y1="4" x2="100" y2="4" stroke="#e6960a" strokeWidth="1.5" opacity="0.8" />
+                            </svg>
+                        </div>
+                        
+                        {/* Centered Grand Floating Highlighted BHRI Badge inline with the straight cable */}
+                        <motion.div
+                            animate={{ y: [0, -4, 0] }}
+                            transition={{
+                                duration: 4,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                            className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 z-20 flex items-center justify-center pointer-events-none"
+                        >
+                            <div className="bg-[#1a3a6b] border-2 border-brandSaffron px-4 py-1.5 rounded-full shadow-[0_0_20px_rgba(246,143,30,0.65),inset_0_1px_3px_rgba(255,255,255,0.15)] text-xs font-black text-brandSaffron tracking-[0.3em] font-montserrat flex items-center gap-2 backdrop-blur-sm select-none">
+                                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                                BHRI
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="bg-white rounded-2xl p-10 border border-gray-200 relative overflow-hidden group shadow-sm hover:shadow-xl transition-all duration-500"
-                        >
-                            {/* Faded Background Icon/Image */}
-                            <div className="absolute -bottom-6 -right-6 w-48 h-48 opacity-[0.03] group-hover:opacity-[0.07] group-hover:scale-110 transition-all duration-700 pointer-events-none">
-                                <Image src="/mission-vision-bg.png" alt="Mission" fill className="object-cover grayscale" />
-                            </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 pt-0">
+                        
+                        {/* Mission Hanging Card */}
+                        <div className="relative pt-44 pb-4 flex justify-center w-full max-w-md mx-auto">
+                            {/* Curved Suspension Cable (Rope) meeting in the center (Mobile only) */}
+                            <svg className="md:hidden absolute top-0 left-0 w-full h-24 pointer-events-none" viewBox="0 0 400 96" preserveAspectRatio="none">
+                                {/* Left rope branch */}
+                                <path d="M 30,0 Q 115,75 200,80" fill="none" stroke="#121212" strokeWidth="4" strokeDasharray="2,2" />
+                                <path d="M 30,0 Q 115,75 200,80" fill="none" stroke="#e6960a" strokeWidth="1.5" opacity="0.75" />
 
-                            <div className="relative z-10">
-                                <div className="w-12 h-12 rounded-xl bg-green-600 text-white flex items-center justify-center mb-8 shadow-lg shadow-green-600/20">
-                                    <Target size={24} />
+                                {/* Right rope branch */}
+                                <path d="M 370,0 Q 285,75 200,80" fill="none" stroke="#121212" strokeWidth="4" strokeDasharray="2,2" />
+                                <path d="M 370,0 Q 285,75 200,80" fill="none" stroke="#e6960a" strokeWidth="1.5" opacity="0.75" />
+                            </svg>
+
+                            {/* Floating Highlighted BHRI Badge at the rope junction (Mobile only) */}
+                            <motion.div
+                                animate={{ y: [0, -4, 0], scale: [1, 1.04, 1] }}
+                                transition={{
+                                    duration: 4,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                                className="md:hidden absolute top-[68px] left-1/2 -translate-x-1/2 z-20 flex items-center justify-center pointer-events-none"
+                            >
+                                <div className="bg-[#1a3a6b] border border-brandSaffron px-3 py-1 rounded-full shadow-[0_0_15px_rgba(246,143,30,0.55),inset_0_1px_3px_rgba(255,255,255,0.1)] text-[10px] font-black text-brandSaffron tracking-[0.25em] font-montserrat flex items-center gap-1.5 backdrop-blur-sm select-none">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                                    BHRI
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-900 mb-6 font-montserrat">Our Mission</h3>
-                                <ul className="space-y-4">
-                                    {[
-                                        "Provide affordable and high-quality healthcare",
-                                        "Ensure patient safety and satisfaction",
-                                        "Adopt modern medical technologies",
-                                        "Support medical education and research"
-                                    ].map((text, i) => (
-                                        <li key={i} className="flex items-start gap-3 text-gray-700">
-                                            <CheckCircle className="text-green-600 shrink-0 mt-0.5" size={18} />
-                                            <span className="font-montserrat text-sm lg:text-base">{text}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </motion.div>
+                            </motion.div>
 
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 }}
-                            className="bg-white rounded-2xl p-10 border border-gray-200 relative overflow-hidden group shadow-sm hover:shadow-xl transition-all duration-500"
-                        >
-                            {/* Faded Background Icon/Image */}
-                            <div className="absolute -bottom-6 -right-6 w-48 h-48 opacity-[0.03] group-hover:opacity-[0.07] group-hover:scale-110 transition-all duration-700 pointer-events-none">
-                                <Image src="/mission-vision-bg.png" alt="Vision" fill className="object-cover grayscale" />
+                            {/* Vertical Lanyard extending from the floating badge/catenary curve down to the snap clip */}
+                            <div className="absolute top-20 md:top-[48px] h-16 md:h-24 left-1/2 -translate-x-1/2 w-4 bg-[#121212] shadow-[inset_0_0_6px_rgba(0,0,0,0.85),0_2px_4px_rgba(0,0,0,0.15)] z-0 rounded-t-sm flex flex-col justify-around items-center py-1 pointer-events-none">
+                                <span className="text-[8px] text-brandSaffron opacity-90 select-none font-bold">☸</span>
                             </div>
 
-                            <div className="relative z-10">
-                                <div className="w-12 h-12 rounded-xl bg-red-600 text-white flex items-center justify-center mb-8 shadow-lg shadow-red-600/20">
-                                    <Eye size={24} />
+                            {/* Metal Swivel Snap Clip connecting lanyard to the card hook */}
+                            <div className="absolute top-[144px] left-1/2 -translate-x-1/2 w-3.5 h-4.5 bg-gradient-to-b from-gray-550 to-gray-750 border border-gray-600 rounded-sm z-10 pointer-events-none" />
+                            <div className="absolute top-[156px] left-1/2 -translate-x-1/2 w-4 h-4.5 rounded-t-full border-[2.5px] border-gray-600 bg-transparent z-10 pointer-events-none" />
+
+                            {/* Pendulum Swinging Motion Card Container */}
+                            <motion.div
+                                animate={{ rotate: [1.2, -1.2, 1.2] }}
+                                transition={{
+                                    duration: 6,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                                style={{ transformOrigin: "top center" }}
+                                className="relative group w-full max-w-md pt-3"
+                            >
+                                {/* Visual Card Stack layers (Saffron/Amber/Blue tones) */}
+                                <div className="absolute inset-0 bg-brandSaffron/20 rounded-[2rem] rotate-2 translate-x-2 translate-y-2 -z-10 transition-transform duration-500 group-hover:rotate-4 group-hover:translate-x-3 group-hover:translate-y-3 border border-brandSaffron/20" />
+                                <div className="absolute inset-0 bg-[#122b52] rounded-[2rem] -rotate-1.5 -translate-x-1.5 translate-y-1.5 -z-20 transition-transform duration-500 group-hover:-rotate-3 group-hover:-translate-x-2 group-hover:translate-y-2 border border-brandSaffron/10" />
+
+                                <div className="bg-[#1a3a6b] rounded-[2rem] border border-brandSaffron/30 p-8 lg:p-10 pt-12 shadow-[0_15px_40px_rgba(26,58,107,0.15)] hover:shadow-[0_25px_60px_rgba(249,115,22,0.2)] relative overflow-hidden transition-all duration-500 hover:-translate-y-1.5 min-h-[380px] flex flex-col justify-between cursor-default">
+                                    
+                                    {/* Hanging Card Grommet Hole at the very top center */}
+                                    <div className="absolute top-3 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#122b52] border border-brandSaffron/35 shadow-inner flex items-center justify-center z-20">
+                                        <div className="w-2 h-2 rounded-full bg-brandSaffron/70" />
+                                    </div>
+
+                                    {/* Saffron Bodhi Tree Drawing Watermark (Optimized for Dark Blue Box) */}
+                                    <div className="absolute bottom-0 right-0 w-56 h-56 opacity-30 group-hover:opacity-45 group-hover:scale-105 transition-all duration-700 pointer-events-none mix-blend-screen invert brightness-[0.7] sepia-[1] saturate-[8] hue-rotate-[10deg]">
+                                        <Image
+                                            src="/mission-vision-bg.png"
+                                            alt="Bodhi Tree"
+                                            fill
+                                            className="object-contain object-right-bottom"
+                                            priority
+                                        />
+                                    </div>
+
+                                    <div className="relative z-10">
+                                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brandSaffron to-amber-600 text-white flex items-center justify-center mb-6 shadow-lg shadow-brandSaffron/30 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                                            <Target size={22} />
+                                        </div>
+                                        <h3 className="text-2xl font-bold text-brandSaffron mb-6 font-montserrat tracking-tight">Our Mission</h3>
+                                        <ul className="space-y-3.5 max-w-[85%]">
+                                            {[
+                                                "Provide affordable and high-quality healthcare",
+                                                "Ensure patient safety and satisfaction",
+                                                "Adopt modern medical technologies",
+                                                "Support medical education and research"
+                                            ].map((text, i) => (
+                                                <li key={i} className="flex items-start gap-3.5 text-brandSaffronLight group/item">
+                                                    <div className="w-5 h-5 rounded-full bg-brandSaffron/10 border border-brandSaffron/20 flex items-center justify-center mt-0.5 shrink-0 group-hover/item:bg-brandSaffron/20 transition-colors">
+                                                        <CheckCircle className="text-brandSaffronLight shrink-0" size={15} />
+                                                    </div>
+                                                    <span className="font-montserrat text-[13px] lg:text-sm font-semibold group-hover/item:text-white transition-colors">{text}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-900 mb-6 font-montserrat">Our Vision</h3>
-                                <p className="text-gray-700 leading-relaxed font-montserrat text-sm lg:text-base">
-                                    To become a center of excellence in healthcare by delivering world-class medical services, fostering innovation, and building trust within the community.
-                                </p>
-                                <p className="text-gray-600 mt-6 text-sm font-montserrat">
-                                    BHRI aims to be the leading healthcare institution in Bihar and Eastern India through ethical practices.
-                                </p>
+                            </motion.div>
+                        </div>
+
+                        {/* Vision Hanging Card */}
+                        <div className="relative pt-44 pb-4 flex justify-center w-full max-w-md mx-auto">
+                            {/* Curved Suspension Cable (Rope) meeting in the center (Mobile only) */}
+                            <svg className="md:hidden absolute top-0 left-0 w-full h-24 pointer-events-none" viewBox="0 0 400 96" preserveAspectRatio="none">
+                                {/* Left rope branch */}
+                                <path d="M 30,0 Q 115,75 200,80" fill="none" stroke="#121212" strokeWidth="4" strokeDasharray="2,2" />
+                                <path d="M 30,0 Q 115,75 200,80" fill="none" stroke="#e6960a" strokeWidth="1.5" opacity="0.75" />
+
+                                {/* Right rope branch */}
+                                <path d="M 370,0 Q 285,75 200,80" fill="none" stroke="#121212" strokeWidth="4" strokeDasharray="2,2" />
+                                <path d="M 370,0 Q 285,75 200,80" fill="none" stroke="#e6960a" strokeWidth="1.5" opacity="0.75" />
+                            </svg>
+
+                            {/* Floating Highlighted BHRI Badge at the rope junction (Mobile only) */}
+                            <motion.div
+                                animate={{ y: [0, -4, 0], scale: [1, 1.04, 1] }}
+                                transition={{
+                                    duration: 4,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                                className="md:hidden absolute top-[68px] left-1/2 -translate-x-1/2 z-20 flex items-center justify-center pointer-events-none"
+                            >
+                                <div className="bg-[#1a3a6b] border border-brandSaffron px-3 py-1 rounded-full shadow-[0_0_15px_rgba(246,143,30,0.55),inset_0_1px_3px_rgba(255,255,255,0.1)] text-[10px] font-black text-brandSaffron tracking-[0.25em] font-montserrat flex items-center gap-1.5 backdrop-blur-sm select-none">
+                                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                                    BHRI
+                                </div>
+                            </motion.div>
+
+                            {/* Vertical Lanyard extending from the floating badge/catenary curve down to the snap clip */}
+                            <div className="absolute top-20 md:top-[48px] h-16 md:h-24 left-1/2 -translate-x-1/2 w-4 bg-[#121212] shadow-[inset_0_0_6px_rgba(0,0,0,0.85),0_2px_4px_rgba(0,0,0,0.15)] z-0 rounded-t-sm flex flex-col justify-around items-center py-1 pointer-events-none">
+                                <span className="text-[8px] text-brandSaffron opacity-90 select-none font-bold">☸</span>
                             </div>
-                        </motion.div>
+
+                            {/* Metal Swivel Snap Clip connecting lanyard to the card hook */}
+                            <div className="absolute top-[144px] left-1/2 -translate-x-1/2 w-3.5 h-4.5 bg-gradient-to-b from-gray-550 to-gray-750 border border-gray-600 rounded-sm z-10 pointer-events-none" />
+                            <div className="absolute top-[156px] left-1/2 -translate-x-1/2 w-4 h-4.5 rounded-t-full border-[2.5px] border-gray-600 bg-transparent z-10 pointer-events-none" />
+
+                            {/* Pendulum Swinging Motion Card Container */}
+                            <motion.div
+                                animate={{ rotate: [-1.2, 1.2, -1.2] }}
+                                transition={{
+                                    duration: 6,
+                                    repeat: Infinity,
+                                    ease: "easeInOut"
+                                }}
+                                style={{ transformOrigin: "top center" }}
+                                className="relative group w-full max-w-md pt-3"
+                            >
+                                {/* Visual Card Stack layers (Saffron/Amber/Blue tones) */}
+                                <div className="absolute inset-0 bg-brandSaffron/20 rounded-[2rem] rotate-2 translate-x-2 translate-y-2 -z-10 transition-transform duration-500 group-hover:rotate-4 group-hover:translate-x-3 group-hover:translate-y-3 border border-brandSaffron/20" />
+                                <div className="absolute inset-0 bg-[#122b52] rounded-[2rem] -rotate-1.5 -translate-x-1.5 translate-y-1.5 -z-20 transition-transform duration-500 group-hover:-rotate-3 group-hover:-translate-x-2 group-hover:translate-y-2 border border-brandSaffron/10" />
+
+                                <div className="bg-[#1a3a6b] rounded-[2rem] border border-brandSaffron/30 p-8 lg:p-10 pt-12 shadow-[0_15px_40px_rgba(26,58,107,0.15)] hover:shadow-[0_25px_60px_rgba(249,115,22,0.2)] relative overflow-hidden transition-all duration-500 hover:-translate-y-1.5 min-h-[380px] flex flex-col justify-between cursor-default">
+                                    
+                                    {/* Hanging Card Grommet Hole at the very top center */}
+                                    <div className="absolute top-3 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#122b52] border border-brandSaffron/35 shadow-inner flex items-center justify-center z-20">
+                                        <div className="w-2 h-2 rounded-full bg-brandSaffron/70" />
+                                    </div>
+
+                                    {/* Saffron Bodhi Tree Drawing Watermark (Optimized for Dark Blue Box) */}
+                                    <div className="absolute bottom-0 right-0 w-56 h-56 opacity-30 group-hover:opacity-45 group-hover:scale-105 transition-all duration-700 pointer-events-none mix-blend-screen invert brightness-[0.7] sepia-[1] saturate-[8] hue-rotate-[10deg]">
+                                        <Image
+                                            src="/mission-vision-bg.png"
+                                            alt="Bodhi Tree"
+                                            fill
+                                            className="object-contain object-right-bottom"
+                                            priority
+                                        />
+                                    </div>
+
+                                    <div className="relative z-10">
+                                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brandSaffron to-amber-600 text-white flex items-center justify-center mb-6 shadow-lg shadow-brandSaffron/30 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                                            <Eye size={22} />
+                                        </div>
+                                        <h3 className="text-2xl font-bold text-brandSaffron mb-6 font-montserrat tracking-tight">Our Vision</h3>
+                                        <div className="space-y-4 max-w-[85%] text-brandSaffronLight">
+                                            <p className="leading-relaxed font-montserrat text-[13px] lg:text-sm font-semibold group-hover:text-white transition-colors">
+                                                To become a center of excellence in healthcare by delivering world-class medical services, fostering innovation, and building trust within the community.
+                                            </p>
+                                            <div className="w-full h-px bg-gradient-to-r from-brandSaffron/40 via-brandSaffron/20 to-transparent my-4" />
+                                            <p className="text-brandSaffronLight/85 text-[12px] lg:text-[13px] font-montserrat italic leading-relaxed">
+                                                BHRI aims to be the leading healthcare institution in Bihar and Eastern India through ethical practices.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
+
                     </div>
                 </div>
             </section>
 
             {/* ===== CORE VALUES ===== */}
-            <section className="py-10 lg:py-16 bg-white">
+            <section className="py-8 lg:py-12 bg-white">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-10 lg:mb-12">
                         <span className="text-green-600 font-bold text-sm uppercase tracking-wider font-montserrat">Our Foundations</span>
                         <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-4 font-montserrat">Our Core Values</h2>
                     </div>
@@ -316,9 +476,9 @@ const AboutOverview = () => {
             </section>
 
             {/* ===== SERVICES SECTION ===== */}
-            <section className="py-10 lg:py-16 bg-gray-50">
+            <section className="py-8 lg:py-12 bg-gray-55">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-10 lg:mb-12">
                         <span className="text-green-600 font-bold text-sm uppercase tracking-wider font-montserrat">What We Offer</span>
                         <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-4 font-montserrat">Comprehensive Healthcare Services</h2>
                     </div>
@@ -336,7 +496,7 @@ const AboutOverview = () => {
             </section>
 
             {/* ===== COMMUNITY & TEAM ===== */}
-            <section className="py-16 lg:py-24 bg-slate-100 overflow-hidden">
+            <section className="py-10 lg:py-14 bg-slate-100 overflow-hidden">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
                         {/* Community Card Stack */}
@@ -415,9 +575,9 @@ const AboutOverview = () => {
 
 
             {/* ===== WHY CHOOSE ===== */}
-            <section className="py-10 lg:py-16 bg-gray-50">
+            <section className="py-8 lg:py-12 bg-gray-55">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-10 lg:mb-12">
                         <span className="text-green-600 font-bold text-sm uppercase tracking-wider font-montserrat">Advantages</span>
                         <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-4 font-montserrat">Why Choose BHRI?</h2>
                     </div>
@@ -450,7 +610,7 @@ const AboutOverview = () => {
             </section>
 
             {/* ===== CAROUSEL ===== */}
-            <section className="py-10 lg:py-16 bg-white">
+            <section className="py-8 lg:py-12 bg-white">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
                     <div className="rounded-3xl overflow-hidden relative min-h-[300px] lg:min-h-[400px] shadow-2xl bg-gray-900">
                         <AnimatePresence mode="wait">
@@ -511,7 +671,7 @@ const AboutOverview = () => {
             </section>
 
             {/* ===== COMMITMENT ===== */}
-            <section className="py-10 lg:py-16 bg-gray-50">
+            <section className="py-8 lg:py-12 bg-gray-55">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
                         <motion.div
@@ -545,7 +705,7 @@ const AboutOverview = () => {
             </section>
 
             {/* ===== CTA SECTION ===== */}
-            <section className="py-10 lg:py-16 bg-green-600 text-white">
+            <section className="py-8 lg:py-12 bg-green-600 text-white">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -571,7 +731,7 @@ const AboutOverview = () => {
             </section>
 
             {/* ===== FOOTER ===== */}
-            <section className="bg-white border-t border-gray-200 py-8">
+            <section className="bg-white border-t border-gray-200 py-6">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
                     <p className="text-gray-600 font-montserrat">Excellence in Healthcare | Buddha Hospital &amp; Research Institute, Gaya</p>
                 </div>

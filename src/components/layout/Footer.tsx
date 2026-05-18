@@ -17,7 +17,6 @@ const MENU: MenuItem[] = [
       { label: "Overview", href: "/about" },
       { label: "Vision & Mission", href: "/about/vision" },
       { label: "Chairman Message", href: "/about/chairman" },
-      { label: "Managing Director Message", href: "/about/md" },
     ],
   },
   {
