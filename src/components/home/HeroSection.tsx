@@ -51,7 +51,7 @@ export default function HeroSection() {
       {/* Live Hospital Stats Top-Center Overlay */}
       <div className="absolute top-3 sm:top-4 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3 sm:gap-5 bg-white/95 backdrop-blur-md border border-slate-200/60 rounded-2xl px-4 sm:px-6 py-2 sm:py-2.5 shadow-xl select-none min-w-[240px] sm:min-w-[260px] justify-center transition-all duration-300">
         <div className="text-center flex-1">
-          <span className="block text-[7px] sm:text-[8px] font-bold text-slate-400 uppercase tracking-widest leading-none mb-1.5">Total OPD</span>
+          <span className="block text-[7px] sm:text-[8px] font-extrabold text-slate-500 uppercase tracking-widest leading-none mb-1.5">Total OPD</span>
           <div className="flex items-center justify-center gap-1.5 leading-none">
             <span className="relative flex h-2 w-2 shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
@@ -64,7 +64,7 @@ export default function HeroSection() {
         <div className="w-px h-6 sm:h-8 bg-slate-200" />
         
         <div className="text-center flex-1">
-          <span className="block text-[7px] sm:text-[8px] font-bold text-slate-400 uppercase tracking-widest leading-none mb-1.5">Total IPD</span>
+          <span className="block text-[7px] sm:text-[8px] font-extrabold text-slate-500 uppercase tracking-widest leading-none mb-1.5">Total IPD</span>
           <div className="flex items-center justify-center gap-1.5 leading-none">
             <span className="relative flex h-2 w-2 shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />

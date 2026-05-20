@@ -114,17 +114,17 @@ export default function Facilities() {
           World-class diagnostic &amp; treatment infrastructure
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 md:gap-5 items-stretch">
           <div className="flex flex-col">
             <AnimatedTabs tabs={facilityTabs} className="flex-1" />
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-2 sm:gap-3">
             {showcaseSlides.map((slide, idx) => (
               <button
                 key={slide.title}
                 onClick={() => setActiveSlide(idx)}
-                className={`group relative rounded-xl overflow-hidden h-[130px] md:h-[150px] transition-all duration-400 ${
+                className={`group relative rounded-xl overflow-hidden h-[110px] sm:h-[130px] md:h-[150px] transition-all duration-400 ${
                   activeSlide === idx
                     ? "ring-2 ring-brandSaffron scale-[1.03]"
                     : "opacity-60 hover:opacity-85"
@@ -139,8 +139,8 @@ export default function Facilities() {
                 <div className="absolute top-2 right-2 w-6 h-6 rounded-full bg-brandSaffron text-white text-[10px] font-bold flex items-center justify-center">
                   {String(idx + 1).padStart(2, "0")}
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-2.5">
-                  <h3 className="text-white font-bold text-xs">{slide.title}</h3>
+                <div className="absolute bottom-0 left-0 right-0 p-1.5 sm:p-2.5">
+                  <h3 className="text-white font-bold text-[10px] sm:text-xs">{slide.title}</h3>
                 </div>
               </button>
             ))}

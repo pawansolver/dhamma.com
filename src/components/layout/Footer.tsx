@@ -189,6 +189,10 @@ export default function Footer() {
 
           {/* Column 4 — About + Contact (moved to right) */}
           <div>
+            <Link href="/" className="inline-block mb-4">
+              <Image src="/logo.png" alt="BHRI" width={140} height={140} className="rounded-full bg-white p-0.5" />
+            </Link>
+
             <p className="text-xs text-white/60 leading-relaxed mb-3">
               Buddha Hospital &amp; Research Institute is a multi-Specialty hospital in Gaya
               offering world-class healthcare with the motto &ldquo;सेवा परमो धर्म:&rdquo;
@@ -196,9 +200,6 @@ export default function Footer() {
             <p className="text-[11px] text-white/50 mb-4">
               Reg. No.: CE/GAY/2025/NH-0504
             </p>
-            <Link href="/" className="inline-block mb-4">
-              <Image src="/logo.png" alt="BHRI" width={140} height={140} className="rounded-full bg-white p-0.5" />
-            </Link>
 
             <ul className="space-y-2.5 mb-4">
               <li className="flex items-start gap-2 text-xs text-white/60">

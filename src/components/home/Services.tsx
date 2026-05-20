@@ -83,14 +83,14 @@ export default function Services() {
           {/* Left Arrow */}
           <button
             onClick={prev}
-            className="absolute -left-4 md:-left-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white shadow-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors"
+            className="absolute -left-2 sm:-left-3 md:-left-6 top-1/2 -translate-y-1/2 z-10 w-9 sm:w-10 h-9 sm:h-10 rounded-full bg-white shadow-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors"
             aria-label="Previous"
           >
-            <ChevronLeft className="w-5 h-5 text-gray-600" />
+            <ChevronLeft className="w-4 sm:w-5 h-4 sm:h-5 text-gray-600" />
           </button>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 px-2 md:px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 px-1 sm:px-3 md:px-4">
             {visibleServices.map((service) => (
               <div key={service.title} className="group cursor-pointer">
                 <div className="relative aspect-[4/3] rounded-[6px] overflow-hidden mb-4 shadow-md border border-gray-200">
@@ -111,15 +111,15 @@ export default function Services() {
           {/* Right Arrow */}
           <button
             onClick={next}
-            className="absolute -right-4 md:-right-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white shadow-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors"
+            className="absolute -right-2 sm:-right-3 md:-right-6 top-1/2 -translate-y-1/2 z-10 w-9 sm:w-10 h-9 sm:h-10 rounded-full bg-white shadow-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors"
             aria-label="Next"
           >
-            <ChevronRight className="w-5 h-5 text-gray-600" />
+            <ChevronRight className="w-4 sm:w-5 h-4 sm:h-5 text-gray-600" />
           </button>
         </div>
 
         {/* Dots */}
-        <div className="flex justify-center gap-2 mt-8">
+        <div className="flex justify-center gap-2 mt-6 sm:mt-8">
           {Array.from({ length: totalPages }).map((_, i) => (
             <button
               key={i}

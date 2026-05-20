@@ -49,7 +49,7 @@ export default function MaternityCare() {
         </div>
 
         {/* 3x2 Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
           {services.map((svc, idx) => (
             <div
               key={svc.title}
@@ -58,7 +58,7 @@ export default function MaternityCare() {
               onMouseLeave={() => setHovered(null)}
             >
               {/* Image */}
-              <div className="relative h-[200px] md:h-[220px] overflow-hidden">
+              <div className="relative h-[160px] sm:h-[180px] md:h-[220px] overflow-hidden">
                 <Image
                   src={svc.img}
                   alt={svc.title}
@@ -73,10 +73,10 @@ export default function MaternityCare() {
               </div>
 
               {/* Title bar */}
-              <div className={`relative bg-gradient-to-r ${svc.color} px-5 py-3 transition-all duration-500 ${
-                hovered === idx ? "py-4" : ""
+              <div className={`relative bg-gradient-to-r ${svc.color} px-3 sm:px-5 py-2.5 sm:py-3 transition-all duration-500 ${
+                hovered === idx ? "py-3 sm:py-4" : ""
               }`}>
-                <h3 className="text-white font-bold text-sm md:text-base text-center">
+                <h3 className="text-white font-bold text-xs sm:text-sm md:text-base text-center">
                   {svc.title}
                 </h3>
               </div>

@@ -33,77 +33,77 @@ export default function ContactForm() {
         <div className="absolute top-[45%] left-[55%] w-1.5 h-1.5 rounded-full bg-white/10" />
       </div>
 
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-10">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10">
         <h2 className="section-heading-white">Contact Us</h2>
         <span className="section-heading-line-white" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mt-8">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6 mt-6 sm:mt-8">
           {/* Left — Contact cards (2 cols) */}
-          <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
-            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3.5 border border-white/10">
-              <div className="w-9 h-9 rounded-lg bg-white/15 flex items-center justify-center flex-shrink-0">
-                <Phone size={16} className="text-brandSaffron" />
+          <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2.5 sm:gap-3">
+            <div className="flex items-start sm:items-center gap-2.5 sm:gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-2.5 sm:p-3.5 border border-white/10">
+              <div className="w-8 sm:w-9 h-8 sm:h-9 rounded-lg bg-white/15 flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-0">
+                <Phone size={14} className="text-brandSaffron" />
               </div>
-              <div>
-                <h4 className="text-white font-bold text-[13px]">Emergency</h4>
-                <p className="text-white/60 text-[13px]">+91 8603048174 / 9060646592</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3.5 border border-white/10">
-              <div className="w-9 h-9 rounded-lg bg-white/15 flex items-center justify-center flex-shrink-0">
-                <Mail size={16} className="text-brandSaffron" />
-              </div>
-              <div>
-                <h4 className="text-white font-bold text-[13px]">Email</h4>
-                <a href="mailto:bhribodhgaya@gmail.com" className="text-white/60 text-[13px] hover:text-white transition">bhribodhgaya@gmail.com</a>
+              <div className="min-w-0">
+                <h4 className="text-white font-bold text-[11px] sm:text-[13px]">Emergency</h4>
+                <p className="text-white/60 text-[11px] sm:text-[13px] truncate">+91 8603048174</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3.5 border border-white/10">
-              <div className="w-9 h-9 rounded-lg bg-white/15 flex items-center justify-center flex-shrink-0">
-                <MapPin size={16} className="text-brandSaffron" />
+            <div className="flex items-start sm:items-center gap-2.5 sm:gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-2.5 sm:p-3.5 border border-white/10">
+              <div className="w-8 sm:w-9 h-8 sm:h-9 rounded-lg bg-white/15 flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-0">
+                <Mail size={14} className="text-brandSaffron" />
               </div>
-              <div>
-                <h4 className="text-white font-bold text-[13px]">Location</h4>
-                <p className="text-white/60 text-[13px]">Gaya-Dobhi Road, NH-22, Kharanti More, Gaya-823004</p>
+              <div className="min-w-0">
+                <h4 className="text-white font-bold text-[11px] sm:text-[13px]">Email</h4>
+                <a href="mailto:bhribodhgaya@gmail.com" className="text-white/60 text-[11px] sm:text-[13px] hover:text-white transition truncate block">BHRI@gmail.com</a>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-3.5 border border-white/10">
-              <div className="w-9 h-9 rounded-lg bg-white/15 flex items-center justify-center flex-shrink-0">
-                <Clock size={16} className="text-brandSaffron" />
+            <div className="flex items-start sm:items-center gap-2.5 sm:gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-2.5 sm:p-3.5 border border-white/10">
+              <div className="w-8 sm:w-9 h-8 sm:h-9 rounded-lg bg-white/15 flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-0">
+                <MapPin size={14} className="text-brandSaffron" />
               </div>
-              <div>
-                <h4 className="text-white font-bold text-[13px]">OPD Timing</h4>
-                <p className="text-white/60 text-[13px]">Mon - Sat: 9:00 AM - 3:00 PM</p>
+              <div className="min-w-0">
+                <h4 className="text-white font-bold text-[11px] sm:text-[13px]">Location</h4>
+                <p className="text-white/60 text-[11px] sm:text-[13px] line-clamp-2">Gaya-Dobhi Road, Gaya</p>
+              </div>
+            </div>
+
+            <div className="flex items-start sm:items-center gap-2.5 sm:gap-3 bg-white/10 backdrop-blur-sm rounded-lg p-2.5 sm:p-3.5 border border-white/10">
+              <div className="w-8 sm:w-9 h-8 sm:h-9 rounded-lg bg-white/15 flex items-center justify-center flex-shrink-0 mt-0.5 sm:mt-0">
+                <Clock size={14} className="text-brandSaffron" />
+              </div>
+              <div className="min-w-0">
+                <h4 className="text-white font-bold text-[11px] sm:text-[13px]">OPD Timing</h4>
+                <p className="text-white/60 text-[11px] sm:text-[13px] truncate">9:00 AM - 3:00 PM</p>
               </div>
             </div>
           </div>
 
           {/* Right — Form (3 cols) */}
-          <div className="lg:col-span-3 bg-white rounded-xl shadow-sm border border-gray-100 p-5 md:p-6">
-            <form onSubmit={handleSubmit} className="space-y-3.5">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          <div className="lg:col-span-3 bg-white rounded-xl shadow-sm border border-gray-100 p-4 sm:p-5 md:p-6">
+            <form onSubmit={handleSubmit} className="space-y-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
                 <div>
-                  <label className="block text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1">Full Name</label>
-                  <input type="text" name="name" placeholder="Your name" value={form.name} onChange={handleChange} required className="w-full px-3.5 py-2.5 bg-[#f8fafc] border border-gray-200 rounded-lg text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue/30 transition" />
+                  <label className="block text-[10px] sm:text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1">Full Name</label>
+                  <input type="text" name="name" placeholder="Your name" value={form.name} onChange={handleChange} required className="w-full px-3 sm:px-3.5 py-2 sm:py-2.5 bg-[#f8fafc] border border-gray-200 rounded-lg text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue/30 transition" />
                 </div>
                 <div>
-                  <label className="block text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1">Email</label>
-                  <input type="email" name="email" placeholder="Your email" value={form.email} onChange={handleChange} required className="w-full px-3.5 py-2.5 bg-[#f8fafc] border border-gray-200 rounded-lg text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue/30 transition" />
+                  <label className="block text-[10px] sm:text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1">Email</label>
+                  <input type="email" name="email" placeholder="Your email" value={form.email} onChange={handleChange} required className="w-full px-3 sm:px-3.5 py-2 sm:py-2.5 bg-[#f8fafc] border border-gray-200 rounded-lg text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue/30 transition" />
                 </div>
               </div>
               <div>
-                <label className="block text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1">Phone</label>
-                <input type="tel" name="phone" placeholder="Your phone number" value={form.phone} onChange={handleChange} className="w-full px-3.5 py-2.5 bg-[#f8fafc] border border-gray-200 rounded-lg text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue/30 transition" />
+                <label className="block text-[10px] sm:text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1">Phone</label>
+                <input type="tel" name="phone" placeholder="Your phone number" value={form.phone} onChange={handleChange} className="w-full px-3 sm:px-3.5 py-2 sm:py-2.5 bg-[#f8fafc] border border-gray-200 rounded-lg text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue/30 transition" />
               </div>
               <div>
-                <label className="block text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1">Message</label>
-                <textarea name="message" placeholder="How can we help you?" value={form.message} onChange={handleChange} rows={3} required className="w-full px-3.5 py-2.5 bg-[#f8fafc] border border-gray-200 rounded-lg text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue/30 transition resize-none" />
+                <label className="block text-[10px] sm:text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1">Message</label>
+                <textarea name="message" placeholder="How can we help you?" value={form.message} onChange={handleChange} rows={3} required className="w-full px-3 sm:px-3.5 py-2 sm:py-2.5 bg-[#f8fafc] border border-gray-200 rounded-lg text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue/30 transition resize-none" />
               </div>
-              <button type="submit" className="w-full py-3 bg-gradient-to-r from-brandBlue to-brandBlueDark text-white font-bold text-sm uppercase tracking-wider rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2">
-                <Send size={15} /> Send Message
+              <button type="submit" className="w-full py-2.5 sm:py-3 bg-gradient-to-r from-brandBlue to-brandBlueDark text-white font-bold text-xs sm:text-sm uppercase tracking-wider rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2">
+                <Send size={13} /> <span className="hidden sm:inline">Send Message</span><span className="sm:hidden">Send</span>
               </button>
             </form>
           </div>

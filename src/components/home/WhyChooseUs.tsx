@@ -123,23 +123,23 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Slider */}
-        <div className="relative px-8 md:px-12">
+        <div className="relative px-3 sm:px-6 md:px-8 lg:px-12">
           {/* Arrows */}
           <button
             onClick={prev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white shadow-lg border border-border flex items-center justify-center text-brandBlue hover:bg-brandBlue hover:text-white transition"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 hidden sm:flex w-10 h-10 rounded-full bg-white shadow-lg border border-border items-center justify-center text-brandBlue hover:bg-brandBlue hover:text-white transition"
           >
             <ChevronLeft size={20} />
           </button>
           <button
             onClick={next}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white shadow-lg border border-border flex items-center justify-center text-brandBlue hover:bg-brandBlue hover:text-white transition"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 hidden sm:flex w-10 h-10 rounded-full bg-white shadow-lg border border-border items-center justify-center text-brandBlue hover:bg-brandBlue hover:text-white transition"
           >
             <ChevronRight size={20} />
           </button>
 
           {/* Cards */}
-          <div className={`grid gap-5 ${visibleCount === VISIBLE_LG ? "grid-cols-4" : "grid-cols-2"}`}>
+          <div className={`grid gap-3 sm:gap-4 md:gap-5 ${visibleCount === VISIBLE_LG ? "grid-cols-4" : "grid-cols-2"}`}>
             {getVisibleCards().map((item) => (
               <div
                 key={item.title}

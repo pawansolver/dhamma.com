@@ -34,7 +34,7 @@ export default function Announcements() {
   }, []);
 
   return (
-    <section className="py-12 md:py-16 bg-bgLight">
+    <section className="py-10 sm:py-12 md:py-16 bg-bgLight">
       <div className="container-custom">
         <h2 className="section-heading">Announcements &amp; Events</h2>
         <span className="section-heading-line" />
@@ -42,25 +42,25 @@ export default function Announcements() {
           Stay updated with the latest announcements and upcoming events at BHRI
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
           {/* Important Announcement */}
           <div className="rounded-xl overflow-hidden shadow-lg border border-border">
             {/* Header */}
-            <div className="bg-brandSaffron flex items-center justify-between px-5 py-3">
-              <h3 className="text-white font-extrabold text-sm flex items-center gap-2">
+            <div className="bg-brandSaffron flex items-center justify-between px-4 sm:px-5 py-2.5 sm:py-3">
+              <h3 className="text-white font-extrabold text-xs sm:text-sm flex items-center gap-2">
                 <Megaphone size={16} />
                 Important Announcement
               </h3>
               <Link
-                href="/notices"
-                className="text-[11px] font-bold text-white bg-white/20 hover:bg-white/30 px-3 py-1 rounded transition"
+                href="/#"
+                className="text-[10px] sm:text-[11px] font-bold text-white bg-white/20 hover:bg-white/30 px-2 sm:px-3 py-1 rounded transition"
               >
                 View All &gt;&gt;
               </Link>
             </div>
 
             {/* Scrolling content */}
-            <div className="bg-brandBlueDark h-[260px] overflow-hidden relative">
+            <div className="bg-brandBlueDark h-[200px] sm:h-[240px] md:h-[260px] overflow-hidden relative">
               <div
                 className="absolute left-0 right-0 transition-none"
                 style={{
@@ -70,58 +70,58 @@ export default function Announcements() {
                 {[...announcements, ...announcements].map((item, idx) => (
                   <Link
                     key={idx}
-                    href="/notices"
-                    className="block px-5 py-3 text-sm text-white/80 hover:text-brandSaffron hover:bg-white/5 transition border-b border-white/5 leading-relaxed"
+                    href="/#"
+                    className="block px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm text-white/80 hover:text-brandSaffron hover:bg-white/5 transition border-b border-white/5 leading-relaxed"
                   >
                     {item}
                   </Link>
                 ))}
               </div>
               {/* Top fade */}
-              <div className="absolute top-0 left-0 right-0 h-6 bg-gradient-to-b from-brandBlueDark to-transparent z-10 pointer-events-none" />
+              <div className="absolute top-0 left-0 right-0 h-4 sm:h-6 bg-gradient-to-b from-brandBlueDark to-transparent z-10 pointer-events-none" />
               {/* Bottom fade */}
-              <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-brandBlueDark to-transparent z-10 pointer-events-none" />
+              <div className="absolute bottom-0 left-0 right-0 h-4 sm:h-6 bg-gradient-to-t from-brandBlueDark to-transparent z-10 pointer-events-none" />
             </div>
           </div>
 
           {/* Upcoming Events */}
           <div className="rounded-xl overflow-hidden shadow-lg border border-border">
             {/* Header */}
-            <div className="bg-brandSaffron flex items-center justify-between px-5 py-3">
-              <h3 className="text-white font-extrabold text-sm flex items-center gap-2">
+            <div className="bg-brandSaffron flex items-center justify-between px-4 sm:px-5 py-2.5 sm:py-3">
+              <h3 className="text-white font-extrabold text-xs sm:text-sm flex items-center gap-2">
                 <CalendarDays size={16} />
                 Upcoming Event
               </h3>
               <Link
-                href="/notices"
-                className="text-[11px] font-bold text-white bg-white/20 hover:bg-white/30 px-3 py-1 rounded transition"
+                href="/#notices"
+                className="text-[10px] sm:text-[11px] font-bold text-white bg-white/20 hover:bg-white/30 px-2 sm:px-3 py-1 rounded transition"
               >
                 View All &gt;&gt;
               </Link>
             </div>
 
             {/* Events list */}
-            <div className="bg-brandBlueDark h-[260px] overflow-hidden">
+            <div className="bg-brandBlueDark h-[200px] sm:h-[240px] md:h-[260px] overflow-hidden">
               {events.map((event, idx) => (
                 <Link
                   key={idx}
-                  href="/notices"
-                  className="flex items-start gap-4 px-5 py-3.5 border-b border-white/5 hover:bg-white/5 transition group"
+                  href="/#"
+                  className="flex items-start gap-3 sm:gap-4 px-4 sm:px-5 py-2.5 sm:py-3.5 border-b border-white/5 hover:bg-white/5 transition group"
                 >
                   {/* Date badge */}
-                  <div className="flex-shrink-0 w-14 text-center bg-brandSaffron/20 rounded-lg py-1.5">
-                    <span className="block text-sm font-extrabold text-brandSaffron leading-tight">
+                  <div className="flex-shrink-0 w-12 sm:w-14 text-center bg-brandSaffron/20 rounded-lg py-1 sm:py-1.5">
+                    <span className="block text-xs sm:text-sm font-extrabold text-brandSaffron leading-tight">
                       {event.date.split(" ")[0]}
                     </span>
-                    <span className="block text-[9px] font-bold text-white/50 uppercase">
+                    <span className="block text-[8px] sm:text-[9px] font-bold text-white/50 uppercase">
                       {event.date.split(" ")[1]}
                     </span>
                   </div>
                   {/* Title */}
-                  <p className="text-sm text-white/70 group-hover:text-brandSaffron transition flex-1 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-white/70 group-hover:text-brandSaffron transition flex-1 leading-relaxed">
                     {event.title}
                   </p>
-                  <ChevronRight size={14} className="text-white/20 group-hover:text-brandSaffron transition mt-1 flex-shrink-0" />
+                  <ChevronRight size={14} className="text-white/20 group-hover:text-brandSaffron transition mt-0.5 sm:mt-1 flex-shrink-0" />
                 </Link>
               ))}
             </div>

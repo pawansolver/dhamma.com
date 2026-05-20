@@ -57,37 +57,37 @@ export default function DepartmentsGrid() {
   const allDepts = showMore ? [...initialDepartments, ...moreDepartments] : initialDepartments;
 
   return (
-    <section className="py-14 md:py-20 bg-gradient-to-br from-[#0d9488] via-[#0f766e] to-[#115e59]">
-      <div className="w-full max-w-[1440px] mx-auto px-4 md:px-6">
+    <section className="py-12 sm:py-14 md:py-20 bg-gradient-to-br from-[#0d9488] via-[#0f766e] to-[#115e59]">
+      <div className="w-full max-w-[1440px] mx-auto px-3 sm:px-4 md:px-6">
         <h2 className="section-heading-white">Our Departments</h2>
         <span className="section-heading-line-white" />
         <p className="section-subheading-white">
           Specialized care across all major medical disciplines
         </p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4 md:gap-5">
           {allDepts.map((dept) => (
             <Link
               key={dept.name}
               href={dept.href}
-              className="flex flex-col items-center justify-center gap-3 bg-white rounded-lg p-6 md:p-8 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group min-h-[140px]"
+              className="flex flex-col items-center justify-center gap-2 sm:gap-3 bg-white rounded-lg p-4 sm:p-6 md:p-8 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group min-h-[130px] sm:min-h-[140px]"
             >
               <dept.icon
-                size={40}
+                size={32}
                 strokeWidth={1.5}
-                className="text-[#0f766e] group-hover:text-[#0d9488] transition-colors"
+                className="text-[#0f766e] group-hover:text-[#0d9488] transition-colors sm:group-hover:scale-110"
               />
-              <span className="text-[13px] md:text-sm font-semibold text-[#1a1a2e] text-center leading-tight">
+              <span className="text-[12px] sm:text-[13px] md:text-sm font-semibold text-[#1a1a2e] text-center leading-tight">
                 {dept.name}
               </span>
             </Link>
           ))}
         </div>
 
-        <div className="text-center mt-8">
+        <div className="text-center mt-6 sm:mt-8">
           <button
             onClick={() => setShowMore(!showMore)}
-            className="inline-flex items-center gap-2 px-7 py-3 bg-white text-[#0f766e] font-bold text-sm rounded-full hover:bg-white/90 transition-all shadow-lg"
+            className="inline-flex items-center gap-2 px-5 sm:px-7 py-2 sm:py-3 bg-white text-[#0f766e] font-bold text-xs sm:text-sm rounded-full hover:bg-white/90 transition-all shadow-lg"
           >
             {showMore ? (
               <>Show Less <ChevronUp size={16} /></>

@@ -96,7 +96,7 @@ export default function Capabilities() {
       />
       <div className="absolute inset-0 bg-[#1a3a6b]/80" />
 
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-6 py-16 md:py-24">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-3 sm:px-4 md:px-6 py-12 sm:py-16 md:py-24">
         <h2 className="section-heading-white">Our Capabilities</h2>
         <span className="section-heading-line-white" />
         <p className="section-subheading-white">
@@ -106,16 +106,16 @@ export default function Capabilities() {
         <div className="flex flex-wrap justify-center items-center">
           {capabilities.map((cap, i) => (
             <div key={cap.label} className="flex items-center">
-              <div className="flex flex-col items-center text-center px-6 md:px-10 lg:px-14 py-4">
-                <cap.icon size={32} strokeWidth={1.5} className={`${cap.color} mb-3`} />
-                <div className="text-white text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight">
+              <div className="flex flex-col items-center text-center px-3 sm:px-6 md:px-10 lg:px-14 py-3 sm:py-4">
+                <cap.icon size={28} strokeWidth={1.5} className={`${cap.color} mb-2 sm:mb-3`} />
+                <div className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight">
                   {typeof cap.value === "number" ? (
                     <AnimatedNumber target={cap.value} suffix={cap.suffix || ""} />
                   ) : (
                     cap.value
                   )}
                 </div>
-                <p className="text-white/60 text-sm md:text-base font-medium mt-2 tracking-wide">
+                <p className="text-white/60 text-xs sm:text-sm md:text-base font-medium mt-1.5 sm:mt-2 tracking-wide">
                   {cap.label}
                 </p>
               </div>

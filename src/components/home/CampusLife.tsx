@@ -65,7 +65,7 @@ export default function CampusLife() {
         </div>
 
         {/* Two-column layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 sm:gap-6 items-start">
           {/* LEFT — Campus Gallery (3 cols) */}
           <div className="lg:col-span-3">
             {/* Main Image / Video */}
@@ -75,7 +75,7 @@ export default function CampusLife() {
                 alt={galleryImages[activeImg].alt}
                 width={800}
                 height={450}
-                className="w-full h-[260px] md:h-[340px] object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-[200px] sm:h-[280px] md:h-[340px] object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
@@ -99,12 +99,12 @@ export default function CampusLife() {
             </div>
 
             {/* Thumbnail strip */}
-            <div className="flex gap-2 mt-3">
+            <div className="flex gap-1.5 sm:gap-2 mt-2 sm:mt-3">
               {galleryImages.map((img, idx) => (
                 <button
                   key={idx}
                   onClick={() => setActiveImg(idx)}
-                  className={`relative rounded-lg overflow-hidden flex-1 h-[60px] md:h-[72px] transition-all duration-300 ${activeImg === idx
+                  className={`relative rounded-lg overflow-hidden flex-1 h-[50px] sm:h-[60px] md:h-[72px] transition-all duration-300 ${activeImg === idx
                       ? "ring-2 ring-brandSaffron scale-[1.03]"
                       : "opacity-50 hover:opacity-80"
                     }`}
@@ -124,9 +124,9 @@ export default function CampusLife() {
           <div className="lg:col-span-2">
             <div className="bg-white rounded-2xl shadow-lg border border-border overflow-hidden">
               {/* Header */}
-              <div className="bg-brandBlue px-5 py-3 flex items-center justify-between">
-                <h3 className="text-white font-extrabold text-base tracking-wide">Latest Updates</h3>
-                <Calendar size={16} className="text-brandSaffron" />
+              <div className="bg-brandBlue px-4 sm:px-5 py-2.5 sm:py-3 flex items-center justify-between">
+                <h3 className="text-white font-extrabold text-sm sm:text-base tracking-wide">Latest Updates</h3>
+                <Calendar size={14} className="text-brandSaffron" />
               </div>
 
               {/* Updates list */}
@@ -134,25 +134,25 @@ export default function CampusLife() {
                 {latestUpdates.map((update, idx) => (
                   <div
                     key={idx}
-                    className="flex items-start gap-3 px-4 py-3.5 hover:bg-bgLight transition-colors group cursor-pointer"
+                    className="flex items-start gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3.5 hover:bg-bgLight transition-colors group cursor-pointer"
                   >
                     {/* Date badge */}
-                    <div className="flex-shrink-0 w-14 text-center">
-                      <span className="block text-xl font-extrabold text-brandBlue leading-none">
+                    <div className="flex-shrink-0 w-12 sm:w-14 text-center">
+                      <span className="block text-lg sm:text-xl font-extrabold text-brandBlue leading-none">
                         {update.day}<sup className="text-[9px] font-bold">th</sup>
                       </span>
-                      <span className="block text-[10px] font-bold text-textmain/40 uppercase tracking-wider">
-                        {update.month} {update.year}
+                      <span className="block text-[8px] sm:text-[10px] font-bold text-textmain/40 uppercase tracking-wider">
+                        {update.month}
                       </span>
                     </div>
 
                     {/* Content */}
                     <div className="flex-1 min-w-0">
-                      <p className="text-xs text-textmain/80 leading-relaxed line-clamp-2 group-hover:text-brandBlue transition-colors">
+                      <p className="text-[11px] sm:text-xs text-textmain/80 leading-relaxed line-clamp-2 group-hover:text-brandBlue transition-colors">
                         {update.title}
                       </p>
                       {update.isNew && (
-                        <span className="inline-block mt-1 text-[9px] font-extrabold text-red-500 bg-red-50 px-1.5 py-0.5 rounded uppercase tracking-wider">
+                        <span className="inline-block mt-1 text-[8px] font-extrabold text-red-500 bg-red-50 px-1.5 py-0.5 rounded uppercase tracking-wider">
                           New
                         </span>
                       )}
@@ -165,7 +165,7 @@ export default function CampusLife() {
 
               {/* View all link */}
               <div className="px-4 py-3 bg-bgLight border-t border-border">
-                <a href="/notices" className="text-xs font-bold text-brandBlue hover:text-brandSaffron transition flex items-center gap-1">
+                <a href="/#" className="text-xs font-bold text-brandBlue hover:text-brandSaffron transition flex items-center gap-1">
                   View All Notices <ChevronRight size={12} />
                 </a>
               </div>
