@@ -47,33 +47,7 @@ export default function HeroSection() {
   }, [next]);
 
   return (
-    <section className="relative w-full h-[620px] sm:h-[550px] md:h-[500px] lg:h-[460px] overflow-hidden">
-      {/* Live Hospital Stats Top-Center Overlay */}
-      <div className="absolute top-3 sm:top-4 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3 sm:gap-5 bg-white/95 backdrop-blur-md border border-slate-200/60 rounded-2xl px-4 sm:px-6 py-2 sm:py-2.5 shadow-xl select-none min-w-[240px] sm:min-w-[260px] justify-center transition-all duration-300">
-        <div className="text-center flex-1">
-          <span className="block text-[7px] sm:text-[8px] font-extrabold text-slate-500 uppercase tracking-widest leading-none mb-1.5">Total OPD</span>
-          <div className="flex items-center justify-center gap-1.5 leading-none">
-            <span className="relative flex h-2 w-2 shrink-0">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-            </span>
-            <span className="text-[12px] sm:text-[14px] font-black text-[#1a3a6b] tracking-wide">1,739</span>
-          </div>
-        </div>
-        
-        <div className="w-px h-6 sm:h-8 bg-slate-200" />
-        
-        <div className="text-center flex-1">
-          <span className="block text-[7px] sm:text-[8px] font-extrabold text-slate-500 uppercase tracking-widest leading-none mb-1.5">Total IPD</span>
-          <div className="flex items-center justify-center gap-1.5 leading-none">
-            <span className="relative flex h-2 w-2 shrink-0">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#e6960a]" />
-            </span>
-            <span className="text-[12px] sm:text-[14px] font-black text-[#e6960a] tracking-wide">173</span>
-          </div>
-        </div>
-      </div>
+    <section className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px] overflow-hidden">
 
       {/* ── Slide 0: Light theme static hero ── */}
       <div
@@ -145,7 +119,7 @@ export default function HeroSection() {
               alt={slide.title}
               fill
               sizes="100vw"
-              className="object-cover"
+              className="object-fill"
             />
             <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-white/90 via-white/70 md:via-white/40 to-transparent" />
             <div className="absolute inset-0 pointer-events-none hidden md:block">

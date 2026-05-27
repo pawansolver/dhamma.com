@@ -975,13 +975,16 @@ export default function FacultyDoctorsPage() {
                                             <Calendar size={14} /> Consultation Hours
                                         </h4>
                                         <div className="space-y-2">
-                                            <div className="flex justify-between items-center text-xs py-1.5 border-b border-slate-55">
-                                                <span className="text-slate-500 font-semibold">Monday - Friday</span>
-                                                <span className="text-slate-800 font-extrabold flex items-center gap-1"><Clock size={12} /> 09:00 AM - 02:00 PM</span>
-                                            </div>
-                                            <div className="flex justify-between items-center text-xs py-1.5">
-                                                <span className="text-slate-500 font-semibold">Saturday</span>
-                                                <span className="text-slate-800 font-extrabold flex items-center gap-1"><Clock size={12} /> 09:00 AM - 12:00 PM</span>
+                                            <div className="bg-blue-50 border border-blue-100 rounded-2xl p-4 text-center">
+                                                <Clock size={20} className="mx-auto text-blue-500 mb-2" />
+                                                <span className="text-[10px] font-bold text-blue-500 uppercase tracking-wider block mb-1">OPD Timing</span>
+                                                <span className="text-sm font-bold text-slate-800 block mb-2">Mon – Sat | Morning & Evening</span>
+                                                <a
+                                                    href="/hospital/opd"
+                                                    className="text-[10px] font-bold text-blue-600 hover:underline flex items-center justify-center gap-1"
+                                                >
+                                                    View Exact OPD Timetable <ChevronRight size={10} />
+                                                </a>
                                             </div>
                                         </div>
                                     </div>

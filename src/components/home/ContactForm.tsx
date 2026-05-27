@@ -5,15 +5,39 @@ import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Thank you! Your message has been sent. We will contact you shortly.");
-    setForm({ name: "", email: "", phone: "", message: "" });
+    setLoading(true);
+
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/contacts`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Thank you! Your message has been sent. We will contact you shortly.");
+        setForm({ name: "", email: "", phone: "", message: "" });
+      } else {
+        alert(data.message || "Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error sending contact form:", error);
+      alert("An error occurred while sending your message. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -102,8 +126,8 @@ export default function ContactForm() {
                 <label className="block text-[10px] sm:text-[11px] font-semibold text-gray-400 uppercase tracking-wider mb-1">Message</label>
                 <textarea name="message" placeholder="How can we help you?" value={form.message} onChange={handleChange} rows={3} required className="w-full px-3 sm:px-3.5 py-2 sm:py-2.5 bg-[#f8fafc] border border-gray-200 rounded-lg text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:border-brandBlue focus:ring-1 focus:ring-brandBlue/30 transition resize-none" />
               </div>
-              <button type="submit" className="w-full py-2.5 sm:py-3 bg-gradient-to-r from-brandBlue to-brandBlueDark text-white font-bold text-xs sm:text-sm uppercase tracking-wider rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2">
-                <Send size={13} /> <span className="hidden sm:inline">Send Message</span><span className="sm:hidden">Send</span>
+              <button type="submit" disabled={loading} className="w-full py-2.5 sm:py-3 bg-gradient-to-r from-brandBlue to-brandBlueDark text-white font-bold text-xs sm:text-sm uppercase tracking-wider rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed">
+                <Send size={13} /> <span className="hidden sm:inline">{loading ? "Sending..." : "Send Message"}</span><span className="sm:hidden">{loading ? "Sending..." : "Send"}</span>
               </button>
             </form>
           </div>
@@ -112,3 +136,4 @@ export default function ContactForm() {
     </section>
   );
 }
+// Trigger HMR

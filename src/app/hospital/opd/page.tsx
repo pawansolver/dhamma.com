@@ -10,6 +10,66 @@ import {
     ClipboardList, UserCheck, TestTube, MapPin,
     Calendar, Baby, Bone, Heart, Zap, Ear, Scissors
 } from "lucide-react";
+import OPDTimetable from "@/components/shared/OPDTimetable";
+
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "http://localhost:5000/api";
+
+function formatTime12(time24: string) {
+    if (!time24) return "";
+    const [h, m] = time24.split(":").map(Number);
+    const ampm = h >= 12 ? "PM" : "AM";
+    const h12 = h % 12 || 12;
+    return `${h12}:${String(m).padStart(2, "0")} ${ampm}`;
+}
+
+function DynamicOPDTimings() {
+    const [timings, setTimings] = useState<{ label: string; start: string; end: string }[]>([]);
+
+    useEffect(() => {
+        fetch(`${API_BASE}/settings/opd-timing`)
+            .then(r => r.json())
+            .then(data => {
+                if (data.success && data.data) {
+                    setTimings([
+                        { label: "Morning Session", start: data.data.morningStart, end: data.data.morningEnd },
+                        { label: "Evening Session", start: data.data.eveningStart, end: data.data.eveningEnd },
+                    ]);
+                }
+            })
+            .catch(() => {});
+    }, []);
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
+            className="bg-blue-600 rounded-[2.5rem] p-8 lg:p-12 text-white shadow-2xl relative overflow-hidden"
+        >
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
+            <Clock className="mb-6 opacity-80" size={48} />
+            <h3 className="text-3xl font-bold mb-8 font-montserrat">OPD Timings</h3>
+            <div className="space-y-6 relative z-10">
+                {timings.length === 0 ? (
+                    <div className="text-white/60 text-center py-4">Loading timings...</div>
+                ) : (
+                    timings.map((session, i) => (
+                        <div key={i} className="flex items-center justify-between border-b border-white/20 pb-4">
+                            <span className="font-montserrat text-lg">{session.label}</span>
+                            <span className="font-bold font-montserrat text-xl">{formatTime12(session.start)} – {formatTime12(session.end)}</span>
+                        </div>
+                    ))
+                )}
+            </div>
+            <div className="mt-10 p-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20">
+                <h4 className="font-bold mb-2 font-montserrat flex items-center gap-2 text-blue-50">
+                    <Calendar size={20} /> Appointment & Booking
+                </h4>
+                <p className="text-sm text-blue-100 font-montserrat leading-relaxed">
+                    Book via registration counter, phone call, or online system. Advance booking is encouraged to reduce waiting time.
+                </p>
+            </div>
+        </motion.div>
+    );
+}
 
 export default function OPDPage() {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -252,33 +312,8 @@ export default function OPDPage() {
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         
-                        {/* Timings */}
-                        <motion.div 
-                            initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
-                            className="bg-blue-600 rounded-[2.5rem] p-8 lg:p-12 text-white shadow-2xl relative overflow-hidden"
-                        >
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-                            <Clock className="mb-6 opacity-80" size={48} />
-                            <h3 className="text-3xl font-bold mb-8 font-montserrat">OPD Timings</h3>
-                            <div className="space-y-6 relative z-10">
-                                <div className="flex items-center justify-between border-b border-white/20 pb-4">
-                                    <span className="font-montserrat text-lg">Morning Session</span>
-                                    <span className="font-bold font-montserrat text-xl">9:00 AM – 2:00 PM</span>
-                                </div>
-                                <div className="flex items-center justify-between border-b border-white/20 pb-4">
-                                    <span className="font-montserrat text-lg">Evening Session</span>
-                                    <span className="font-bold font-montserrat text-xl">4:00 PM – 7:00 PM</span>
-                                </div>
-                            </div>
-                            <div className="mt-10 p-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20">
-                                <h4 className="font-bold mb-2 font-montserrat flex items-center gap-2 text-blue-50">
-                                    <Calendar size={20} /> Appointment & Booking
-                                </h4>
-                                <p className="text-sm text-blue-100 font-montserrat leading-relaxed">
-                                    Book via registration counter, phone call, or online system. Advance booking is encouraged to reduce waiting time.
-                                </p>
-                            </div>
-                        </motion.div>
+                        {/* Timings - Dynamic from Backend */}
+                        <DynamicOPDTimings />
 
                         {/* Convenience */}
                         <motion.div 
@@ -308,6 +343,9 @@ export default function OPDPage() {
                     </div>
                 </div>
             </section>
+
+            {/* ===== DYNAMIC OPD TIMETABLE FROM BACKEND ===== */}
+            <OPDTimetable />
 
             {/* ===== WHY CHOOSE US (Grid) ===== */}
             <section className="py-16 lg:py-24 bg-slate-900 text-white relative overflow-hidden">

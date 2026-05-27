@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { ChevronDown, Menu, X, Phone, Mail, Clock, ShieldAlert, FileEdit } from "lucide-react";
+import { ChevronDown, Menu, X, Phone, Mail, Clock, ShieldAlert, FileEdit, Calendar } from "lucide-react";
+import AppointmentModal from "@/components/booking/AppointmentModal";
 
 function FacebookIcon({ size = 14 }: { size?: number }) {
   return (
@@ -130,6 +131,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileSubmenu, setMobileSubmenu] = useState<string | null>(null);
+  const [showBooking, setShowBooking] = useState(false);
 
   return (
     <header className="w-full sticky top-0 z-50 shadow-md">
@@ -173,10 +175,10 @@ export default function Navbar() {
 
           {/* Desktop Actions */}
           <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
-            <a href="/hospital/opd" className="nav-action-btn nav-btn-green">
+            <button onClick={() => setShowBooking(true)} className="nav-action-btn nav-btn-green">
               <Clock size={14} />
-              OPD Schedule
-            </a>
+              Appointment Booking
+            </button>
             <a href="/hospital/emergency" className="nav-action-btn nav-btn-red">
               <ShieldAlert size={14} />
               Emergency
@@ -298,14 +300,13 @@ export default function Navbar() {
           ))}
 
           <div className="flex flex-col gap-3 p-5 bg-black/10">
-            <a 
-              href="/hospital/opd" 
+            <button 
               className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-md text-sm font-semibold text-white bg-green-600 hover:bg-green-700"
-              onClick={() => setMobileOpen(false)}
+              onClick={() => { setMobileOpen(false); setShowBooking(true); }}
             >
               <Clock size={16} />
-              OPD Schedule
-            </a>
+              Book Appointment
+            </button>
             <a 
               href="/hospital/emergency" 
               className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-md text-sm font-semibold text-white bg-red-600 hover:bg-red-700"
@@ -325,6 +326,21 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
+
+      {/* Floating Book OPD Button - Right Side */}
+      <div className="fixed right-4 bottom-6 z-[999] flex flex-col gap-2">
+        <button
+          onClick={() => setShowBooking(true)}
+          className="group flex items-center gap-2 px-5 py-3 bg-green-600 text-white font-bold rounded-full shadow-xl hover:bg-green-700 hover:scale-105 transition-all duration-200 animate-bounce"
+          style={{ animationDuration: "2s" }}
+        >
+          <Calendar size={18} />
+          <span className="hidden sm:inline">Book OPD</span>
+        </button>
+      </div>
+
+      {/* Appointment Booking Modal */}
+      <AppointmentModal isOpen={showBooking} onClose={() => setShowBooking(false)} />
     </header>
   );
 }
