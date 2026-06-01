@@ -24,7 +24,14 @@ export default function ContactForm() {
         body: JSON.stringify(form),
       });
 
-      const data = await response.json();
+      let data;
+      const responseText = await response.text();
+      try {
+        data = JSON.parse(responseText);
+      } catch (parseError) {
+        console.error("Non-JSON response from server:", responseText);
+        throw new Error("Invalid response from server. Please check your API connection.");
+      }
 
       if (response.ok) {
         alert("Thank you! Your message has been sent. We will contact you shortly.");
