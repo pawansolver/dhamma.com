@@ -10,17 +10,22 @@ const slides = [
     subtitle: "State-of-the-art infrastructure with advanced medical technology",
   },
   {
-    image: "/images/about-hospital.png",
+    image: "/hospital_hero_hd.png",
     title: "Expert Medical Team",
     subtitle: "250+ experienced doctors & faculty across 20+ departments",
   },
   {
-    image: "/images/about-hospital.png",
+    image: "/hospital_ot_hd.png",
     title: "Advanced Surgical Care",
     subtitle: "Equipped with modern OT, ICU, NICU & PICU with ventilator support",
   },
   {
-    image: "/images/about-hospital.png",
+    image: "/hospital_icu_hd.png",
+    title: "Critical Care Excellence",
+    subtitle: "24/7 Intensive Care with advanced life support and continuous monitoring",
+  },
+  {
+    image: "/hospital_interior_hd.png",
     title: "Patient-First Approach",
     subtitle: "Compassionate care with the motto — सेवा परमो धर्म:",
   },

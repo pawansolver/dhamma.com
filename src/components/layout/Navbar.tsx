@@ -185,10 +185,6 @@ export default function Navbar() {
               <ShieldAlert size={14} />
               Emergency
             </a>
-            <a href="/admissions" className="nav-action-btn nav-btn-saffron">
-              <FileEdit size={14} />
-              Online Registration
-            </a>
           </div>
 
           {/* Fully Visible Hamburger Button */}
@@ -348,14 +344,6 @@ export default function Navbar() {
             >
               <ShieldAlert size={16} />
               Emergency
-            </a>
-            <a 
-              href="/admissions" 
-              className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-md text-sm font-semibold text-white bg-orange-500 hover:bg-orange-600"
-              onClick={() => setMobileOpen(false)}
-            >
-              <FileEdit size={16} />
-              Online Registration
             </a>
           </div>
         </div>

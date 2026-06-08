@@ -107,7 +107,7 @@ export default function Announcements() {
                       {[...announcements, ...(announcements.length > 1 ? announcements : [])].map((item, idx) => (
                     <article
                       key={`${item.id}-${idx}`}
-                      className="group flex gap-3 rounded-xl border border-border bg-white hover:shadow-md hover:border-brandSaffron/40 transition overflow-hidden"
+                      className="group flex gap-3 rounded-xl border border-border bg-white hover:shadow-md hover:border-brandSaffron/40 transition overflow-hidden h-[120px]"
                     >
                       <div className="flex-shrink-0 w-24 sm:w-28 bg-gray-100 relative">
                         {item.thumbnail ? (
@@ -198,7 +198,7 @@ export default function Announcements() {
                   return (
                     <article
                       key={`${event.id}-${idx}`}
-                      className="group flex gap-3 rounded-xl border border-border bg-white hover:shadow-md hover:border-brandBlue/40 transition overflow-hidden"
+                      className="group flex gap-3 rounded-xl border border-border bg-white hover:shadow-md hover:border-brandBlue/40 transition overflow-hidden h-[120px]"
                     >
                       {/* Thumbnail or Date badge */}
                       {event.thumbnail ? (
