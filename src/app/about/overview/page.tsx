@@ -124,7 +124,7 @@ export default function AboutOverview() {
             {/* ═══════ HERO ═════════════════════════════════════════ */}
             <section className="relative min-h-screen flex items-end pb-16 overflow-hidden">
                 <div className="absolute inset-0">
-                    <Image src="/images/about-hospital.png" alt="Buddha Hospital & Research Institute" fill priority className="object-cover object-center" />
+                    <Image src="/images/about-hospital.png" alt="Buddha Hospital & Research Institute" fill priority className="object-cover object-top" />
                     {/* Dark cinematic overlays */}
                     <div className="absolute inset-0 bg-[#0a0a0a]/65" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
@@ -437,7 +437,7 @@ export default function AboutOverview() {
 
             {/* ═══════ CTA ══════════════════════════════════════════ */}
             <section className="relative min-h-[500px] flex items-center overflow-hidden">
-                <Image src="/about-hospital.png" alt="" fill className="object-cover object-center opacity-35" />
+                <Image src="/images/about-hospital.png" alt="" fill className="object-cover object-top opacity-35" />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/95 via-[#0a0a0a]/75 to-[#0a0a0a]/50" />
                 <FloatOrb className="w-[600px] h-[600px] bg-amber-500/10 blur-3xl -top-40 right-0" />
 

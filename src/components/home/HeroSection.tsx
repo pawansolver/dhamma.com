@@ -7,22 +7,22 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const imageSlides = [
   {
-    image: "/images/hero/hero-1.png",
+    image: "/images/about-hospital.png",
     title: "World-Class Healthcare",
     subtitle: "State-of-the-art infrastructure with advanced medical technology",
   },
   {
-    image: "/images/hero/hero-2.png",
+    image: "/images/about-hospital.png",
     title: "Expert Medical Team",
     subtitle: "250+ experienced doctors & faculty across 20+ departments",
   },
   {
-    image: "/images/hero/hero-3.png",
+    image: "/images/about-hospital.png",
     title: "Advanced Surgical Care",
     subtitle: "Equipped with modern OT, ICU, NICU & PICU with ventilator support",
   },
   {
-    image: "/images/hero/hero-4.png",
+    image: "/images/about-hospital.png",
     title: "Patient-First Approach",
     subtitle: "Compassionate care with the motto — सेवा परमो धर्म:",
   },
@@ -111,15 +111,17 @@ export default function HeroSection() {
         return (
           <div
             key={i}
-            className="absolute inset-0 transition-opacity duration-[900ms] ease-in-out"
+            className="absolute inset-0 overflow-hidden transition-opacity duration-[900ms] ease-in-out"
             style={{ opacity: current === slideIdx ? 1 : 0, zIndex: current === slideIdx ? 2 : 1 }}
           >
-            <Image
-              src={slide.image}
-              alt={slide.title}
-              fill
-              sizes="100vw"
-              className="object-fill"
+            <div
+              className="absolute inset-0 bg-cover bg-no-repeat bg-[#1a3a6b]"
+              style={{
+                backgroundImage: `url('${slide.image}')`,
+                backgroundPosition: "center 32%",
+              }}
+              role="img"
+              aria-label={slide.title}
             />
             <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-white/90 via-white/70 md:via-white/40 to-transparent" />
             <div className="absolute inset-0 pointer-events-none hidden md:block">

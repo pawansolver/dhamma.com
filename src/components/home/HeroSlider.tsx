@@ -1,27 +1,26 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const slides = [
   {
-    image: "/images/hero/hero-1.png",
+    image: "/images/about-hospital.png",
     title: "World-Class Healthcare",
     subtitle: "State-of-the-art infrastructure with advanced medical technology",
   },
   {
-    image: "/images/hero/hero-2.png",
+    image: "/images/about-hospital.png",
     title: "Expert Medical Team",
     subtitle: "250+ experienced doctors & faculty across 20+ departments",
   },
   {
-    image: "/images/hero/hero-3.png",
+    image: "/images/about-hospital.png",
     title: "Advanced Surgical Care",
     subtitle: "Equipped with modern OT, ICU, NICU & PICU with ventilator support",
   },
   {
-    image: "/images/hero/hero-4.png",
+    image: "/images/about-hospital.png",
     title: "Patient-First Approach",
     subtitle: "Compassionate care with the motto — सेवा परमो धर्म:",
   },
@@ -48,16 +47,17 @@ export default function HeroSlider() {
       {slides.map((slide, i) => (
         <div
           key={i}
-          className="absolute inset-0 transition-opacity duration-[1000ms] ease-in-out"
+          className="absolute inset-0 overflow-hidden transition-opacity duration-[1000ms] ease-in-out"
           style={{ opacity: i === current ? 1 : 0 }}
         >
-          <Image
-            src={slide.image}
-            alt={slide.title}
-            fill
-            sizes="100vw"
-            className="object-cover"
-            priority={i === 0}
+          <div
+            className="absolute inset-0 bg-cover bg-no-repeat bg-[#0f2557]"
+            style={{
+              backgroundImage: `url('${slide.image}')`,
+              backgroundPosition: "center 32%",
+            }}
+            role="img"
+            aria-label={slide.title}
           />
         </div>
       ))}

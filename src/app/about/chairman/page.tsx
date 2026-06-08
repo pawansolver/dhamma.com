@@ -41,7 +41,7 @@ export default function ChairmanPage() {
             <section className="relative min-h-screen flex items-end pb-20 overflow-hidden">
                 {/* bg image */}
                 <div className="absolute inset-0">
-                    <Image src="/images/about-hospital.png" alt="Buddha Hospital & Research Institute" fill priority className="object-cover object-center" />
+                    <Image src="/images/about-hospital.png" alt="Buddha Hospital & Research Institute" fill priority className="object-cover object-top" />
                     {/* Dark cinematic overlay — keeps BHRI branding visible but creates premium dark feel */}
                     <div className="absolute inset-0 bg-[#0a0a0a]/70" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
