@@ -169,7 +169,7 @@ export default function DepartmentPage({ data }: { data: DeptData }) {
             <a href="tel:+918603048174"
               className="inline-flex items-center gap-2 border border-white/20 text-white/80 px-6 py-3.5 rounded-full text-sm hover:border-white/50 hover:text-white transition-all"
             >
-              <Phone size={14} /> +91 8603048174
+              <Phone size={14} /> +91 8603048174 / 9060646592
             </a>
           </motion.div>
         </div>
@@ -390,7 +390,7 @@ export default function DepartmentPage({ data }: { data: DeptData }) {
               <a href="tel:+918603048174"
                 className="inline-flex items-center gap-2 bg-white/8 hover:bg-white/15 text-white font-semibold px-8 py-4 rounded-full border border-white/15 transition-all text-sm"
               >
-                <Phone size={16} /> +91 8603048174
+                <Phone size={16} /> +91 8603048174 / 9060646592
               </a>
             </div>
           </motion.div>

@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-    GraduationCap, FileText, CheckCircle, Award, Users, 
-    ShieldCheck, ChevronRight, X, Phone, DollarSign, 
+    GraduationCap, FileText, CheckCircle, Award, Users,
+    ShieldCheck, ChevronRight, X, Phone, DollarSign,
     ClipboardList, MapPin, Sparkles, Send, Check
 } from "lucide-react";
 
@@ -110,10 +110,10 @@ const feeStructure: Record<FeeQuota, FeeDetails> = {
 export default function AdmissionsPage() {
     const [selectedStep, setSelectedStep] = useState<StepKey>("neet");
     const [selectedQuota, setSelectedQuota] = useState<FeeQuota>("state");
-    
+
     // Checklist State
     const [checklist, setChecklist] = useState<Record<number, boolean>>({
-        0: false, 1: false, 2: false, 3: false, 4: false, 
+        0: false, 1: false, 2: false, 3: false, 4: false,
         5: false, 6: false, 7: false, 8: false, 9: false
     });
 
@@ -152,14 +152,14 @@ export default function AdmissionsPage() {
 
     return (
         <div className="bg-white min-h-screen relative overflow-hidden" style={{ fontFamily: sansFont }}>
-            
+
             {/* HERO */}
             <section className="relative h-[65vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-slate-950 text-white">
                 <div className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-[#0c2420] to-[#041a16] mix-blend-multiply opacity-95 z-10" />
                     <Image src="/admissions_hero.png" alt="Admissions Hub" fill className="object-cover" priority />
                 </div>
-                
+
                 <div className="relative z-20 text-center px-6 max-w-4xl mx-auto -mt-6">
                     <span className="inline-flex items-center gap-2 py-1.5 px-4 bg-emerald-500/10 backdrop-blur-md rounded-full font-bold tracking-widest text-[10px] uppercase border border-emerald-500/30 text-emerald-300 mb-6">
                         <GraduationCap size={12} /> Secure Your Medical Seat
@@ -170,7 +170,7 @@ export default function AdmissionsPage() {
                     <p className="text-lg lg:text-xl text-blue-100 font-medium mb-10 leading-relaxed max-w-2xl mx-auto opacity-95">
                         Follow the structured NEET-UG counselling pathway, verify fees details, and pack standard dossiers for physical reporting at BHRI.
                     </p>
-                    <button 
+                    <button
                         onClick={() => document.getElementById("steps")?.scrollIntoView({ behavior: "smooth" })}
                         className="px-8 py-3.5 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold rounded-full shadow-lg shadow-emerald-600/30 transition-all text-xs uppercase tracking-wider"
                     >
@@ -221,16 +221,14 @@ export default function AdmissionsPage() {
                                 <button
                                     key={key}
                                     onClick={() => setSelectedStep(key)}
-                                    className={`w-full text-left p-6 rounded-[2rem] border transition-all duration-300 flex items-center justify-between group ${
-                                        selectedStep === key 
-                                        ? "bg-slate-900 border-slate-900 text-white shadow-xl translate-x-2" 
-                                        : "bg-slate-50 border-slate-100 text-slate-700 hover:bg-slate-100 hover:border-slate-200"
-                                    }`}
+                                    className={`w-full text-left p-6 rounded-[2rem] border transition-all duration-300 flex items-center justify-between group ${selectedStep === key
+                                            ? "bg-slate-900 border-slate-900 text-white shadow-xl translate-x-2"
+                                            : "bg-slate-50 border-slate-100 text-slate-700 hover:bg-slate-100 hover:border-slate-200"
+                                        }`}
                                 >
                                     <div className="flex items-center gap-4">
-                                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                                            selectedStep === key ? "bg-emerald-500 text-white" : "bg-white text-slate-500 group-hover:text-emerald-600"
-                                        } transition-colors shadow-sm shrink-0`}>
+                                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${selectedStep === key ? "bg-emerald-500 text-white" : "bg-white text-slate-500 group-hover:text-emerald-600"
+                                            } transition-colors shadow-sm shrink-0`}>
                                             {key === "neet" && <Award size={20} />}
                                             {key === "choice" && <FileText size={20} />}
                                             {key === "allotment" && <ClipboardList size={20} />}
@@ -249,7 +247,7 @@ export default function AdmissionsPage() {
                         {/* Interactive Showcase */}
                         <div className="lg:col-span-8 bg-slate-50 border border-slate-100 rounded-[3rem] p-8 lg:p-12 shadow-sm relative overflow-hidden min-h-[500px]">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl pointer-events-none" />
-                            
+
                             <AnimatePresence mode="wait">
                                 <motion.div
                                     key={selectedStep}
@@ -294,7 +292,7 @@ export default function AdmissionsPage() {
             {/* INTERACTIVE FEE STRUCTURE CALCULATOR */}
             <section className="py-24 bg-slate-50 border-y border-slate-100">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                    
+
                     <div className="text-center mb-16">
                         <span className="text-emerald-600 font-bold text-sm uppercase tracking-widest mb-3 block">Tuition Fees</span>
                         <h2 className="text-3xl lg:text-5xl font-bold text-slate-900" style={{ fontFamily: serifFont }}>Institutional Fee Structure</h2>
@@ -312,11 +310,10 @@ export default function AdmissionsPage() {
                             <button
                                 key={q.value}
                                 onClick={() => setSelectedQuota(q.value as FeeQuota)}
-                                className={`px-6 py-3 rounded-full text-xs font-bold transition-all border ${
-                                    selectedQuota === q.value 
-                                    ? "bg-slate-900 border-slate-900 text-white shadow-lg" 
-                                    : "bg-white border-slate-200 text-slate-600 hover:border-slate-300"
-                                }`}
+                                className={`px-6 py-3 rounded-full text-xs font-bold transition-all border ${selectedQuota === q.value
+                                        ? "bg-slate-900 border-slate-900 text-white shadow-lg"
+                                        : "bg-white border-slate-200 text-slate-600 hover:border-slate-300"
+                                    }`}
                             >
                                 {q.label}
                             </button>
@@ -326,7 +323,7 @@ export default function AdmissionsPage() {
                     {/* Fee details sheet */}
                     <div className="bg-white p-8 lg:p-12 rounded-[3rem] border border-slate-200/80 shadow-xl max-w-2xl mx-auto relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-24 h-24 bg-emerald-500/5 rounded-full blur-xl pointer-events-none" />
-                        
+
                         <div className="flex justify-between items-center border-b border-slate-200 pb-4 mb-6">
                             <span className="text-[10px] font-black text-emerald-600 uppercase tracking-widest block">Audit Sheet: {selectedQuota.toUpperCase()} QUOTA</span>
                             <span className="text-xs bg-slate-100 text-slate-600 font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Session 2024-25</span>
@@ -363,7 +360,7 @@ export default function AdmissionsPage() {
             {/* INTERACTIVE DOCUMENT CHECKLIST */}
             <section className="py-24 bg-white relative">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                    
+
                     <div className="text-center mb-16">
                         <span className="text-emerald-600 font-bold text-sm uppercase tracking-widest mb-3 block">Reporting Dossier</span>
                         <h2 className="text-3xl lg:text-5xl font-bold text-slate-900" style={{ fontFamily: serifFont }}>Dossier Pack List Checklist</h2>
@@ -375,21 +372,19 @@ export default function AdmissionsPage() {
                     <div className="max-w-3xl mx-auto bg-slate-50 border border-slate-100 rounded-[3rem] p-8 lg:p-12 shadow-sm">
                         <div className="space-y-3">
                             {documentsChecklist.map((doc, idx) => (
-                                <div 
+                                <div
                                     key={idx}
                                     onClick={() => toggleCheck(idx)}
-                                    className={`p-4 rounded-xl border transition-all duration-200 cursor-pointer flex items-center gap-4 ${
-                                        checklist[idx] 
-                                        ? "bg-emerald-50/50 border-emerald-300 text-slate-800" 
-                                        : "bg-white border-slate-100 text-slate-600 hover:border-slate-200"
-                                    }`}
+                                    className={`p-4 rounded-xl border transition-all duration-200 cursor-pointer flex items-center gap-4 ${checklist[idx]
+                                            ? "bg-emerald-50/50 border-emerald-300 text-slate-800"
+                                            : "bg-white border-slate-100 text-slate-600 hover:border-slate-200"
+                                        }`}
                                 >
-                                    <div className={`w-6 h-6 rounded-lg border flex items-center justify-center transition-all shrink-0 ${
-                                        checklist[idx] ? "bg-emerald-500 border-emerald-500 text-white" : "border-slate-300 bg-white"
-                                    }`}>
+                                    <div className={`w-6 h-6 rounded-lg border flex items-center justify-center transition-all shrink-0 ${checklist[idx] ? "bg-emerald-500 border-emerald-500 text-white" : "border-slate-300 bg-white"
+                                        }`}>
                                         {checklist[idx] && <Check size={14} />}
                                     </div>
-                                    <span 
+                                    <span
                                         className={`text-xs font-semibold select-none ${checklist[idx] ? "line-through opacity-65" : ""}`}
                                         dangerouslySetInnerHTML={{ __html: doc }}
                                     />
@@ -413,11 +408,11 @@ export default function AdmissionsPage() {
                             <p className="text-slate-400 text-sm leading-relaxed mb-8">
                                 Have queries regarding choice filling ranks or payment schedules? Reach out directly to our dedicated admission desk team or drop a quick callback request.
                             </p>
-                            
+
                             <div className="space-y-4 mb-8 text-xs text-slate-300">
                                 <div className="flex items-center gap-3">
                                     <Phone size={16} className="text-emerald-400" />
-                                    <span>Helpline Desk: +91-8603048174 / +91-9060646592</span>
+                                    <span>Helpline Desk: +91 8603048174 / 9060646592</span>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <MapPin size={16} className="text-emerald-400" />
@@ -431,64 +426,64 @@ export default function AdmissionsPage() {
                             {!formSubmitted ? (
                                 <form onSubmit={handleFormSubmit} className="space-y-4 text-slate-100">
                                     <h3 className="text-lg font-bold mb-4 font-montserrat text-emerald-400">Request Callback</h3>
-                                    
+
                                     <div className="grid grid-cols-2 gap-4">
                                         <div>
                                             <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Full Name</label>
-                                            <input 
-                                                type="text" 
+                                            <input
+                                                type="text"
                                                 required
                                                 value={formData.name}
                                                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-emerald-500 text-white" 
+                                                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-emerald-500 text-white"
                                             />
                                         </div>
                                         <div>
                                             <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Phone Number</label>
-                                            <input 
-                                                type="tel" 
+                                            <input
+                                                type="tel"
                                                 required
                                                 value={formData.phone}
                                                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-emerald-500 text-white" 
+                                                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-emerald-500 text-white"
                                             />
                                         </div>
                                     </div>
 
                                     <div>
                                         <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Email Address</label>
-                                        <input 
-                                            type="email" 
+                                        <input
+                                            type="email"
                                             value={formData.email}
                                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                            className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-emerald-500 text-white" 
+                                            className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-emerald-500 text-white"
                                         />
                                     </div>
 
                                     <div className="grid grid-cols-2 gap-4">
                                         <div>
                                             <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">NEET Roll No</label>
-                                            <input 
-                                                type="text" 
+                                            <input
+                                                type="text"
                                                 value={formData.neetRoll}
                                                 onChange={(e) => setFormData({ ...formData, neetRoll: e.target.value })}
-                                                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-emerald-500 text-white" 
+                                                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-emerald-500 text-white"
                                             />
                                         </div>
                                         <div>
                                             <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">NEET Score</label>
-                                            <input 
-                                                type="number" 
+                                            <input
+                                                type="number"
                                                 value={formData.neetScore}
                                                 onChange={(e) => setFormData({ ...formData, neetScore: e.target.value })}
-                                                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-emerald-500 text-white" 
+                                                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-emerald-500 text-white"
                                             />
                                         </div>
                                     </div>
 
                                     <div>
                                         <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Your Enquiry Query</label>
-                                        <textarea 
+                                        <textarea
                                             rows={3}
                                             value={formData.query}
                                             onChange={(e) => setFormData({ ...formData, query: e.target.value })}
@@ -496,8 +491,8 @@ export default function AdmissionsPage() {
                                         />
                                     </div>
 
-                                    <button 
-                                        type="submit" 
+                                    <button
+                                        type="submit"
                                         className="w-full py-3 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
                                     >
                                         <Send size={14} /> Submit Inquiry Call
@@ -510,7 +505,7 @@ export default function AdmissionsPage() {
                                     <p className="text-xs text-slate-400 mt-2 leading-relaxed">
                                         Thank you, {formData.name}. Our chief admission advisor will contact you at {formData.phone} shortly.
                                     </p>
-                                    <button 
+                                    <button
                                         onClick={() => setFormSubmitted(false)}
                                         className="mt-6 px-6 py-2 bg-slate-800 hover:bg-slate-700 text-xs font-bold rounded-xl transition-all"
                                     >

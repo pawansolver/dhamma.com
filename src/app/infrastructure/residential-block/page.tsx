@@ -277,7 +277,7 @@ export default function ResidentialBlockPage() {
                     </p>
                     <div className="flex flex-wrap justify-center gap-6">
                         <span className="flex items-center gap-2 text-teal-400 text-xs font-semibold">
-                            <Phone size={14} /> Warden Desk Helpline: +91-8603048174
+                            <Phone size={14} /> Warden Desk Helpline: +91 8603048174 / 9060646592
                         </span>
                         <span className="flex items-center gap-2 text-rose-400 text-xs font-semibold">
                             <ShieldCheck size={14} /> Emergency Security: +91-9060646592

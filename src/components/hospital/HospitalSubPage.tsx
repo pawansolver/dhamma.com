@@ -389,7 +389,7 @@ export default function HospitalSubPage({ data }: { data: HospitalSubData }) {
               <a href="tel:+918603048174"
                 className="inline-flex items-center gap-2 bg-white/8 hover:bg-white/15 text-white font-semibold px-8 py-4 rounded-full border border-white/15 transition-all text-sm"
               >
-                <Phone size={16} /> +91 8603048174
+                <Phone size={16} /> +91 8603048174 / 9060646592
               </a>
             </div>
           </motion.div>

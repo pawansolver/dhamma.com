@@ -104,7 +104,7 @@ export default function HeroSection() {
             </p>
             <div className="flex flex-wrap gap-3 md:gap-4 justify-center lg:justify-start">
               <SparkleButton href="#about-section">Explore More</SparkleButton>
-              <SparkleButton href="/contact">Contact Us</SparkleButton>
+              <SparkleButton href="#contact-form">Contact Us</SparkleButton>
             </div>
           </div>
         </div>

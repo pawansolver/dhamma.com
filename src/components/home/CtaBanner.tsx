@@ -1,6 +1,11 @@
+"use client";
+
 import { SparkleButton } from "@/components/ui/button-8";
+import { useBooking } from "@/context/BookingContext";
 
 export default function CtaBanner() {
+  const { openBooking } = useBooking();
+
   return (
     <section className="bg-gradient-to-r from-[#0f2557] via-[#1a3a6b] to-[#14532d] text-white py-10 sm:py-14 md:py-20">
       <div className="container-custom text-center">
@@ -12,7 +17,7 @@ export default function CtaBanner() {
         </p>
         <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center">
           <SparkleButton href="/hospital/emergency">Emergency Helpline</SparkleButton>
-          <SparkleButton href="/hospital/opd">Book OPD</SparkleButton>
+          <SparkleButton onClick={openBooking}>Book OPD</SparkleButton>
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-    Briefcase, FileText, CheckCircle, ShieldCheck, ChevronRight, 
+    Briefcase, FileText, CheckCircle, ShieldCheck, ChevronRight,
     X, Phone, Mail, Award, Users, Stethoscope, Star, Send, Upload, Check
 } from "lucide-react";
 
@@ -84,7 +84,7 @@ export default function CareerPage() {
     const [activeTab, setActiveTab] = useState<"All" | "Clinical" | "Academic" | "Nursing" | "Admin">("All");
     const [selectedJob, setSelectedJob] = useState<JobOpening | null>(null);
     const [formSubmitted, setFormSubmitted] = useState(false);
-    
+
     // Application Form state
     const [formData, setFormData] = useState({
         name: "", email: "", phone: "", exp: "", currentCTC: "", cover: ""
@@ -103,14 +103,14 @@ export default function CareerPage() {
 
     return (
         <div className="bg-white min-h-screen relative overflow-hidden" style={{ fontFamily: sansFont }}>
-            
+
             {/* HERO */}
             <section className="relative h-[65vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-slate-950 text-white">
                 <div className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-[#0a1829] to-[#0a2624] mix-blend-multiply opacity-90 z-10" />
                     <Image src="/career_hero.png" alt="Careers" fill className="object-cover" priority />
                 </div>
-                
+
                 <div className="relative z-20 text-center px-6 max-w-4xl mx-auto -mt-6">
                     <span className="inline-flex items-center gap-2 py-1.5 px-4 bg-teal-500/10 backdrop-blur-md rounded-full font-bold tracking-widest text-[10px] uppercase border border-teal-500/30 text-teal-300 mb-6">
                         <Briefcase size={12} /> Make a Real Impact on Lives
@@ -121,7 +121,7 @@ export default function CareerPage() {
                     <p className="text-lg lg:text-xl text-blue-100 font-medium mb-10 leading-relaxed max-w-2xl mx-auto opacity-95">
                         Join a fast-growing, prestigious medical academy and research hospital. Shape the future of medical education and clinical care in Bodhgaya.
                     </p>
-                    <button 
+                    <button
                         onClick={() => document.getElementById("jobs")?.scrollIntoView({ behavior: "smooth" })}
                         className="px-8 py-3.5 bg-gradient-to-r from-teal-600 to-indigo-600 text-white font-bold rounded-full shadow-lg shadow-teal-600/30 transition-all text-xs uppercase tracking-wider"
                     >
@@ -178,7 +178,7 @@ export default function CareerPage() {
             {/* INTERACTIVE JOBS BOARD CONSOLE */}
             <section id="jobs" className="py-24 bg-slate-50 border-y border-slate-100">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                    
+
                     <div className="text-center mb-16">
                         <span className="text-teal-600 font-bold text-sm uppercase tracking-widest mb-3 block">Vacancies Board</span>
                         <h2 className="text-3xl lg:text-5xl font-bold text-slate-900" style={{ fontFamily: serifFont }}>Active Openings</h2>
@@ -199,11 +199,10 @@ export default function CareerPage() {
                             <button
                                 key={tab.value}
                                 onClick={() => setActiveTab(tab.value as any)}
-                                className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all border ${
-                                    activeTab === tab.value 
-                                    ? "bg-slate-900 border-slate-900 text-white shadow-md" 
-                                    : "bg-white border-slate-200 text-slate-600 hover:border-slate-300"
-                                }`}
+                                className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all border ${activeTab === tab.value
+                                        ? "bg-slate-900 border-slate-900 text-white shadow-md"
+                                        : "bg-white border-slate-200 text-slate-600 hover:border-slate-300"
+                                    }`}
                             >
                                 {tab.label}
                             </button>
@@ -239,7 +238,7 @@ export default function CareerPage() {
                                                 {job.title}
                                             </h3>
                                             <p className="text-xs text-slate-500 leading-relaxed">{job.desc}</p>
-                                            
+
                                             <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-[10px] text-slate-400 font-semibold border-t border-slate-100 pt-3">
                                                 <span>Experience: {job.experience}</span>
                                                 <span>•</span>
@@ -266,7 +265,7 @@ export default function CareerPage() {
                 <div className="max-w-4xl mx-auto px-6 lg:px-8">
                     <div className="bg-slate-950 text-white rounded-[3rem] p-8 lg:p-12 shadow-2xl relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-48 h-48 bg-teal-500/5 rounded-full blur-3xl pointer-events-none" />
-                        
+
                         <div className="text-center max-w-2xl mx-auto mb-12">
                             <span className="text-teal-400 font-bold text-xs uppercase tracking-widest mb-3 block">Future Opportunities</span>
                             <h2 className="text-2xl lg:text-4xl font-bold font-montserrat" style={{ fontFamily: serifFont }}>Drop Your CV / Resume</h2>
@@ -280,22 +279,22 @@ export default function CareerPage() {
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
                                         <label className="text-[9px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Full Name</label>
-                                        <input 
-                                            type="text" 
+                                        <input
+                                            type="text"
                                             required
                                             value={formData.name}
                                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                            className="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-teal-500" 
+                                            className="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-teal-500"
                                         />
                                     </div>
                                     <div>
                                         <label className="text-[9px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Phone Number</label>
-                                        <input 
-                                            type="tel" 
+                                        <input
+                                            type="tel"
                                             required
                                             value={formData.phone}
                                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                            className="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-teal-500" 
+                                            className="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-teal-500"
                                         />
                                     </div>
                                 </div>
@@ -303,29 +302,29 @@ export default function CareerPage() {
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
                                         <label className="text-[9px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Email Address</label>
-                                        <input 
-                                            type="email" 
+                                        <input
+                                            type="email"
                                             required
                                             value={formData.email}
                                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                            className="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-teal-500" 
+                                            className="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-teal-500"
                                         />
                                     </div>
                                     <div>
                                         <label className="text-[9px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Total Years Experience</label>
-                                        <input 
-                                            type="text" 
+                                        <input
+                                            type="text"
                                             value={formData.exp}
                                             onChange={(e) => setFormData({ ...formData, exp: e.target.value })}
                                             placeholder="e.g. 3 Years, Fresh Graduate"
-                                            className="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-teal-500" 
+                                            className="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-teal-500"
                                         />
                                     </div>
                                 </div>
 
                                 <div>
                                     <label className="text-[9px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Brief Statement / Department Interest</label>
-                                    <textarea 
+                                    <textarea
                                         rows={3}
                                         value={formData.cover}
                                         onChange={(e) => setFormData({ ...formData, cover: e.target.value })}
@@ -333,8 +332,8 @@ export default function CareerPage() {
                                     />
                                 </div>
 
-                                <button 
-                                    type="submit" 
+                                <button
+                                    type="submit"
                                     className="w-full py-3 bg-teal-500 hover:bg-teal-600 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
                                 >
                                     <Send size={14} /> Submit Application Dossier
@@ -347,7 +346,7 @@ export default function CareerPage() {
                                 <p className="text-xs text-slate-400 mt-2 leading-relaxed max-w-sm mx-auto">
                                     Thank you, {formData.name}. Our Chief HR Advisor will register your clinical credentials and contact you at {formData.phone} if a suitable profile matches your profile.
                                 </p>
-                                <button 
+                                <button
                                     onClick={() => setFormSubmitted(false)}
                                     className="mt-6 px-6 py-2 bg-slate-800 hover:bg-slate-700 text-xs font-bold rounded-xl transition-all"
                                 >
@@ -362,22 +361,22 @@ export default function CareerPage() {
             {/* APPLY MODAL */}
             <AnimatePresence>
                 {selectedJob && (
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={() => setSelectedJob(null)}
                         className="fixed inset-0 bg-slate-950/85 z-50 flex items-center justify-center p-6 backdrop-blur-sm"
                     >
-                        <motion.div 
+                        <motion.div
                             initial={{ scale: 0.95, y: 15 }}
                             animate={{ scale: 1, y: 0 }}
                             exit={{ scale: 0.95, y: 15 }}
                             onClick={(e) => e.stopPropagation()}
                             className="bg-white rounded-[2.5rem] overflow-hidden max-w-xl w-full border border-slate-200 shadow-2xl relative p-8"
                         >
-                            <button 
-                                onClick={() => setSelectedJob(null)} 
+                            <button
+                                onClick={() => setSelectedJob(null)}
                                 className="absolute top-6 right-6 w-10 h-10 bg-slate-50 hover:bg-slate-100 text-slate-600 rounded-full flex items-center justify-center border border-slate-150 transition-colors"
                             >
                                 <X size={18} />
@@ -407,18 +406,18 @@ export default function CareerPage() {
                             {!formSubmitted ? (
                                 <form onSubmit={handleFormSubmit} className="space-y-3 border-t border-slate-100 pt-4">
                                     <h4 className="text-[10px] font-bold text-teal-600 uppercase tracking-wider">Quick Application Form</h4>
-                                    
+
                                     <div className="grid grid-cols-2 gap-3">
-                                        <input 
-                                            type="text" 
+                                        <input
+                                            type="text"
                                             required
                                             placeholder="Your Name *"
                                             value={formData.name}
                                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                             className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2 text-xs focus:outline-none focus:border-teal-500 text-slate-800"
                                         />
-                                        <input 
-                                            type="tel" 
+                                        <input
+                                            type="tel"
                                             required
                                             placeholder="Phone Number *"
                                             value={formData.phone}
@@ -426,9 +425,9 @@ export default function CareerPage() {
                                             className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2 text-xs focus:outline-none focus:border-teal-500 text-slate-800"
                                         />
                                     </div>
-                                    
-                                    <input 
-                                        type="email" 
+
+                                    <input
+                                        type="email"
                                         required
                                         placeholder="Email Address *"
                                         value={formData.email}
@@ -441,7 +440,7 @@ export default function CareerPage() {
                                         <span className="text-[9px] font-bold text-slate-500 block">Click to attach CV / Resume (PDF / Doc)</span>
                                     </div>
 
-                                    <button 
+                                    <button
                                         type="submit"
                                         className="w-full py-3 bg-teal-500 text-slate-950 font-black rounded-xl text-xs uppercase tracking-wider hover:bg-teal-600 transition-colors"
                                     >
@@ -453,7 +452,7 @@ export default function CareerPage() {
                                     <CheckCircle size={36} className="text-teal-500 mx-auto mb-2 animate-bounce" />
                                     <h4 className="font-bold text-sm text-slate-800">Position Applied Successfully!</h4>
                                     <p className="text-[10px] text-slate-500 mt-1">Thank you, {formData.name}. Our HR desk will contact you at {formData.phone} shortly.</p>
-                                    <button 
+                                    <button
                                         onClick={() => {
                                             setFormSubmitted(false);
                                             setSelectedJob(null);

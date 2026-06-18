@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-    Activity, Award, Users, ShieldCheck, Check, 
+    Activity, Award, Users, ShieldCheck, Check,
     ChevronRight, HeartPulse, Sparkles, Trophy, X
 } from "lucide-react";
 
@@ -61,14 +61,14 @@ export default function SportsGymnasiumPage() {
 
     return (
         <div className="bg-white min-h-screen relative overflow-hidden" style={{ fontFamily: sansFont }}>
-            
+
             {/* HERO */}
             <section className="relative h-[65vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-slate-950 text-white">
                 <div className="absolute inset-0 z-0">
                     <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-[#1e0808] to-slate-950 mix-blend-multiply opacity-90 z-10" />
                     <Image src="/sports_gymnasium_hero.png" alt="Sports & Gym" fill className="object-cover" priority />
                 </div>
-                
+
                 <div className="relative z-20 text-center px-6 max-w-4xl mx-auto -mt-6">
                     <span className="inline-flex items-center gap-2 py-1.5 px-4 bg-rose-500/10 backdrop-blur-md rounded-full font-bold tracking-widest text-[10px] uppercase border border-rose-500/30 text-rose-300 mb-6">
                         <Award size={12} /> Physical Wellness &amp; Recreation
@@ -79,7 +79,7 @@ export default function SportsGymnasiumPage() {
                     <p className="text-lg lg:text-xl text-blue-100 font-medium mb-10 leading-relaxed max-w-2xl mx-auto opacity-95">
                         High-tech indoor gym clubs, badminton courts, floodlit athletic grounds, and group meditation programs to balance academic rigor.
                     </p>
-                    <button 
+                    <button
                         onClick={() => document.getElementById("arenas")?.scrollIntoView({ behavior: "smooth" })}
                         className="px-8 py-3.5 bg-gradient-to-r from-rose-600 to-orange-600 text-white font-bold rounded-full shadow-lg shadow-rose-600/30 transition-all text-xs uppercase tracking-wider"
                     >
@@ -100,23 +100,21 @@ export default function SportsGymnasiumPage() {
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                        
+
                         {/* Selector Tabs */}
                         <div className="lg:col-span-4 space-y-4">
                             {(Object.keys(arenas) as ArenaKey[]).map((key) => (
                                 <button
                                     key={key}
                                     onClick={() => setSelectedArena(key)}
-                                    className={`w-full text-left p-6 rounded-[2rem] border transition-all duration-300 flex items-center justify-between group ${
-                                        selectedArena === key 
-                                        ? "bg-slate-900 border-slate-900 text-white shadow-xl translate-x-2" 
-                                        : "bg-slate-50 border-slate-100 text-slate-700 hover:bg-slate-100 hover:border-slate-200"
-                                    }`}
+                                    className={`w-full text-left p-6 rounded-[2rem] border transition-all duration-300 flex items-center justify-between group ${selectedArena === key
+                                            ? "bg-slate-900 border-slate-900 text-white shadow-xl translate-x-2"
+                                            : "bg-slate-50 border-slate-100 text-slate-700 hover:bg-slate-100 hover:border-slate-200"
+                                        }`}
                                 >
                                     <div className="flex items-center gap-4">
-                                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                                            selectedArena === key ? "bg-rose-500 text-white" : "bg-white text-slate-500 group-hover:text-rose-600"
-                                        } transition-colors shadow-sm shrink-0`}>
+                                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${selectedArena === key ? "bg-rose-500 text-white" : "bg-white text-slate-500 group-hover:text-rose-600"
+                                            } transition-colors shadow-sm shrink-0`}>
                                             {key === "gym" && <Activity size={20} />}
                                             {key === "badminton" && <Award size={20} />}
                                             {key === "outdoor" && <Users size={20} />}
@@ -134,7 +132,7 @@ export default function SportsGymnasiumPage() {
                         {/* Interactive Showcase */}
                         <div className="lg:col-span-8 bg-slate-50 border border-slate-100 rounded-[3rem] p-8 lg:p-12 shadow-sm relative overflow-hidden min-h-[500px]">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-rose-500/5 rounded-full blur-2xl pointer-events-none" />
-                            
+
                             <AnimatePresence mode="wait">
                                 <motion.div
                                     key={selectedArena}
@@ -150,7 +148,7 @@ export default function SportsGymnasiumPage() {
                                             {activeArena.name}
                                         </h3>
                                         <p className="text-slate-600 text-xs leading-relaxed mb-6">{activeArena.desc}</p>
-                                        
+
                                         <div className="space-y-2 mb-6">
                                             {activeArena.specs.map((spec, i) => (
                                                 <div key={i} className="flex items-center gap-2 text-[11px] font-semibold text-slate-800">
@@ -198,7 +196,7 @@ export default function SportsGymnasiumPage() {
                             <p className="text-slate-400 text-sm leading-relaxed mb-8">
                                 Relive the active sporting camaraderie built on our campuses. Click below to view the simulated live scoreboard of our latest MBBS Volleyball finals!
                             </p>
-                            
+
                             {!liveScore ? (
                                 <button
                                     onClick={() => setLiveScore(true)}

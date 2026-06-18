@@ -113,8 +113,8 @@ export default function AboutOverview() {
     const faqs = [
         { q: "What is BHRI?", a: "Buddha Hospital & Research Institute (BHRI) is a modern multi-speciality hospital in Bodhgaya, Bihar. It provides comprehensive healthcare — from OPD consultations to emergency, surgical, critical, and diagnostic services — all under one roof." },
         { q: "What specialities are available?", a: "BHRI covers 20+ specialities including General Medicine, Surgery, Paediatrics, Obstetrics, ENT, Ophthalmology, Orthopaedics, Psychiatry, Radiology, Pathology, Pharmacology, Dermatology, Dentistry, Anaesthesiology, and more." },
-        { q: "Is BHRI available for emergencies 24×7?", a: "Yes. Our emergency department is staffed 24 hours a day, 7 days a week, with Advanced Life Support ambulances, trauma-ready specialists, and direct ICU access. Call +91 8603048174 for emergencies." },
-        { q: "How do I book an appointment?", a: "Book online via our website, call our helpline at +91 8603048174, or walk in directly. Our smart token system minimises waiting time across all OPD specialities." },
+        { q: "Is BHRI available for emergencies 24×7?", a: "Yes. Our emergency department is staffed 24 hours a day, 7 days a week, with Advanced Life Support ambulances, trauma-ready specialists, and direct ICU access. Call +91 8603048174 / 9060646592 for emergencies." },
+        { q: "How do I book an appointment?", a: "Book online via our website, call our helpline at +91 8603048174 / 9060646592, or walk in directly. Our smart token system minimises waiting time across all OPD specialities." },
         { q: "Does BHRI accept insurance?", a: "Yes. We have cashless tie-ups with major insurance providers, TPAs, Ayushman Bharat (PMJAY), CGHS, and ECHS. Our insurance desk handles the authorisation process for you." },
     ];
 
@@ -462,7 +462,7 @@ export default function AboutOverview() {
                             <a href="tel:+918603048174"
                                 className="inline-flex items-center gap-2 bg-white/8 hover:bg-white/15 text-white font-semibold px-8 py-4 rounded-full border border-white/15 transition-all text-sm"
                             >
-                                <Phone size={16} /> +91 8603048174
+                                <Phone size={16} /> +91 8603048174 / 9060646592
                             </a>
                         </div>
                     </motion.div>

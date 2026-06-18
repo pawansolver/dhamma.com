@@ -62,7 +62,7 @@ export const hospitalSubData: Record<string, HospitalSubData> = {
     ],
     faqs: [
       { q: "What are the OPD timings?", a: "Our OPD operates Monday to Saturday from 9:00 AM to 4:00 PM. Sundays are reserved for emergency consultations only. Specialist clinics may have specific days — please check the schedule before visiting." },
-      { q: "How can I book an OPD appointment?", a: "You can book an OPD appointment online via our website, by calling our 24×7 helpline at +91 8603048174, or by walking into our reception. Online booking lets you choose your doctor and time slot." },
+      { q: "How can I book an OPD appointment?", a: "You can book an OPD appointment online via our website, by calling our 24×7 helpline at +91 8603048174 / 9060646592, or by walking into our reception. Online booking lets you choose your doctor and time slot." },
       { q: "Do I need a referral to see a specialist?", a: "No. You can directly book a specialist OPD appointment without any referral. However, having previous medical records helps the specialist provide better care." },
       { q: "What documents should I bring?", a: "Bring any past medical records, prescriptions, lab reports, and a valid ID proof. If you are using insurance, also bring your insurance card or policy details." },
       { q: "Are OPD consultations available for children?", a: "Yes. We have a dedicated Paediatric OPD with child-friendly consultation rooms, vaccination clinic, and growth monitoring. Daily timings are 9 AM – 1 PM with evening slots on selected days." },
@@ -271,7 +271,7 @@ export const hospitalSubData: Record<string, HospitalSubData> = {
       { value: "ICU", label: "Direct Access" },
     ],
     faqs: [
-      { q: "What should I do in a medical emergency?", a: "Call our emergency helpline immediately at +91 8603048174. Our ambulance team can reach you while you walk in — both work in parallel. Our ER is open 24×7 with no appointment needed for emergencies." },
+      { q: "What should I do in a medical emergency?", a: "Call our emergency helpline immediately at +91 8603048174 / 9060646592. Our ambulance team can reach you while you walk in — both work in parallel. Our ER is open 24×7 with no appointment needed for emergencies." },
       { q: "Do you have ambulance services?", a: "Yes. We operate Advanced Life Support (ALS) ambulances equipped with ventilators, defibrillators, and trained paramedics. Call our helpline — average ambulance response time within Gaya city is 10–15 minutes." },
       { q: "What kind of emergencies do you handle?", a: "All types — trauma & accidents, cardiac (heart attack, arrhythmia), stroke, paediatric emergencies, obstetric, poisoning, snakebite, severe infections. Our multi-specialty team is on call for every situation." },
       { q: "Is the emergency room open at night?", a: "Yes. Our ER operates 24 hours a day, 7 days a week, including all holidays. Senior doctors and trained nursing staff are present every hour. Specialists are on-call for immediate consultation." },
