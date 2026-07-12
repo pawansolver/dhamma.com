@@ -413,7 +413,7 @@ const AboutOverview = () => {
                 </div>
             </section>
 
-            {/* --- WHY CHOOSE Dhamma Superspeciality Hospital (Premium Icon Grid) --- */}}
+            {/* --- WHY CHOOSE Dhamma Superspeciality Hospital (Premium Icon Grid) --- */}
             <section className="section-padding bg-brandBlue relative overflow-hidden">
                 <div className="absolute inset-0 opacity-5 bg-[url('/grid-pattern.png')] bg-repeat" />
                 <div className="container-custom relative z-10">
