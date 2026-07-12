@@ -375,8 +375,11 @@ body {
 }
 
 .nav-btn-green {
-  background: linear-gradient(180deg, #22c55e 0%, #15803d 100%);
-  --glow-color: rgba(34, 197, 94, 0.5);
+  background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  background-size: 200% auto;
+  --glow-color: rgba(212, 175, 55, 0.6);
+  color: #ef4444 !important;
+  font-weight: 800;
 }
 
 .nav-btn-red {

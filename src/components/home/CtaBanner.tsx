@@ -7,11 +7,11 @@ export default function CtaBanner() {
   const { openBooking } = useBooking();
 
   return (
-    <section className="bg-gradient-to-r from-[#0f2557] via-[#1a3a6b] to-[#14532d] text-white py-10 sm:py-14 md:py-20">
+    <section className="bg-gradient-to-r from-[#0066CC] via-[#FBB03B] to-[#FF0000] text-white py-10 sm:py-14 md:py-20">
       <div className="container-custom text-center">
-        <h2 className="section-heading-white">Need Medical Assistance?</h2>
-        <span className="section-heading-line-white" />
-        <p className="section-subheading-white !mb-6 sm:!mb-8">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold !text-white mb-2 drop-shadow-md">Need Medical Assistance?</h2>
+        <div className="w-16 h-1 bg-white mx-auto mb-6 rounded-full shadow-sm" />
+        <p className="text-white font-medium text-sm md:text-base max-w-2xl mx-auto !mb-6 sm:!mb-8 drop-shadow-md">
           Our team of expert doctors and staff is available 24x7 for emergency care.
           Book your OPD appointment or reach us anytime.
         </p>

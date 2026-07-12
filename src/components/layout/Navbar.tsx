@@ -38,95 +38,51 @@ function YoutubeIcon({ size = 14 }: { size?: number }) {
   );
 }
 
-type SubItem = { label: string; href: string };
+type SubItem = { label: string; href: string; doctors?: string };
 type MenuItem = { label: string; href: string; children?: SubItem[] };
 
 const MENU: MenuItem[] = [
-  { label: "HOME", href: "/" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about/overview" },
   {
-    label: "ABOUT US",
-    href: "/about/overview",
+    label: "Area Of Care",
+    href: "#",
     children: [
-      { label: "Overview", href: "/about/overview" },
-      { label: "Chairman Message", href: "/about/chairman" },
+      { label: "Overview", href: "#" }
     ],
   },
+  { label: "Health Professionals", href: "/doctors" },
   {
-    label: "HOSPITAL",
-    href: "/hospital/the-hospital",
+    label: "Gallery",
+    href: "/gallery/photos",
     children: [
-      { label: "The Hospital", href: "/hospital/the-hospital" },
-      { label: "OPD Services", href: "/hospital/opd" },
-      { label: "In-Wards Services", href: "/hospital/in-wards" },
-      { label: "Diagnostic Services", href: "/hospital/diagnostics" },
-      { label: "Emergency Services", href: "/hospital/emergency" },
-    ],
+      { label: "Photo Gallery", href: "/gallery/photos" },
+      { label: "Video Gallery", href: "/gallery/videos" }
+    ]
   },
+  { label: "Contact Us", href: "/contact" },
+  { label: "FACULTY & DOCTORS", href: "/doctors" },
   {
     label: "DEPARTMENTS",
     href: "#",
     children: [
-      { label: "Anatomy", href: "/departments/anatomy" },
-      { label: "Forensic Medicine & Toxicology", href: "/departments/forensic-medicine" },
-      { label: "Orthopaedics", href: "/departments/orthopaedics" },
-      { label: "Physiology", href: "/departments/physiology" },
-      { label: "Community Medicine", href: "/departments/community-medicine" },
-      { label: "Oto-Rhino-Laryngology (ENT)", href: "/departments/ent" },
-      { label: "Biochemistry", href: "/departments/biochemistry" },
-      { label: "General Medicine", href: "/departments/general-medicine" },
-      { label: "Ophthalmology", href: "/departments/ophthalmology" },
-      { label: "Pharmacology", href: "/departments/pharmacology" },
-      { label: "Paediatrics", href: "/departments/paediatrics" },
-      { label: "Obstetrics & Gynecology", href: "/departments/obstetrics-gynecology" },
-      { label: "Pathology", href: "/departments/pathology" },
-      { label: "Psychiatry", href: "/departments/psychiatry" },
-      { label: "Radiology", href: "/departments/radiology" },
-      { label: "Microbiology", href: "/departments/microbiology" },
-      { label: "Dermatology, Venereology & Leprosy", href: "/departments/dermatology" },
-      { label: "Dentistry", href: "/departments/dentistry" },
-      { label: "Anaesthesiology", href: "/departments/anaesthesiology" },
-      { label: "General Surgery", href: "/departments/general-surgery" },
+      { label: "All Services", href: "/departments", doctors: "32+" },
+      { label: "Cardiology", href: "/departments/cardiology", doctors: "3+" },
+      { label: "Neuro Surgery", href: "/departments/neuro-surgery", doctors: "2+" },
+      { label: "Nephrology", href: "/departments/nephrology", doctors: "2+" },
+      { label: "Orthopedic", href: "/departments/orthopaedics", doctors: "2+" },
+      { label: "Urology", href: "/departments/urology", doctors: "1+" },
+      { label: "General Medicine", href: "/departments/general-medicine", doctors: "2+" },
+      { label: "Neurology", href: "/departments/neurology", doctors: "1+" },
+      { label: "Obs. & Gynae.", href: "/departments/obstetrics-gynecology", doctors: "2+" },
+      { label: "General Surgery", href: "/departments/general-surgery", doctors: "1+" },
+      { label: "Rheumatology", href: "/departments/rheumatology", doctors: "1+" },
+      { label: "Pediatric", href: "/departments/paediatrics", doctors: "2+" },
+      { label: "Plastic Surgery", href: "/departments/plastic-surgery", doctors: "1+" },
+      { label: "Gastroenterology", href: "/departments/gastroenterology", doctors: "1+" },
+      { label: "Ophthalmology", href: "/departments/ophthalmology", doctors: "2+" },
     ],
   },
-  { label: "FACULTY & DOCTORS", href: "/doctors" },
-  {
-    label: "INFRASTRUCTURE",
-    href: "/#",
-    children: [
-      { label: "Academic Complex", href: "/infrastructure/academic-complex" },
-      { label: "Residential Block", href: "/infrastructure/residential-block" },
-      { label: "Sports & Gymnasium", href: "/infrastructure/sports-gymnasium" },
-      { label: "Cafeteria & Mess", href: "/infrastructure/cafeteria-mess" },
-    ],
-  },
-  {
-    label: "ACADEMICS",
-    href: "/academics",
-    children: [
-      { label: "Programmes", href: "/academics/programmes" },
-      { label: "NMC CBME Curriculum", href: "/academics/nmc-cbme-curriculum" },
-      { label: "Time Table", href: "/academics/time-table" },
-      { label: "Research", href: "/academics/research" },
-      { label: "Student Details", href: "/academics/student-details" },
-      { label: "List of Holidays", href: "/academics/holidays" },
-      { label: "Results", href: "/academics/results" },
-    ],
-  },
-  { label: "ADMISSIONS", href: "/admissions" },
-  {
-    label: "GALLERY",
-    href: "#",
-    children: [
-      { label: "Photo Gallery", href: "/gallery/photos" },
-      { label: "Video Gallery", href: "/gallery/videos" },
-      { label: "Events", href: "/gallery/events" },
-      { label: "Announcements", href: "/announcements" },
-      { label: "Notices", href: "/notices" },
-    ],
-  },
-  { label: "LIBRARY", href: "/library" },
-  { label: "CAREER", href: "/career" },
-  { label: "CONTACT", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -150,29 +106,22 @@ export default function Navbar() {
             priority
           />
         </div>
-        
+
         {/* Adjusted padding and layout so button always fits on mobile */}
-        <div className="relative z-[2] w-full max-w-[1440px] mx-auto px-3 sm:px-4 md:px-6 flex items-center justify-between py-2 sm:py-3">
-          
-          <Link href="/" className="flex items-center gap-2 md:gap-3 flex-shrink max-w-[80%] lg:max-w-none">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 relative flex-shrink-0 rounded-full overflow-hidden">
+        <div className="relative z-[2] w-full max-w-[1440px] mx-auto px-3 sm:px-4 md:px-6 flex items-center justify-between h-16 sm:h-20 md:h-24 lg:h-28">
+
+          <Link href="/" className="flex items-center gap-2 md:gap-3 flex-shrink max-w-[80%] lg:max-w-none h-full py-1 sm:py-2">
+            <div className="w-40 sm:w-56 md:w-72 lg:w-96 h-full relative flex-shrink-0">
               <Image
-                src="/logo.png"
-                alt="Buddha Hospital And Research Institute"
+                src="/dhamma.png"
+                alt="logo"
                 fill
                 priority
-                className="object-cover"
+                className="object-contain object-left"
               />
             </div>
-            
-            <div className="flex flex-col justify-center select-none">
-              <span className="font-extrabold text-[12px] sm:text-[14px] md:text-[18px] leading-tight text-[#1a3a6b] uppercase tracking-wide line-clamp-2">
-                Buddha Hospital And Research Institute
-              </span>
-              <span className="hidden sm:block text-[8px] sm:text-[9px] text-gray-500 font-bold uppercase tracking-wider mt-0.5">
-                Gaya-Dobhi Road, NH-22, Kharanti More, Gaya-823004
-              </span>
-            </div>
+
+
           </Link>
 
           {/* Desktop Actions */}
@@ -189,7 +138,7 @@ export default function Navbar() {
 
           {/* Fully Visible Hamburger Button */}
           <button
-            className="lg:hidden flex items-center justify-center p-2 rounded-md bg-[#1a3a6b] text-white flex-shrink-0 ml-auto z-50 transition-colors"
+            className="lg:hidden flex items-center justify-center p-2 rounded-md bg-[#0056b3] text-white flex-shrink-0 ml-auto z-50 transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -199,11 +148,11 @@ export default function Navbar() {
       </div>
 
       {/* ───── TIER 3: Main navigation ───── */}
-      <nav className="relative bg-[#1a3a6b]">
+      <nav className="relative" style={{ background: 'linear-gradient(135deg, #BF953F)', backgroundSize: '200% auto' }}>
         <div className="absolute left-0 bottom-0 w-full h-px bg-gradient-to-r from-transparent via-brandSaffron/20 to-transparent pointer-events-none" />
-        
+
         {/* Desktop Menu */}
-        <div className="container-custom hidden lg:flex items-center justify-center">
+        <div className="container-custom hidden lg:flex items-center justify-evenly w-full">
           {MENU.map((item, idx) => (
             <div
               key={item.label}
@@ -213,7 +162,7 @@ export default function Navbar() {
             >
               <Link
                 href={item.href}
-                className="flex items-center gap-1 px-3 xl:px-4 py-3 text-[13px] font-semibold text-white hover:bg-brandBlueDark transition-colors whitespace-nowrap"
+                className="flex items-center gap-1 px-3 xl:px-4 py-3 text-[13px] font-semibold uppercase text-white hover:text-red-500 transition-colors whitespace-nowrap"
               >
                 {item.label}
                 {item.children && <ChevronDown size={13} className="opacity-70" />}
@@ -222,51 +171,38 @@ export default function Navbar() {
               {item.children && openDropdown === item.label && (
                 item.children.length > 8 ? (
                   /* ── MEGA MENU (Departments) ── */
-                  <div className="absolute left-0 w-full top-full bg-[#0a0a0a] border-t border-white/8 shadow-2xl z-50">
-                    <div className="max-w-7xl mx-auto px-8 py-8">
-                      <div className="flex items-start gap-10">
-                        {/* Left panel */}
-                        <div className="flex-shrink-0 w-52">
-                          <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/30 mb-3">Browse</p>
-                          <h3 className="text-2xl font-extrabold text-white leading-tight mb-4">{item.label}</h3>
-                          <p className="text-white/40 text-xs leading-relaxed">
-                            20 specialised departments delivering expert-led clinical care and academic excellence.
-                          </p>
-                          <div className="mt-6 h-px bg-gradient-to-r from-teal-500/50 to-transparent" />
-                          <Link href="/departments" className="mt-5 inline-flex items-center gap-2 text-teal-400 text-xs font-bold hover:text-teal-300 transition">
-                            View All <ChevronDown size={12} className="-rotate-90" />
-                          </Link>
-                        </div>
-
-                        {/* Departments grid */}
-                        <div className="flex-1 grid grid-cols-4 gap-x-4 gap-y-1">
+                  <div className="absolute left-0 w-full top-full bg-white border-t border-gray-200 shadow-xl z-50">
+                    <div className="max-w-7xl mx-auto">
+                      <div className="flex px-8 py-8 gap-10">
+                        <div className="flex-1 grid grid-cols-4 gap-x-8 gap-y-4">
                           {item.children.map((child) => (
                             <Link
                               key={child.label}
                               href={child.href}
-                              className="group flex items-center gap-2 px-3 py-2.5 rounded-lg hover:bg-white/6 transition-all"
+                              className="text-[14px] text-gray-700 hover:text-blue-600 font-medium transition-colors"
                             >
-                              <span className="w-1.5 h-1.5 rounded-full bg-teal-500/60 group-hover:bg-teal-400 flex-shrink-0 transition-colors" />
-                              <span className="text-white/60 group-hover:text-white text-[13px] font-medium transition-colors leading-snug">
-                                {child.label}
-                              </span>
+                              {child.label}
                             </Link>
                           ))}
                         </div>
+                      </div>
+                      <div className="bg-gray-100 px-8 py-4 border-t border-gray-200">
+                        <Link href="/departments" className="text-[14px] text-gray-900 font-semibold hover:text-blue-600 flex items-center gap-1 transition-colors">
+                          View all {item.label.toLowerCase()} <ChevronDown size={14} className="-rotate-90" />
+                        </Link>
                       </div>
                     </div>
                   </div>
                 ) : (
                   /* ── STANDARD DROPDOWN ── */
-                  <div className={`absolute top-full ${idx > MENU.length / 2 ? 'right-0' : 'left-0'} min-w-[230px] bg-[#0a0a0a] border border-white/8 shadow-2xl z-50 rounded-b-xl overflow-hidden transition-all duration-200 opacity-100 translate-y-0`}>
+                  <div className={`absolute top-full ${idx > MENU.length / 2 ? 'right-0' : 'left-0'} min-w-[220px] bg-white border border-gray-200 shadow-xl z-50 rounded-b-lg overflow-hidden transition-all duration-200 opacity-100 translate-y-0`}>
                     <div className="py-2">
                       {item.children.map((child, idx) => (
                         <Link
                           key={child.label}
                           href={child.href}
-                          className="flex items-center gap-3 px-5 py-3 text-white/60 hover:text-white hover:bg-white/5 transition-all text-[13px] font-medium border-b border-white/5 last:border-0"
+                          className="flex items-center px-5 py-2.5 text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-all text-[14px] font-medium"
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-teal-500/50 flex-shrink-0" />
                           {child.label}
                         </Link>
                       ))}
@@ -280,22 +216,20 @@ export default function Navbar() {
 
         {/* ───── Mobile menu ───── */}
         {/* ───── Mobile Sidebar Overlay ───── */}
-        <div 
-          className={`lg:hidden fixed inset-0 z-[60] bg-black/50 transition-opacity duration-300 ${
-            mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"
-          }`}
+        <div
+          className={`lg:hidden fixed inset-0 z-[60] bg-black/50 transition-opacity duration-300 ${mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"
+            }`}
           onClick={() => setMobileOpen(false)}
           aria-hidden="true"
         />
 
         {/* ───── Mobile Sidebar ───── */}
-        <div className={`lg:hidden fixed top-0 left-0 h-screen w-[85%] max-w-[320px] bg-[#1a3a6b] shadow-2xl z-[70] transition-transform duration-300 ease-in-out flex flex-col ${
-          mobileOpen ? "translate-x-0" : "-translate-x-full"
-        }`}>
+        <div className={`lg:hidden fixed top-0 left-0 h-screen w-[85%] max-w-[320px] bg-[#0056b3] shadow-2xl z-[70] transition-transform duration-300 ease-in-out flex flex-col ${mobileOpen ? "translate-x-0" : "-translate-x-full"
+          }`}>
           {/* Sidebar Header */}
           <div className="flex items-center justify-between p-4 border-b border-white/10 bg-[#0f2557] flex-shrink-0">
             <span className="font-extrabold text-white text-lg">Menu</span>
-            <button 
+            <button
               onClick={() => setMobileOpen(false)}
               className="p-2 bg-white/10 rounded-md text-white hover:bg-white/20 transition-colors"
               aria-label="Close menu"
@@ -320,9 +254,8 @@ export default function Navbar() {
                       {item.label}
                       <ChevronDown
                         size={18}
-                        className={`transition-transform duration-300 ${
-                          mobileSubmenu === item.label ? "rotate-180" : ""
-                        }`}
+                        className={`transition-transform duration-300 ${mobileSubmenu === item.label ? "rotate-180" : ""
+                          }`}
                       />
                     </button>
                     {mobileSubmenu === item.label && (
@@ -355,15 +288,15 @@ export default function Navbar() {
 
           {/* Sidebar Footer Buttons */}
           <div className="p-5 bg-[#0f2557] flex flex-col gap-3 flex-shrink-0 border-t border-white/10">
-            <button 
+            <button
               className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-md text-sm font-semibold text-white bg-green-600 hover:bg-green-700 transition"
               onClick={() => { setMobileOpen(false); openBooking(); }}
             >
               <Clock size={16} />
               Book Appointment
             </button>
-            <a 
-              href="/hospital/emergency" 
+            <a
+              href="/hospital/emergency"
               className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-md text-sm font-semibold text-white bg-red-600 hover:bg-red-700 transition"
               onClick={() => setMobileOpen(false)}
             >
@@ -384,7 +317,7 @@ export default function Navbar() {
           aria-label="Chat on WhatsApp"
         >
           <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 sm:w-8 sm:h-8">
-            <path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.128.552 4.195 1.6 6.01L.226 23.593l5.69-1.492a11.967 11.967 0 0 0 6.115 1.666c6.645 0 12.03-5.385 12.03-12.03C24.061 5.385 18.676 0 12.031 0zm0 21.722a9.92 9.92 0 0 1-5.068-1.385l-.363-.215-3.77.988.995-3.676-.236-.375a9.927 9.927 0 0 1-1.527-5.347c0-5.502 4.478-9.98 9.97-9.98 5.5 0 9.98 4.478 9.98 9.98 0 5.502-4.48 9.98-9.98 9.98zm5.485-7.487c-.302-.152-1.785-.88-2.062-.98-.278-.1-.48-.152-.68.152-.202.302-.782.98-.958 1.18-.175.202-.35.228-.652.076-.302-.152-1.275-.47-2.428-1.5-.897-.803-1.503-1.796-1.68-2.098-.176-.302-.018-.465.132-.615.137-.137.302-.352.453-.528.15-.175.202-.302.302-.502.1-.202.05-.38-.025-.53-.076-.152-.68-1.642-.932-2.25-.246-.593-.497-.512-.68-.52-.176-.008-.38-.01-.582-.01-.202 0-.528.076-.805.378-.278.302-1.058 1.033-1.058 2.518 0 1.485 1.083 2.92 1.233 3.12.15.202 2.128 3.25 5.152 4.553 2.185.94 2.905.9 3.96.76.81-.106 2.062-.843 2.352-1.657.29-.812.29-1.508.202-1.657-.087-.152-.338-.228-.64-.38z"/>
+            <path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.128.552 4.195 1.6 6.01L.226 23.593l5.69-1.492a11.967 11.967 0 0 0 6.115 1.666c6.645 0 12.03-5.385 12.03-12.03C24.061 5.385 18.676 0 12.031 0zm0 21.722a9.92 9.92 0 0 1-5.068-1.385l-.363-.215-3.77.988.995-3.676-.236-.375a9.927 9.927 0 0 1-1.527-5.347c0-5.502 4.478-9.98 9.97-9.98 5.5 0 9.98 4.478 9.98 9.98 0 5.502-4.48 9.98-9.98 9.98zm5.485-7.487c-.302-.152-1.785-.88-2.062-.98-.278-.1-.48-.152-.68.152-.202.302-.782.98-.958 1.18-.175.202-.35.228-.652.076-.302-.152-1.275-.47-2.428-1.5-.897-.803-1.503-1.796-1.68-2.098-.176-.302-.018-.465.132-.615.137-.137.302-.352.453-.528.15-.175.202-.302.302-.502.1-.202.05-.38-.025-.53-.076-.152-.68-1.642-.932-2.25-.246-.593-.497-.512-.68-.52-.176-.008-.38-.01-.582-.01-.202 0-.528.076-.805.378-.278.302-1.058 1.033-1.058 2.518 0 1.485 1.083 2.92 1.233 3.12.15.202 2.128 3.25 5.152 4.553 2.185.94 2.905.9 3.96.76.81-.106 2.062-.843 2.352-1.657.29-.812.29-1.508.202-1.657-.087-.152-.338-.228-.64-.38z" />
           </svg>
         </a>
       </div>

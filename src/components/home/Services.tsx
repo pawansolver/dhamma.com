@@ -1,41 +1,48 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight, BriefcaseMedical, Dna, Activity, Stethoscope, Pill, Landmark } from "lucide-react";
 
 const services = [
   {
-    title: "OPD Services",
-    image: "/images/services/opd.png",
+    title: "Urology",
+    description: "Expert urological care for kidney, bladder, and male reproductive health.",
+    icon: BriefcaseMedical,
   },
   {
-    title: "24 X 7 Emergency",
-    image: "/images/services/emergency.png",
+    title: "Neuro Surgery",
+    description: "Advanced surgical care for complex neurological conditions with precision and expertise.",
+    icon: Dna,
   },
   {
-    title: "ICU (With Ventilator)",
-    image: "/images/services/icu.png",
+    title: "Rheumatology",
+    description: "Comprehensive care for autoimmune and joint diseases to reduce inflammation.",
+    icon: BriefcaseMedical,
   },
   {
-    title: "NICU (With Ventilator)",
-    image: "/images/services/nicu.png",
+    title: "Obs. & Gynae.",
+    description: "Comprehensive care for women's health, including pregnancy, fertility, and wellness.",
+    icon: Activity,
   },
   {
-    title: "PICU (With Ventilator)",
-    image: "/images/services/picu.png",
+    title: "Gastroenterology",
+    description: "Digestive health services for GI disorders with endoscopic and surgical solutions.",
+    icon: BriefcaseMedical,
   },
   {
-    title: "Special Ward",
-    image: "/images/services/special-ward.png",
+    title: "Pediatric",
+    description: "Comprehensive child healthcare from newborns to adolescents, focusing on wellness.",
+    icon: Stethoscope,
   },
   {
-    title: "24 X 7 Pharmacy",
-    image: "/images/services/pharmacy.png",
+    title: "Plastic Surgery",
+    description: "Aesthetic and reconstructive surgery for facial, body, and hand conditions.",
+    icon: Activity,
   },
   {
-    title: "General Ward",
-    image: "/images/services/general-ward.png",
+    title: "General Medicine",
+    description: "Primary healthcare managing chronic and acute diseases with personalized care.",
+    icon: Pill,
   },
 ];
 
@@ -90,20 +97,29 @@ export default function Services() {
           </button>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 px-1 sm:px-3 md:px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-4 md:gap-6 px-1 sm:px-3 md:px-4">
             {visibleServices.map((service) => (
-              <div key={service.title} className="group cursor-pointer">
-                <div className="relative aspect-[4/3] rounded-[6px] overflow-hidden mb-4 shadow-md border border-gray-200">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+              <div 
+                key={service.title} 
+                className="group cursor-pointer bg-[#c2ebe5] relative p-5 md:p-6 aspect-square flex flex-col justify-between border-b-[8px] border-[#009b9b] overflow-hidden transition-colors hover:bg-[#b0dfd8]"
+              >
+                {/* Watermark Icon */}
+                <Landmark strokeWidth={1} className="absolute -bottom-4 -left-4 w-28 h-28 text-white/40 z-0 pointer-events-none" />
+                
+                {/* Content */}
+                <div className="relative z-10 w-11/12">
+                  <h3 className="text-[#111111] font-semibold text-[17px] md:text-[19px] leading-snug mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-[#111111]/80 text-[13px] leading-relaxed line-clamp-3">
+                    {service.description}
+                  </p>
                 </div>
-                <h3 className="text-[#0072CE] font-semibold text-[15px] md:text-[17px] leading-snug group-hover:underline transition-all px-1">
-                  {service.title}
-                </h3>
+                
+                {/* Arrow */}
+                <div className="w-full flex justify-end relative z-10">
+                  <ArrowRight strokeWidth={1.5} className="w-6 h-6 text-[#111111] transition-transform duration-300 group-hover:translate-x-2" />
+                </div>
               </div>
             ))}
           </div>

@@ -1,46 +1,42 @@
 import Image from "next/image";
-import { SparkleButton } from "@/components/ui/button-8";
 
 export default function AboutSection() {
   return (
-    <section id="about-section" className="section bg-bgLight">
-      <div className="container-custom flex flex-col lg:flex-row items-center gap-6 sm:gap-8 md:gap-10">
-        <div className="flex-shrink-0 relative">
-          {/* Outer decorative ring */}
-          <div className="absolute -inset-3 rounded-full border-2 border-dashed border-brandGreen/20 animate-[spin_30s_linear_infinite]" />
-          <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-brandGreen/30">
-            {/* Top gradient fill */}
-            <div className="absolute top-0 left-0 right-0 h-[25%] bg-gradient-to-b from-brandBlue to-brandBlue/70 z-0" />
-            {/* Bottom gradient fill */}
-            <div className="absolute bottom-0 left-0 right-0 h-[20%] bg-gradient-to-t from-brandGreen/60 to-transparent z-0" />
-            {/* Image */}
-            <Image
-              src="/images/about-hospital.png"
-              alt="Buddha Hospital & Research Institute Building"
-              fill
-              className="object-contain p-0.5 z-10 drop-shadow-lg"
-            />
+    <section id="about-section" className="w-full bg-white py-16 md:py-24">
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center gap-10 md:gap-16">
+
+        {/* Left side: Image */}
+        <div className="w-full md:w-1/2 flex justify-center">
+          <Image
+            src="/images/surgeons-operating.png"
+            alt="Surgery"
+            width={600}
+            height={400}
+            className="w-full h-auto object-cover"
+          />
+        </div>
+
+        {/* Right side: Content */}
+        <div className="w-full md:w-1/2 flex flex-col justify-center">
+          <p className="text-brandBlue font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] mb-2 md:mb-3">
+            ABOUT DHAMMA
+          </p>
+          <h2 className="text-3xl md:text-[40px] font-bold text-[#0a1930] mb-6 leading-[1.2]">
+            We Provide Finest Patient&apos;s Care &amp; Amenities
+          </h2>
+          <div className="text-gray-600 text-sm md:text-[15px] leading-[1.8] space-y-4 font-sans text-justify">
+            <p>
+              Dhamma Institute of Medical Science is going to be 340 bedded hospital and Teaching Institute that is situated near AIIMS, Patna.
+            </p>
+            <p>
+              The objective of the Dhamma Institute of Medical Science, Patna is the establishment, maintenance and development of a teaching institute, where men and women shall receive an education of the highest grade in the art and science of medicine, nursing or one or other of the related professions, to equip them in the spirit of Christ, for service in the relief of suffering and in the promotion of health.
+            </p>
+            <p>
+              Apart from the other facilities, there are 60 intensive care beds with the twenty-four hour hi-tech trauma care facility, serving a wide cross-section of the community, belonging to every economic segment of society. Medical services are given to the poor and needy patients. Three separate rural and urban health training centres have to establish.
+            </p>
           </div>
         </div>
-        <div className="flex-1 text-center lg:text-left">
-          <h2 className="section-heading !text-left max-md:!text-center">About BHRI</h2>
-          <span className="section-heading-line !mx-0 max-md:!mx-auto" />
-          <p className="text-textmain/80 text-base leading-relaxed mb-4 text-justify">
-            <strong className="text-textmain">Buddha Hospital &amp; Research Institute</strong>{" "}
-            is a multi-Specialty hospital in Gaya. We offer reasonable pricing health care plans,
-            insurance packages to clients. Buddha Hospital &amp; Research Institute has an
-            outstanding and recognized team of doctors in all specialties including Cardiology,
-            Gastroenterology, Nephrology, Respiratory, Orthopedics, Joint replacement, Bariatric
-            Surgery and Neurosurgery.
-          </p>
-          <p className="text-textmain/80 text-base leading-relaxed mb-6 text-justify">
-            Our doctors are assisted by a team of devoted nurses and paramedics. We have 24x7
-            Emergency, Pharmacy and Ambulance Services, ICU, NICU, PICU, Operating Theaters,
-            Dialysis, Diagnostics and Imaging, and Physiotherapy and Rehab facilities, and Health
-            Check-up plans.
-          </p>
-          <SparkleButton href="/about/overview">Read More</SparkleButton>
-        </div>
+
       </div>
     </section>
   );

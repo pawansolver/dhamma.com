@@ -5,13 +5,12 @@ import Services from "@/components/home/Services";
 import AboutSection from "@/components/home/AboutSection";
 import DepartmentsGrid from "@/components/home/DepartmentsGrid";
 import CtaBanner from "@/components/home/CtaBanner";
-import WhyChooseUs from "@/components/home/WhyChooseUs";
 import GallerySection from "@/components/home/GallerySection";
 import ContactForm from "@/components/home/ContactForm";
-import Facilities from "@/components/home/Facilities";
-import CampusLife from "@/components/home/CampusLife";
-import MaternityCare from "@/components/home/MaternityCare";
+import WhyChooseDhamma from "@/components/home/WhyChooseDhamma";
 import Announcements from "@/components/home/Announcements";
+import TpaSection from "@/components/home/TpaSection";
+import TestimonialSection from "@/components/home/TestimonialSection";
 
 export default function Home() {
   return (
@@ -21,13 +20,12 @@ export default function Home() {
       <AboutSection />
       <Capabilities />
       <Services />
-      <Facilities />
-      <CampusLife />
-      <MaternityCare />
+      <WhyChooseDhamma />
       <Announcements />
+      <TestimonialSection />
       <DepartmentsGrid />
       <CtaBanner />
-      <WhyChooseUs />
+      <TpaSection />
       <GallerySection />
       <ContactForm />
     </>

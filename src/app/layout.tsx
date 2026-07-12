@@ -17,9 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Buddha Hospital & Research Institute | BHRI Gaya",
+  title: "dhammainstitute.com",
   description:
-    "Buddha Hospital & Research Institute (BHRI) Gaya — Leading healthcare and medical education in Bihar. सेवा परमो धर्म:",
+    " dhammainstitute — Leading healthcare and medical education in Bihar. सेवा परमो धर्म:",
   icons: {
     icon: "/logo.png",
   },

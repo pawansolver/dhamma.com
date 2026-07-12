@@ -2,34 +2,27 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { SparkleButton } from "@/components/ui/button-8";
+import { ParticleButton } from "@/components/ui/particle-button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const imageSlides = [
   {
-    image: "/images/about-hospital.png",
-    title: "World-Class Healthcare",
-    subtitle: "State-of-the-art infrastructure with advanced medical technology",
+    image: "/images/herrroo/gfs.png",
+    overhead: "ABOUT DHAMMA",
+    titleLine1: "भगवान बुद्ध के विचारों से प्रेरित..",
+    titleLine2: "We Provide Finest Patient's Care & Amenities",
+    subtitle: "Embrace a world of comprehensive healthcare where your well-being takes center stage. At Dhamma, we're dedicated to providing you with personalized and compassionate medical services.",
   },
   {
-    image: "/hospital_hero_hd.png",
+    image: "/images/herrroo/917A1613-scaled.jpg",
     title: "Expert Medical Team",
     subtitle: "250+ experienced doctors & faculty across 20+ departments",
   },
   {
-    image: "/hospital_ot_hd.png",
+    image: "/images/herrroo/917A1641-scaled.jpg",
     title: "Advanced Surgical Care",
     subtitle: "Equipped with modern OT, ICU, NICU & PICU with ventilator support",
-  },
-  {
-    image: "/hospital_icu_hd.png",
-    title: "Critical Care Excellence",
-    subtitle: "24/7 Intensive Care with advanced life support and continuous monitoring",
-  },
-  {
-    image: "/hospital_interior_hd.png",
-    title: "Patient-First Approach",
-    subtitle: "Compassionate care with the motto — सेवा परमो धर्म:",
   },
 ];
 
@@ -37,6 +30,7 @@ const TOTAL = 1 + imageSlides.length;
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
+  const router = useRouter();
 
   const next = useCallback(() => {
     setCurrent((p) => (p + 1) % TOTAL);
@@ -78,8 +72,8 @@ export default function HeroSection() {
           <div className="flex-shrink-0 relative order-first lg:order-last mb-2 lg:mb-0">
             <div className="absolute -inset-2 lg:-inset-4 rounded-full border-2 border-dashed border-brandBlue/10 animate-[spin_40s_linear_infinite]" />
             <Image
-              src="/logo.png"
-              alt="BHRI Logo"
+              src="/images/herrroo/gfs.png"
+              alt="Dhamma Logo"
               width={220}
               height={220}
               priority
@@ -89,24 +83,30 @@ export default function HeroSection() {
 
           <div className="flex-1 text-center lg:text-left mt-2 lg:mt-0">
             <p className="text-brandBlue font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] mb-2 md:mb-3 flex items-center gap-2 justify-center lg:justify-start">
-              <span className="w-2 h-2 rounded-full bg-brandSaffron inline-block" />
-              सेवा परमो धर्म:
+              ABOUT DHAMMA
             </p>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-3 md:mb-5 text-[#1a1a2e]">
-              Welcome to <br className="hidden lg:block" />
-              <span className="text-brandBlue">Buddha Hospital</span>{" "}
-              <br className="block lg:hidden" />
-              &amp; Research Institute
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-extrabold leading-tight mb-3 md:mb-5 text-[#1a1a2e]">
+              भगवान बुद्ध के विचारों से प्रेरित.. <br />
+              We Provide Finest Patient's Care &amp; Amenities
             </h1>
             <p className="text-gray-500 text-sm sm:text-base md:text-lg max-w-xl mb-6 mx-auto lg:mx-0 leading-relaxed">
-              A premier healthcare and medical education institution in Gaya, Bihar —
-              delivering compassionate care with modern infrastructure and expert faculty.
+              Embrace a world of comprehensive healthcare where your well-being takes center stage. At Dhamma, we're dedicated to providing you with personalized and compassionate medical services.
             </p>
             <div className="flex flex-wrap gap-3 md:gap-4 justify-center lg:justify-start">
-              <SparkleButton href="#about-section">Explore More</SparkleButton>
-              <SparkleButton href="#contact-form">Contact Us</SparkleButton>
+              <ParticleButton 
+                onClick={() => router.push("#about-section")}
+                className="bg-brandBlue text-white hover:bg-brandBlueDark rounded-full px-6 shadow-lg shadow-brandBlue/30"
+              >
+                Explore More
+              </ParticleButton>
+              <ParticleButton 
+                onClick={() => router.push("#contact-form")}
+                className="bg-brandSaffron text-white hover:bg-orange-600 rounded-full px-6 shadow-lg shadow-brandSaffron/30"
+              >
+                Contact Us
+              </ParticleButton>
             </div>
-            
+
 
           </div>
         </div>
@@ -140,12 +140,18 @@ export default function HeroSection() {
             <div className="relative z-10 h-full w-full max-w-[1440px] mx-auto px-6 sm:px-14 md:px-16 lg:px-10 flex flex-col justify-center text-center md:text-left items-center md:items-start pt-12 pb-24 md:py-0">
               <div className="max-w-xl">
                 <p className="text-brandBlue font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] mb-2 md:mb-3 flex items-center gap-2 justify-center md:justify-start">
-                  <span className="w-2 h-2 rounded-full bg-brandSaffron inline-block" />
-                  Buddha Hospital &amp; Research Institute
+                  {!slide.overhead && <span className="w-2 h-2 rounded-full bg-brandSaffron inline-block" />}
+                  {slide.overhead || "Dhamma Institute"}
                 </p>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1a1a2e] leading-[1.2] md:leading-[1.1] mb-3 md:mb-4">
-                  {slide.title}
-                </h2>
+                {slide.titleLine1 ? (
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-extrabold text-[#1a1a2e] leading-[1.2] md:leading-[1.15] mb-3 md:mb-4">
+                    {slide.titleLine1} <br /> {slide.titleLine2}
+                  </h2>
+                ) : (
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1a1a2e] leading-[1.2] md:leading-[1.1] mb-3 md:mb-4">
+                    {slide.title}
+                  </h2>
+                )}
                 <p className="text-gray-700 md:text-gray-600 text-sm sm:text-base md:text-lg max-w-md mx-auto md:mx-0 leading-relaxed">
                   {slide.subtitle}
                 </p>
@@ -193,29 +199,7 @@ export default function HeroSection() {
         <span>{String(TOTAL).padStart(2, "0")}</span>
       </div>
 
-      {/* ── Bottom service strip ── */}
-      <div className="absolute bottom-0 left-0 right-0 z-10">
-        <div className="bg-gradient-to-r from-brandBlue to-brandBlueDark">
-          <div className="w-full max-w-[1440px] mx-auto px-4 lg:px-10 py-3 flex flex-wrap items-center justify-center gap-y-2 gap-x-4 sm:gap-6 lg:gap-12 text-white text-[11px] sm:text-[12px] lg:text-[13px]">
-            <span className="flex items-center gap-1.5 sm:gap-2 font-semibold">
-              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-400" />
-              24x7 Emergency
-            </span>
-            <span className="flex items-center gap-1.5 sm:gap-2 font-semibold">
-              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-brandSaffron" />
-              Free OPD
-            </span>
-            <span className="flex items-center gap-1.5 sm:gap-2 font-semibold">
-              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-400" />
-              250+ Doctors
-            </span>
-            <span className="flex items-center gap-1.5 sm:gap-2 font-semibold">
-              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-purple-400" />
-              800+ Beds
-            </span>
-          </div>
-        </div>
-      </div>
+
     </section>
   );
 }

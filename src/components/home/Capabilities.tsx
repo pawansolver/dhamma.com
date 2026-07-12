@@ -92,7 +92,7 @@ export default function Capabilities() {
 
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
-        style={{ backgroundImage: "url('/images/stats-bg.png')" }}
+        style={{ backgroundImage: "url('/images/herrroo/gfs.png')" }}
       />
       <div className="absolute inset-0 bg-[#1a3a6b]/80" />
 
