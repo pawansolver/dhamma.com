@@ -63,7 +63,7 @@ function ParticleButton({
     const [showParticles, setShowParticles] = useState(false);
     const buttonRef = useRef<HTMLButtonElement>(null);
 
-    const handleClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    const handleClick: ButtonProps["onClick"] = (e) => {
         setShowParticles(true);
         if (onClick) {
             onClick(e);
