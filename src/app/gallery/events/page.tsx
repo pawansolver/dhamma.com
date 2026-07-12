@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -123,7 +123,7 @@ export default function EventsPage() {
                         Events &amp; Programs
                     </h1>
                     <p className="text-lg text-blue-100 font-medium leading-relaxed max-w-2xl mx-auto opacity-95">
-                        Explore upcoming and recent events, cultural festivals, medical seminars and healthcare drives at BHRI Bodhgaya.
+                        Explore upcoming and recent events, cultural festivals, medical seminars and healthcare drives at Dhamma Superspeciality Hospital Patna.
                     </p>
                 </div>
             </section>

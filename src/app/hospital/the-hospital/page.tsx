@@ -89,12 +89,12 @@ export default function HospitalPage() {
     ];
 
     const faqs = [
-        { q: "What kind of hospital is BHRI?", a: "BHRI is a modern multi-speciality hospital and research institute providing comprehensive healthcare services from outpatient consultation to advanced critical care, surgery, and diagnostics — all under one roof in Bodhgaya, Bihar." },
-        { q: "Does BHRI offer 24/7 emergency services?", a: "Yes. Our emergency department operates 24×7 with dedicated trauma care, ambulance support, and rapid response teams to handle critical medical situations at any hour." },
-        { q: "What specialities are available?", a: "BHRI covers 20+ medical specialities including General Medicine, Surgery, Cardiology, Orthopaedics, Paediatrics, Obstetrics & Gynaecology, ENT, Ophthalmology, Psychiatry, Radiology, and many more." },
+        { q: "What kind of hospital Is Dhamma Superspeciality Hospital?", a: "Dhamma Superspeciality Hospital is a modern multi-speciality hospital and research institute providing comprehensive healthcare services from outpatient consultation to advanced critical care, surgery, and diagnostics — all under one roof in Patna, Bihar." },
+        { q: "Does Dhamma Superspeciality Hospital offer 24/7 emergency services?", a: "Yes. Our emergency department operates 24×7 with dedicated trauma care, ambulance support, and rapid response teams to handle critical medical situations at any hour." },
+        { q: "What specialities are available?", a: "Dhamma Superspeciality Hospital covers 20+ medical specialities including General Medicine, Surgery, Cardiology, Orthopaedics, Paediatrics, Obstetrics & Gynaecology, ENT, Ophthalmology, Psychiatry, Radiology, and many more." },
         { q: "Can patients book appointments online?", a: "Yes. Patients can book OPD appointments through our website, by phone, or directly at the hospital reception. Our online system shows available doctors and time slots in real time." },
         { q: "Are the facilities accessible to all patients?", a: "Yes. The hospital is fully wheelchair accessible with ramps, elevators, dedicated washrooms, and patient-assist services for elderly and differently-abled patients." },
-        { q: "Does BHRI have insurance cashless tie-ups?", a: "Yes. We have cashless tie-ups with major insurance providers and TPAs. Patients can avail cashless treatment after pre-authorisation through our insurance desk." },
+        { q: "Does Dhamma Superspeciality Hospital have insurance cashless tie-ups?", a: "Yes. We have cashless tie-ups with major insurance providers and TPAs. Patients can avail cashless treatment after pre-authorisation through our insurance desk." },
     ];
 
     return (
@@ -175,7 +175,7 @@ export default function HospitalPage() {
                     <motion.div {...fadeUp()} className="flex items-start gap-3 mb-10">
                         <span className="text-2xl">âœ»</span>
                         <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#1a1a1a]/60 max-w-xs leading-relaxed">
-                            Buddha Hospital &amp; Research Institute<br />Where care begins, healing follows.
+                            Dhamma Superspeciality Hospital<br />Where care begins, healing follows.
                         </p>
                     </motion.div>
 
@@ -298,7 +298,7 @@ export default function HospitalPage() {
                             Everyone.<br />Everywhere.
                         </h2>
                         <p className="text-[#1a1a1a]/65 text-base leading-relaxed mb-10 max-w-md">
-                            Healthcare shouldn&apos;t be limited by income, location, or time. BHRI exists to bring world-class clinical care into the hands of every family in Bihar.
+                            Healthcare shouldn&apos;t be limited by income, location, or time. Dhamma Superspeciality Hospital exists to bring world-class clinical care into the hands of every family in Bihar.
                         </p>
                         <Link
                             href="/contact"
@@ -397,11 +397,11 @@ export default function HospitalPage() {
                         </p>
                         <div className="flex flex-wrap gap-3 sm:gap-4">
                             <button onClick={openBooking} className="btn-inverse"><CalendarCheck size={16} /> Book Appointment</button>
-                            <a href="tel:+918603048174"
+                            <a href="tel:+917643990301"
                                 className="inline-flex items-center gap-2 sm:gap-3 bg-white/8 hover:bg-white/15 text-white font-semibold px-4 py-2 sm:px-8 sm:py-3.5 rounded-full border border-white/15 transition-all text-[11px] sm:text-sm"
                             >
                                 <Phone size={12} className="flex-shrink-0 sm:w-3.5 sm:h-3.5" />
-                                <span className="whitespace-nowrap">+91 8603048174 / 9060646592</span>
+                                <span className="whitespace-nowrap">+91 7643990301 / +9176439 90302</span>
                             </a>
                         </div>
                     </motion.div>

@@ -248,7 +248,7 @@ export default function AcademicComplexPage() {
                                         <div className="text-center py-4">
                                             <Award size={36} className="text-emerald-400 mx-auto mb-2 animate-bounce" />
                                             <h4 className="text-xs font-bold text-emerald-400 mb-1">CPR Simulation Completed Successfully!</h4>
-                                            <p className="text-[10px] text-slate-400 mb-4">Patient stabilized. Skills certifications logged on BHRI node.</p>
+                                            <p className="text-[10px] text-slate-400 mb-4">Patient stabilized. Skills certifications logged on Dhamma node.</p>
                                             <button onClick={() => setSimStep(0)} className="px-4 py-1.5 bg-slate-800 hover:bg-slate-700 text-[10px] font-bold rounded-lg transition-colors border border-slate-700 text-slate-100">Run Again</button>
                                         </div>
                                     )}

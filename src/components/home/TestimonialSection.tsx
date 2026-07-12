@@ -14,7 +14,7 @@ const testimonials = [
   },
   {
     rating: 4.5,
-    text: "I am deeply satisfied with the high-quality care at Dhamma Hospital. The doctors made the treatment plan clear and delivered prompt care. The nursing team was easy to talk to and provided daily updates.",
+    text: "I am deeply satisfied with the high-quality care at Dhamma Superspeciality Hospital. The doctors made the treatment plan clear and delivered prompt care. The nursing team was easy to talk to and provided daily updates.",
     name: "Priya Sharma",
     title: "Family Member",
     image: "/images/why-choose/expert-faculty.png",

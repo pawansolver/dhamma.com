@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import { Megaphone, Search, ChevronLeft, ChevronRight, FileText, ImageIcon } from "lucide-react";
@@ -98,7 +98,7 @@ export default function AnnouncementsListingPage() {
           <p className="text-brandSaffron text-xs font-bold tracking-[0.25em] uppercase mb-2">Announcements</p>
           <h1 className="text-3xl md:text-4xl font-extrabold !text-white">Important Announcements</h1>
           <p className="text-white/70 text-sm md:text-base mt-2 max-w-2xl">
-            Stay informed about the latest announcements, circulars and important updates from BHRI Bodhgaya.
+            Stay informed about the latest announcements, circulars and important updates from Dhamma Superspeciality Hospital Patna.
           </p>
 
           <form onSubmit={handleSearch} className="mt-6 flex max-w-md gap-2">

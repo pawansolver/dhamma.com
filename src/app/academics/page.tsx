@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import Link from "next/link";
@@ -107,7 +107,7 @@ export default function AcademicsHubPage() {
                         Academics Portal
                     </h1>
                     <p className="text-lg lg:text-xl text-blue-100 font-medium mb-10 leading-relaxed max-w-2xl mx-auto opacity-95">
-                        Fostering state-of-the-art medical education under strict National Medical Commission guidelines at Buddha Hospital &amp; Research Institute.
+                        Fostering state-of-the-art medical education under strict National Medical Commission guidelines at Dhamma Superspeciality Hospital.
                     </p>
                 </div>
             </section>

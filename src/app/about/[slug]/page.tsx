@@ -122,7 +122,7 @@ const AboutOverview = () => {
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="/logo.png" // Using logo as a pattern if background image is not available
-                        alt="BHRI Hospital"
+                        alt="Dhamma Superspeciality Hospital"
                         fill
                         className="object-contain opacity-5 scale-150 rotate-12"
                         priority
@@ -142,11 +142,11 @@ const AboutOverview = () => {
                             </span>
                             <h1 className="text-5xl md:text-8xl font-black text-white leading-[1.05] uppercase tracking-tighter mb-8">
                                 Healing with <br />
-                                <span className="text-brandSaffronLight">Innovation</span> & <br />
+                                <span className="text-brandSaffronLight">Innovation</span> &amp; <br />
                                 Integrity
                             </h1>
                             <p className="text-white/80 text-lg md:text-xl font-medium max-w-2xl leading-relaxed mb-10">
-                                Buddha Hospital & Research Institute (BHRI) is a trusted healthcare destination in Gaya, committed to delivering quality medical care with compassion and modern technology.
+                                Dhamma Superspeciality Hospital is a trusted healthcare destination in Patna, committed to delivering quality medical care with compassion and modern technology.
                             </p>
                             <div className="flex flex-wrap gap-5">
                                 <SparkleButton href="/contact">Book Appointment</SparkleButton>
@@ -180,7 +180,7 @@ const AboutOverview = () => {
                                 We are a multi-speciality hospital and research institute focused on advanced patient care, medical education, and community health development.
                             </p>
                             <p className="text-slate-500 mb-8">
-                                BHRI is built with a vision to become a leading healthcare institution in Bihar and Eastern India, combining advanced medical technology with experienced healthcare professionals.
+                                Dhamma Superspeciality Hospital is built with a vision to become a leading healthcare institution in Bihar and Eastern India, combining advanced medical technology with experienced healthcare professionals.
                             </p>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
                                 {[
@@ -333,7 +333,7 @@ const AboutOverview = () => {
                         <div className="relative z-10">
                             <SectionHeading subtitle="Our Impact" title="Community & Social Work" centered={false} />
                             <p className="text-white/70 text-lg mb-12 max-w-xl font-medium">
-                                At BHRI, we believe healthcare should reach everyone. We actively bridge the gap in underserved areas through dedicated programs.
+                                At Dhamma Superspeciality Hospital, we believe healthcare should reach everyone. We actively bridge the gap in underserved areas through dedicated programs.
                             </p>
                             <div className="space-y-6">
                                 {[
@@ -413,19 +413,19 @@ const AboutOverview = () => {
                 </div>
             </section>
 
-            {/* --- WHY CHOOSE BHRI (Premium Icon Grid) --- */}
+            {/* --- WHY CHOOSE Dhamma Superspeciality Hospital (Premium Icon Grid) --- */}}
             <section className="section-padding bg-brandBlue relative overflow-hidden">
                 <div className="absolute inset-0 opacity-5 bg-[url('/grid-pattern.png')] bg-repeat" />
                 <div className="container-custom relative z-10">
                     <div className="text-center mb-20">
                         <span className="text-brandSaffron font-black text-xs uppercase tracking-[0.4em] mb-4 block">Advantages</span>
-                        <h2 className="section-heading-white">Why Choose BHRI?</h2>
+                        <h2 className="section-heading-white">Why Choose Dhamma Superspeciality Hospital?</h2>
                         <div className="h-1.5 w-20 bg-brandSaffron mx-auto mt-8 rounded-full" />
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-[3rem] overflow-hidden backdrop-blur-sm">
                         {[
-                            { title: "Trusted in Gaya", icon: Award, desc: "Reliable healthcare provider for the region." },
+                            { title: "Trusted in Patna", icon: Award, desc: "Reliable healthcare provider for the region." },
                             { title: "Affordable Care", icon: ShieldCheck, desc: "Quality treatment that is accessible to all." },
                             { title: "Expert Doctors", icon: UserCheck, desc: "Highly experienced medical professionals." },
                             { title: "Modern Facilities", icon: Zap, desc: "Latest medical equipment and infrastructure." },
@@ -496,7 +496,7 @@ const AboutOverview = () => {
                             <div className="flex-1">
                                 <SectionHeading subtitle="Deep Dive" title="Our Commitment to Quality" centered={false} />
                                 <p className="text-slate-600 text-lg leading-relaxed mb-6 font-medium">
-                                    Buddha Hospital & Research Institute is dedicated to redefining healthcare standards in the region by integrating modern medical practices with compassionate patient care. With a strong focus on quality, safety, and accessibility, BHRI ensures that every patient receives personalized attention and the best possible treatment.
+                                    Dhamma Superspeciality Hospital is dedicated to redefining healthcare standards in the region by integrating modern medical practices with compassionate patient care. With a strong focus on quality, safety, and accessibility, Dhamma Superspeciality Hospital ensures that every patient receives personalized attention and the best possible treatment.
                                 </p>
                                 <p className="text-slate-500 text-md leading-relaxed font-medium">
                                     Our institution is continuously evolving to meet the growing healthcare needs of society. From advanced diagnostics to specialized treatments, we strive to deliver excellence at every level. We also emphasize preventive healthcare and community outreach programs to promote healthier lifestyles.
@@ -509,7 +509,7 @@ const AboutOverview = () => {
                                     </div>
                                     <Star className="text-brandSaffron mb-6 relative z-10" size={40} />
                                     <h6 className="text-2xl font-black uppercase tracking-tight mb-4 relative z-10">Excellence in Every Step</h6>
-                                    <p className="text-white/60 text-sm italic relative z-10">"Your health is our priority. We are here to serve Gaya with the best of medicine and care."</p>
+                                    <p className="text-white/60 text-sm italic relative z-10">"Your health is our priority. We are here to serve Patna with the best of medicine and care."</p>
                                 </div>
                             </div>
                         </div>
@@ -526,7 +526,7 @@ const AboutOverview = () => {
                         Your Health is <br /> Our Priority
                     </h2>
                     <p className="text-white text-xl font-bold mb-12 uppercase tracking-[0.2em]">
-                        Visit BHRI today and experience healthcare with care, trust, and excellence.
+                        Visit Dhamma Superspeciality Hospital today and experience healthcare with care, trust, and excellence.
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
                         <button className="bg-white text-brandSaffron px-12 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-brandBlue hover:text-white transition-all duration-300 shadow-2xl">

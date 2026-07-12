@@ -7,7 +7,7 @@ const videos = [
   { id: "dQw4w9WgXcQ", title: "Hospital Overview" },
   { id: "dQw4w9WgXcQ", title: "Campus Tour" },
   { id: "dQw4w9WgXcQ", title: "Medical Facilities" },
-  { id: "dQw4w9WgXcQ", title: "Student Life at BHRI" },
+  { id: "dQw4w9WgXcQ", title: "Student Life at Dhamma Superspeciality Hospital" },
   { id: "dQw4w9WgXcQ", title: "OPD & Emergency Services" },
   { id: "dQw4w9WgXcQ", title: "Annual Day Celebration" },
 ];
@@ -28,7 +28,7 @@ export default function VideoGalleryPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/80 to-transparent z-10" />
           <Image 
             src="/images/gallery/gallery-3.png"
-            alt="BHRI Video Gallery"
+            alt="Dhamma Superspeciality Hospital Video Gallery"
             fill
             className="object-cover"
             priority
@@ -42,7 +42,7 @@ export default function VideoGalleryPage() {
             transition={{ duration: 0.8 }}
           >
             <span className="inline-block py-1.5 px-4 bg-white/10 backdrop-blur-md rounded-full text-white font-semibold tracking-[0.2em] text-xs mb-6 border border-white/20 uppercase">
-              BHRI Broadcasts
+              Dhamma Superspeciality Hospital Broadcasts
             </span>
             <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl" style={{ fontFamily: serifFont }}>
               Video Gallery

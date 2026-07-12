@@ -17,9 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "dhammainstitute.com",
+  title: "Dhamma Superspeciality Hospital | Patna, Bihar",
   description:
-    " dhammainstitute — Leading healthcare and medical education in Bihar. सेवा परमो धर्म:",
+    "Dhamma Superspeciality Hospital — Leading multi-speciality healthcare in Patna, Bihar. Expert doctors, advanced diagnostics, 24/7 emergency. सेवा परमो धर्म:",
   icons: {
     icon: "/logo.png",
   },

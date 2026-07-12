@@ -1,4 +1,4 @@
-import { Activity, Microscope, HeartPulse, Globe, Users, ShieldCheck, Clock, Stethoscope, Bed, Zap, AlertTriangle, FlaskConical, Brain } from "lucide-react";
+﻿import { Activity, Microscope, HeartPulse, Globe, Users, ShieldCheck, Clock, Stethoscope, Bed, Zap, AlertTriangle, FlaskConical, Brain } from "lucide-react";
 import type { HospitalSubData } from "./HospitalSubPage";
 
 export const hospitalSubData: Record<string, HospitalSubData> = {
@@ -18,7 +18,7 @@ export const hospitalSubData: Record<string, HospitalSubData> = {
     introHeadline: "Modern OPD Care — for People and Practitioners.",
     introCards: [
       { value: "20+", unit: "specs", title: "Consultation Rooms", desc: "Multi-speciality rooms for general medicine, surgery, paediatrics, ortho & more.", img: "/hospital_opd_hd.png" },
-      { value: "500+", unit: "daily", title: "Patient Footfall", desc: "Trusted daily by 500+ patients from Gaya, Bodhgaya and surrounding districts.", img: "/hospital_interior_hd.png" },
+      { value: "500+", unit: "daily", title: "Patient Footfall", desc: "Trusted daily by 500+ patients from Patna and surrounding districts.", img: "/hospital_interior_hd.png" },
       { value: "Smart", unit: "queue", title: "Token System", desc: "Digital token & SMS alerts — minimal waiting, maximum efficiency.", img: "/hospital_hero_hd.png" },
       { value: "Online", unit: "book", title: "Easy Booking", desc: "Book your OPD slot online or via phone — confirmation in seconds.", img: "/hospital_icu_hd.png" },
     ],
@@ -41,7 +41,7 @@ export const hospitalSubData: Record<string, HospitalSubData> = {
       { num: "06", title: "Health Check-ups", desc: "Preventive health packages — basic, comprehensive, and executive." },
     ],
     splitHeading: "One stop.\nOne visit.",
-    splitText: "From consultation to lab tests, imaging, and pharmacy — every OPD visit at BHRI is designed to be complete and stress-free. Walk in for a consultation, walk out with all your reports and prescriptions in hand.",
+    splitText: "From consultation to lab tests, imaging, and pharmacy — every OPD visit at Dhamma Superspeciality Hospital is designed to be complete and stress-free. Walk in for a consultation, walk out with all your reports and prescriptions in hand.",
     splitBadgeTitle: "OPD Reception",
     splitBadgeSub: "Open Mon-Sat, 9 AM – 4 PM",
     facilities: [
@@ -62,7 +62,7 @@ export const hospitalSubData: Record<string, HospitalSubData> = {
     ],
     faqs: [
       { q: "What are the OPD timings?", a: "Our OPD operates Monday to Saturday from 9:00 AM to 4:00 PM. Sundays are reserved for emergency consultations only. Specialist clinics may have specific days — please check the schedule before visiting." },
-      { q: "How can I book an OPD appointment?", a: "You can book an OPD appointment online via our website, by calling our 24×7 helpline at +91 8603048174 / 9060646592, or by walking into our reception. Online booking lets you choose your doctor and time slot." },
+      { q: "How can I book an OPD appointment?", a: "You can book an OPD appointment online via our website, by calling our 24×7 helpline at +91 7643990301 / +9176439 90302, or by walking into our reception. Online booking lets you choose your doctor and time slot." },
       { q: "Do I need a referral to see a specialist?", a: "No. You can directly book a specialist OPD appointment without any referral. However, having previous medical records helps the specialist provide better care." },
       { q: "What documents should I bring?", a: "Bring any past medical records, prescriptions, lab reports, and a valid ID proof. If you are using insurance, also bring your insurance card or policy details." },
       { q: "Are OPD consultations available for children?", a: "Yes. We have a dedicated Paediatric OPD with child-friendly consultation rooms, vaccination clinic, and growth monitoring. Daily timings are 9 AM – 1 PM with evening slots on selected days." },
@@ -111,7 +111,7 @@ export const hospitalSubData: Record<string, HospitalSubData> = {
       { num: "06", title: "Day Care Services", desc: "Short-stay wards for chemotherapy, dialysis, and day procedures." },
     ],
     splitHeading: "Healing,\nin every room.",
-    splitText: "Every patient at BHRI receives more than just treatment — they receive an environment built for healing. Clean, comfortable wards, dedicated nursing care, and modern medical equipment ensure that every stay is focused on recovery and dignity.",
+    splitText: "Every patient at Dhamma Superspeciality Hospital receives more than just treatment — they receive an environment built for healing. Clean, comfortable wards, dedicated nursing care, and modern medical equipment ensure that every stay is focused on recovery and dignity.",
     splitBadgeTitle: "Critical Care Unit",
     splitBadgeSub: "ICU, NICU & PICU available",
     facilities: [
@@ -133,7 +133,7 @@ export const hospitalSubData: Record<string, HospitalSubData> = {
     faqs: [
       { q: "What types of rooms are available?", a: "We offer general wards, semi-private rooms, private rooms, and deluxe suites. Each option includes a bed, basic furniture, attached or shared washroom, and 24×7 nursing care. Private rooms include AC, TV, Wi-Fi, and an attendant bed." },
       { q: "Can a family member stay with the patient?", a: "Yes. Private rooms include an attendant bed. Even in general wards, one family attendant is allowed during specified hours. ICU patients have controlled visiting hours for safety." },
-      { q: "How is critical care different at BHRI?", a: "Our ICU, NICU and PICU are equipped with modern ventilators, monitors, and specialised staff. Intensivists and trained ICU nurses provide round-the-clock care with dedicated 1:2 nurse-patient ratio." },
+      { q: "How is critical care different at Dhamma Superspeciality Hospital?", a: "Our ICU, NICU and PICU are equipped with modern ventilators, monitors, and specialised staff. Intensivists and trained ICU nurses provide round-the-clock care with dedicated 1:2 nurse-patient ratio." },
       { q: "What is the cost for inpatient services?", a: "Costs vary by room type, treatment, and length of stay. We offer transparent billing, insurance cashless tie-ups, and counselling for treatment estimates. Ask our admissions desk for a detailed package." },
       { q: "Do you offer cashless insurance for admissions?", a: "Yes. We have cashless tie-ups with major TPAs and government schemes (Ayushman Bharat, CGHS, ECHS). Pre-authorisation is required — our insurance desk handles the entire process." },
       { q: "Are visitors allowed in the wards?", a: "Yes, with restrictions. General wards: 4–7 PM daily. ICU/NICU: 11 AM–12 noon and 5–6 PM, one visitor at a time. Children below 12 not allowed in critical care areas." },
@@ -201,11 +201,11 @@ export const hospitalSubData: Record<string, HospitalSubData> = {
       { value: "24×7", label: "Emergency Lab" },
     ],
     faqs: [
-      { q: "What diagnostic services are available at BHRI?", a: "We offer comprehensive diagnostics including pathology (histopath, cytology), clinical biochemistry, haematology, microbiology, immunology, cardiac diagnostics (ECG, echo), and full imaging (X-ray, USG, CT, MRI, mammography)." },
+      { q: "What diagnostic services are available at Dhamma Superspeciality Hospital?", a: "We offer comprehensive diagnostics including pathology (histopath, cytology), clinical biochemistry, haematology, microbiology, immunology, cardiac diagnostics (ECG, echo), and full imaging (X-ray, USG, CT, MRI, mammography)." },
       { q: "How quickly will I get my reports?", a: "Most routine lab reports are ready within 4–24 hours. Specialised tests like culture-sensitivity may take 48–72 hours. Imaging reports are typically available the same day. Emergency reports are processed within an hour." },
       { q: "Can I get my reports online?", a: "Yes. All reports are available digitally — sent via email and accessible through our patient portal/app. You can also collect a printed copy from the diagnostics counter." },
       { q: "Do I need a doctor's referral for tests?", a: "Most routine tests can be done without a referral, but for some specialised investigations (like advanced MRI sequences or invasive biopsies), a doctor's prescription is recommended for accurate clinical correlation." },
-      { q: "Is home sample collection available?", a: "Yes. We provide home sample collection for blood, urine, and stool tests within Gaya city. Call our diagnostic helpline to schedule a collection at your preferred time." },
+      { q: "Is home sample collection available?", a: "Yes. We provide home sample collection for blood, urine, and stool tests within Patna city. Call our diagnostic helpline to schedule a collection at your preferred time." },
       { q: "Are the reports recognised by other hospitals?", a: "Absolutely. Our pathology and imaging reports are NABL-grade quality and are recognised by all major hospitals, insurers, and government schemes across India." },
     ],
     ctaHeadingLine1: "Trusted reports,",
@@ -271,8 +271,8 @@ export const hospitalSubData: Record<string, HospitalSubData> = {
       { value: "ICU", label: "Direct Access" },
     ],
     faqs: [
-      { q: "What should I do in a medical emergency?", a: "Call our emergency helpline immediately at +91 8603048174 / 9060646592. Our ambulance team can reach you while you walk in — both work in parallel. Our ER is open 24×7 with no appointment needed for emergencies." },
-      { q: "Do you have ambulance services?", a: "Yes. We operate Advanced Life Support (ALS) ambulances equipped with ventilators, defibrillators, and trained paramedics. Call our helpline — average ambulance response time within Gaya city is 10–15 minutes." },
+      { q: "What should I do in a medical emergency?", a: "Call our emergency helpline immediately at +91 7643990301 / +9176439 90302. Our ambulance team can reach you while you walk in — both work in parallel. Our ER is open 24×7 with no appointment needed for emergencies." },
+      { q: "Do you have ambulance services?", a: "Yes. We operate Advanced Life Support (ALS) ambulances equipped with ventilators, defibrillators, and trained paramedics. Call our helpline — average ambulance response time within Patna city is 10–15 minutes." },
       { q: "What kind of emergencies do you handle?", a: "All types — trauma & accidents, cardiac (heart attack, arrhythmia), stroke, paediatric emergencies, obstetric, poisoning, snakebite, severe infections. Our multi-specialty team is on call for every situation." },
       { q: "Is the emergency room open at night?", a: "Yes. Our ER operates 24 hours a day, 7 days a week, including all holidays. Senior doctors and trained nursing staff are present every hour. Specialists are on-call for immediate consultation." },
       { q: "Will insurance cover emergency treatment?", a: "Yes, most insurance policies cover emergency care. Our 24×7 insurance desk handles cashless authorisation immediately for emergencies. If pre-auth is delayed, we admit first and process the paperwork in parallel." },

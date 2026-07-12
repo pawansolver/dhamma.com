@@ -37,7 +37,7 @@ export default function ContactPage() {
                         <span className="text-blue-600 font-bold text-sm uppercase tracking-widest mb-3 block">Reach Out</span>
                         <h2 className="section-heading" style={{ fontFamily: serifFont }}>Location &amp; Highlights</h2>
                         <p className="text-slate-500 max-w-xl mx-auto mt-4 text-sm">
-                            Locate Buddha Hospital &amp; Research Institute on Gaya-Dobhi Road. Browse campus captures and navigate using the interactive map interface below.
+                            Locate Dhamma Superspeciality Hospital in Patna. Browse campus captures and navigate using the interactive map interface below.
                         </p>
                     </div>
 
@@ -55,7 +55,7 @@ export default function ContactPage() {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex flex-col justify-end p-6">
                                     <span className="text-[8px] bg-emerald-500 text-white font-extrabold px-3 py-1 rounded-full uppercase tracking-wider w-fit mb-2">Hospital Wing</span>
-                                    <h4 className="text-white font-bold text-sm font-montserrat">Buddha Hospital Entrance</h4>
+                                    <h4 className="text-white font-bold text-sm font-montserrat">Dhamma Superspeciality Hospital Entrance</h4>
                                     <p className="text-slate-300 text-[10px] mt-1 font-medium">State-of-the-art outpatient OPDs and clinical trauma emergency divisions.</p>
                                 </div>
                             </div>
@@ -80,17 +80,17 @@ export default function ContactPage() {
                             <div>
                                 <span className="text-[10px] font-bold text-blue-600 uppercase tracking-widest block mb-2">Google Map Navigation</span>
                                 <h3 className="text-xl font-bold text-slate-900 mb-3 font-montserrat" style={{ fontFamily: serifFont }}>
-                                    Find Us in Bodhgaya
+                                    Find Us in Patna
                                 </h3>
                                 <p className="text-slate-500 text-xs leading-relaxed mb-6">
-                                    Buddha Hospital &amp; Research Institute is prominently situated on the main **Gaya-Dobhi Road (NH-22)** at Kharanti More, Bodhgaya, Bihar. Use the live interactive map directions for seamless transit.
+                                    Dhamma Superspeciality Hospital is prominently situated **Opposite Canara Bank, Phulwari Sharif, Near AIIMS Gate No. 1, Patna, India, Bihar**. Use the live interactive map directions for seamless transit.
                                 </p>
                             </div>
 
                             {/* Google Map Iframe */}
                             <div className="w-full flex-grow rounded-2xl overflow-hidden shadow-inner border border-slate-200 min-h-[320px] relative bg-slate-200">
                                 <iframe 
-                                    src="https://maps.google.com/maps?q=Buddha+Hospital+%26+Research+Institute,+Kharanti+More,+Tekuna+Farm,+Gaya-Dobhi+Road,+Gaya,+Bihar+823004&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                                    src="https://maps.google.com/maps?q=Opposite+Canara+Bank,+Phulwari+Sharif,+Near+AIIMS+Gate+No.+1,+Patna,+Bihar&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                                     width="100%" 
                                     height="100%" 
                                     style={{ border: 0 }} 

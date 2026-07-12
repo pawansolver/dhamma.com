@@ -28,15 +28,15 @@ export default function NewsTicker() {
   // If no tickers are available, we can either return null or show a default message.
   // We'll show a default message to keep the layout stable.
   const displayTickers = tickers.length > 0 ? tickers : [
-    { id: 'default', textEnglish: 'Welcome to Buddha Hospital & Research Institute', textHindi: '', link: null }
+    { id: 'default', textEnglish: 'Welcome to Dhamma Superspeciality Hospital, Patna', textHindi: '', link: null }
   ];
 
   return (
-    <div className="bg-brandBlueDark border-t-2 border-brandSaffron">
-      <div className="flex items-stretch">
+    <div className="fixed bottom-0 left-0 w-full z-[1000] bg-brandBlueDark border-t-2 border-brandSaffron m-0 p-0">
+      <div className="flex items-stretch w-full">
         {/* Left badge — flush left */}
-        <div className="bg-red-600 flex items-center gap-1 sm:gap-1.5 px-3 sm:px-4 py-2 flex-shrink-0">
-          <span className="text-white text-[10px] sm:text-xs font-extrabold uppercase tracking-wider whitespace-nowrap">
+        <div className="bg-gradient-to-r from-[#C29239] via-[#F4E19C] to-[#C29239] flex items-center gap-1 sm:gap-1.5 px-3 sm:px-4 py-2 flex-shrink-0">
+          <span className="text-[#E53935] text-[10px] sm:text-xs font-extrabold uppercase tracking-wider whitespace-nowrap drop-shadow-sm">
             What&apos;s New
           </span>
         </div>
@@ -58,7 +58,7 @@ export default function NewsTicker() {
                 )}
               </span>
             ))}
-            
+
             {/* Duplicate for seamless marquee if needed, animate-marquee usually handles this with duplicated content in CSS, 
                 but just in case we add it twice for longer screens if there are very few tickers. */}
             {tickers.length > 0 && tickers.length < 5 && displayTickers.map((ticker) => (

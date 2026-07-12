@@ -3,8 +3,8 @@ import { ShieldCheck, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Privacy Policy | BHRI Bodhgaya",
-  description: "Privacy Policy and patient data protection guidelines for Buddha Hospital & Research Institute (BHRI) Gaya.",
+  title: "Privacy Policy | Dhamma Superspeciality Hospital Patna",
+  description: "Privacy Policy and patient data protection guidelines for Dhamma Superspeciality Hospital Patna.",
 };
 
 export default function PrivacyPolicy() {
@@ -34,7 +34,7 @@ export default function PrivacyPolicy() {
                 <section>
                     <h2 className="text-2xl font-bold text-slate-900 mb-4 font-montserrat">1. Commitment to Privacy</h2>
                     <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-                        At Buddha Hospital &amp; Research Institute (BHRI), Bodhgaya, we are deeply committed to protecting the privacy and confidentiality of our patients, students, faculty, and website visitors. This Privacy Policy explains how we collect, use, and safeguard your personal and medical information in compliance with Indian healthcare and data protection standards.
+                        At Dhamma Superspeciality Hospital , Patna, we are deeply committed to protecting the privacy and confidentiality of our patients, students, faculty, and website visitors. This Privacy Policy explains how we collect, use, and safeguard your personal and medical information in compliance with Indian healthcare and data protection standards.
                     </p>
                 </section>
 
@@ -71,7 +71,7 @@ export default function PrivacyPolicy() {
                 <section>
                     <h2 className="text-2xl font-bold text-slate-900 mb-4 font-montserrat">5. Sharing of Information</h2>
                     <p className="text-slate-600 leading-relaxed text-sm md:text-base mb-3">
-                        BHRI does not sell, trade, or rent your personal data to third parties. We may share your information only under the following necessary circumstances:
+                        Dhamma Superspeciality Hospital does not sell, trade, or rent your personal data to third parties. We may share your information only under the following necessary circumstances:
                     </p>
                     <ul className="space-y-3 text-slate-600 list-disc pl-5 text-sm md:text-base leading-relaxed">
                         <li>With specialized doctors, laboratories, or diagnostic centers for referrals and integrated patient care.</li>
@@ -83,7 +83,7 @@ export default function PrivacyPolicy() {
                 <section>
                     <h2 className="text-2xl font-bold text-slate-900 mb-4 font-montserrat">6. Patient Rights</h2>
                     <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-                        You have the right to access your personal health records, request corrections to inaccurate data, and request a copy of your diagnostic reports as per hospital policy. Please note that for medical-legal compliance, the original physical/digital records remain the property of BHRI.
+                        You have the right to access your personal health records, request corrections to inaccurate data, and request a copy of your diagnostic reports as per hospital policy. Please note that for medical-legal compliance, the original physical/digital records remain the property of Dhamma Superspeciality Hospital.
                     </p>
                 </section>
 
@@ -94,11 +94,11 @@ export default function PrivacyPolicy() {
                     </p>
                     <address className="not-italic text-sm text-slate-700 font-medium">
                         <strong>Data Privacy &amp; Records Department</strong><br />
-                        Buddha Hospital &amp; Research Institute<br />
-                        Gaya-Dobhi Road, NH-22, Kharanti More, Tikuna Farm,<br />
-                        Gaya (Bihar)-823004<br />
+                        Dhamma Superspeciality Hospital<br />
+                        Opposite Canara Bank, Phulwari Sharif, Near AIIMS Gate No. 1,<br />
+                        Patna, India, Bihar<br />
                         <br />
-                        <strong>Email:</strong> bhribodhgaya@gmail.com
+                        <strong>Email:</strong> info@dhammainstitute.com
                     </address>
                 </section>
 

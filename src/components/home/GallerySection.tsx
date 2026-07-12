@@ -31,7 +31,7 @@ export default function GallerySection() {
         <h2 className="section-heading">Gallery &amp; Media</h2>
         <span className="section-heading-line" />
         <p className="section-subheading">
-          Explore our campus, facilities, and life at BHRI through photos and videos
+          Explore our campus, facilities, and life at Dhamma Superspeciality Hospital through photos and videos
         </p>
 
         {/* Toggle tabs */}

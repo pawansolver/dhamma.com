@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -26,7 +26,7 @@ const publicationsList: ResearchData[] = [
         authors: "Dr. S. P. Prasad, Dr. Anjana Kumari",
         journal: "Journal of Medical Biochemistry &amp; Diagnostics (2025)",
         indexing: "Index Medicus / PubMed Index",
-        abstract: "A cross-sectional screening study evaluating HbA1c ratios against diagnostic microvascular lipid indexes in diabetic cohorts from Bodhgaya. Concluded that early lipid audits reduce retinopathy outcomes.",
+        abstract: "A cross-sectional screening study evaluating HbA1c ratios against diagnostic microvascular lipid indexes in diabetic cohorts from Patna. Concluded that early lipid audits reduce retinopathy outcomes.",
         tags: ["Biochemistry", "Diabetes"]
     },
     {
@@ -38,7 +38,7 @@ const publicationsList: ResearchData[] = [
         tags: ["Surgery", "Laparoscopy"]
     },
     {
-        title: "Epidemiological study of immunization gaps among rural kids under 5 years: A clinic audit in Gaya Outpost",
+        title: "Epidemiological study of immunization gaps among rural kids under 5 years: A clinic audit in Patna Outpost",
         authors: "Dr. Shalini Sen, Dr. Alok Ranjan",
         journal: "Journal of Preventive &amp; Social Medicine (2025)",
         indexing: "Index Medicus / WHO Index",
@@ -85,7 +85,7 @@ export default function ResearchPage() {
                         Medical Research
                     </h1>
                     <p className="text-lg lg:text-xl text-blue-100 font-medium mb-10 leading-relaxed max-w-2xl mx-auto opacity-95">
-                        Discover scientific journals, ICMR-funded student research projects, drug trial reports, and ongoing clinical case publications at BHRI.
+                        Discover scientific journals, ICMR-funded student research projects, drug trial reports, and ongoing clinical case publications at Dhamma Superspeciality Hospital.
                     </p>
                     <button 
                         onClick={() => document.getElementById("publications")?.scrollIntoView({ behavior: "smooth" })}

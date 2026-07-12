@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -47,7 +47,7 @@ export default function StudentDetailsPage() {
                         Student Details
                     </h1>
                     <p className="text-lg lg:text-xl text-blue-100 font-medium mb-10 leading-relaxed max-w-2xl mx-auto opacity-95">
-                        Student batch ratios, gender-harassment cell guidelines, anti-ragging undertakings, and chief advisor list at BHRI.
+                        Student batch ratios, gender-harassment cell guidelines, anti-ragging undertakings, and chief advisor list at Dhamma Superspeciality Hospital.
                     </p>
                     <button 
                         onClick={() => document.getElementById("batches")?.scrollIntoView({ behavior: "smooth" })}

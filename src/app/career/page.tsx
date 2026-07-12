@@ -116,10 +116,10 @@ export default function CareerPage() {
                         <Briefcase size={12} /> Make a Real Impact on Lives
                     </span>
                     <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 font-montserrat leading-tight" style={{ fontFamily: serifFont }}>
-                        Careers at BHRI
+                        Careers at Dhamma Superspeciality Hospital
                     </h1>
                     <p className="text-lg lg:text-xl text-blue-100 font-medium mb-10 leading-relaxed max-w-2xl mx-auto opacity-95">
-                        Join a fast-growing, prestigious medical academy and research hospital. Shape the future of medical education and clinical care in Bodhgaya.
+                        Join a fast-growing, prestigious medical academy and research hospital. Shape the future of medical education and clinical care in Patna.
                     </p>
                     <button
                         onClick={() => document.getElementById("jobs")?.scrollIntoView({ behavior: "smooth" })}
@@ -134,7 +134,7 @@ export default function CareerPage() {
             <section className="py-24 bg-white relative">
                 <div className="max-w-7xl mx-auto px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <span className="text-teal-600 font-bold text-sm uppercase tracking-widest mb-3 block">Why Choose BHRI?</span>
+                        <span className="text-teal-600 font-bold text-sm uppercase tracking-widest mb-3 block">Why Choose Dhamma Superspeciality Hospital?</span>
                         <h2 className="section-heading" style={{ fontFamily: serifFont }}>Fostering Growth &amp; Care</h2>
                         <p className="text-slate-500 max-w-xl mx-auto mt-4 text-sm">
                             We believe that supporting our medical, nursing, and administrative staff is essential to delivering compassionate, premium patient outcomes.
@@ -241,8 +241,8 @@ export default function CareerPage() {
 
                                             <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-[10px] text-slate-400 font-semibold border-t border-slate-100 pt-3">
                                                 <span>Experience: {job.experience}</span>
-                                                <span>•</span>
-                                                <span>Location: Bodhgaya Campus</span>
+                                                <span>—</span>
+                                                <span>Location: Patna Campus</span>
                                             </div>
                                         </div>
 
@@ -385,7 +385,7 @@ export default function CareerPage() {
                             <div className="border-b border-slate-100 pb-4 mb-6">
                                 <span className="text-[8px] bg-teal-50 text-teal-700 border border-teal-100 font-extrabold px-3 py-0.5 rounded-full uppercase tracking-wider block h-fit w-fit mb-2">{selectedJob.department} Division</span>
                                 <h3 className="text-xl font-bold text-slate-900 font-montserrat leading-tight" dangerouslySetInnerHTML={{ __html: selectedJob.title }} />
-                                <p className="text-slate-500 text-[10px] mt-1 font-bold">Lending desk window: {selectedJob.vacancies} • gaya campus</p>
+                                <p className="text-slate-500 text-[10px] mt-1 font-bold">Lending desk window: {selectedJob.vacancies} — patna campus</p>
                             </div>
 
                             <div className="space-y-4 mb-6">

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
@@ -129,7 +129,7 @@ export default function FacultyDoctorsPage() {
                         Our Distinguished Faculty
                     </h1>
                     <p className="text-blue-200 text-base lg:text-lg max-w-2xl mx-auto">
-                        Meet the experienced medical professionals shaping the future of healthcare at BHRI Bodhgaya.
+                        Meet the experienced medical professionals shaping the future of healthcare at Dhamma Superspeciality Hospital Patna.
                     </p>
                 </div>
             </section>
@@ -239,7 +239,7 @@ export default function FacultyDoctorsPage() {
                                                 
                                                 <div className="flex items-center gap-1.5 text-slate-500">
                                                     <Clock size={12} className="text-[#9333ea]" />
-                                                    <span className="text-[11px] font-medium">{doc.experience || "BHRI Bodhgaya"}</span>
+                                                    <span className="text-[11px] font-medium">{doc.experience || "Dhamma Superspeciality Hospital Patna"}</span>
                                                 </div>
                                             </div>
 
@@ -387,7 +387,7 @@ export default function FacultyDoctorsPage() {
                                     <div className="bg-slate-50 rounded-2xl p-4 flex items-center justify-between">
                                         <div>
                                             <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">OPD Booking</p>
-                                            <p className="text-base font-black text-emerald-600 mt-0.5">+91 8603048174 / 9060646592</p>
+                                            <p className="text-base font-black text-emerald-600 mt-0.5">+91 7643990301 / +9176439 90302</p>
                                         </div>
                                         <Phone size={20} className="text-slate-300" />
                                     </div>

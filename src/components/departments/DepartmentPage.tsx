@@ -130,7 +130,7 @@ export default function DepartmentPage({ data }: { data: DeptData }) {
             className="text-[11px] font-bold uppercase tracking-[0.28em] text-teal-400 mb-4 flex items-center gap-2"
           >
             <span className="w-6 h-px bg-teal-500" />
-            BHRI Department
+            Dhamma Superspeciality Hospital
           </motion.p>
 
           {/* Title */}
@@ -166,11 +166,11 @@ export default function DepartmentPage({ data }: { data: DeptData }) {
             >
               Book Consultation <ArrowRight size={15} />
             </button>
-            <a href="tel:+918603048174"
+            <a href="tel:+917643990301"
               className="inline-flex items-center gap-2 sm:gap-3 border border-white/20 text-white/80 px-4 py-2 sm:px-6 sm:py-3.5 rounded-full text-[11px] sm:text-sm hover:border-white/50 hover:text-white transition-all"
             >
               <Phone size={12} className="flex-shrink-0 sm:w-3.5 sm:h-3.5" />
-              <span className="whitespace-nowrap">+91 8603048174 / 9060646592</span>
+              <span className="whitespace-nowrap">+91 7643990301 / +9176439 90302</span>
             </a>
           </motion.div>
         </div>
@@ -267,7 +267,7 @@ export default function DepartmentPage({ data }: { data: DeptData }) {
                 className="absolute bottom-8 left-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-5 py-3"
               >
                 <p className="text-white font-extrabold text-sm">{data.name}</p>
-                <p className="text-white/50 text-xs mt-0.5">BHRI, Bodhgaya</p>
+                <p className="text-white/50 text-xs mt-0.5">Dhamma Superspeciality Hospital, Patna</p>
               </motion.div>
             </div>
 
@@ -388,11 +388,11 @@ export default function DepartmentPage({ data }: { data: DeptData }) {
               >
                 <CalendarCheck size={16} /> Book Appointment
               </button>
-              <a href="tel:+918603048174"
+              <a href="tel:+917643990301"
                 className="inline-flex items-center gap-2 sm:gap-3 bg-white/8 hover:bg-white/15 text-white font-semibold px-4 py-2 sm:px-8 sm:py-3.5 rounded-full border border-white/15 transition-all text-[11px] sm:text-sm"
               >
                 <Phone size={12} className="flex-shrink-0 sm:w-3.5 sm:h-3.5" />
-                <span className="whitespace-nowrap">+91 8603048174 / 9060646592</span>
+                <span className="whitespace-nowrap">+91 7643990301 / +9176439 90302</span>
               </a>
             </div>
           </motion.div>

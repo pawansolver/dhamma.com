@@ -631,7 +631,7 @@ body {
 }
 
 /* ==============================================================
-   ☸️ BUDDHA THEME GOLDEN ACCENTS (Global Headings & Bold Text)
+   ☸️ DHAMMA THEME GOLDEN ACCENTS (Global Headings & Bold Text)
    ============================================================== */
 
 /* Target headings globally with exclusion of navigation, header actions, footers and buttons */
@@ -644,13 +644,13 @@ h6:not(nav *, header *, footer *, button *, .btn-primary *, .btn-inverse *, .nav
 .section-heading:not(footer *),
 .heading-xl {
   color: #e6960a !important;
-  /* Buddha Golden Saffron */
+  /* Dhamma Golden Saffron */
 }
 
 /* For section headings on dark backgrounds, make them a bright gold/yellow for readability */
 .section-heading-white {
   color: #f5b731 !important;
-  /* Buddha Bright Saffron */
+  /* Dhamma Bright Saffron */
 }
 
 /* Make section lines use the golden gradient */
@@ -665,7 +665,7 @@ p strong,
 li strong,
 span strong {
   color: #e6960a !important;
-  /* Buddha Golden Saffron for bold text */
+  /* Dhamma Golden Saffron for bold text */
 }
 
 /* ═══════════════════════════════════════════════════════

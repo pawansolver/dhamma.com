@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -100,7 +100,7 @@ export default function NoticesListingPage() {
           <p className="text-brandSaffron text-xs font-bold tracking-[0.25em] uppercase mb-2">Notices &amp; Updates</p>
           <h1 className="text-3xl md:text-4xl font-extrabold !text-white">Latest Hospital &amp; Academic Notices</h1>
           <p className="text-white/70 text-sm md:text-base mt-2 max-w-2xl">
-            Stay informed about announcements, circulars, results and important updates from BHRI Bodhgaya.
+            Stay informed about announcements, circulars, results and important updates from Dhamma Superspeciality Hospital Patna.
           </p>
 
           <form onSubmit={handleSearch} className="mt-6 flex max-w-md gap-2">

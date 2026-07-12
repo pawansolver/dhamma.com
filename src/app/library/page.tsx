@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -113,7 +113,7 @@ export default function LibraryPage() {
 
                 <div className="relative z-20 text-center px-6 max-w-4xl mx-auto -mt-6">
                     <span className="inline-flex items-center gap-2 py-1.5 px-4 bg-indigo-500/10 backdrop-blur-md rounded-full font-bold tracking-widest text-[10px] uppercase border border-indigo-500/30 text-indigo-300 mb-6">
-                        <BookOpen size={12} /> The Intellectual Heart of BHRI
+                        <BookOpen size={12} /> The Intellectual Heart of Dhamma Superspeciality Hospital
                     </span>
                     <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 font-montserrat leading-tight" style={{ fontFamily: serifFont }}>
                         Central Library

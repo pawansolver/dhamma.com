@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, Bookmark } from "lucide-react";
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
@@ -46,84 +46,124 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact-form" className="py-14 md:py-20 bg-white">
+    <section id="contact-form" className="py-14 md:py-20 bg-[#fcfbf7]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+          
+          {/* ── LEFT — Image with Glassmorphism Info Panel ── */}
+          <div className="relative rounded-[2rem] overflow-hidden shadow-lg h-[500px] lg:h-[650px]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/herrroo/gfs.png"
+              alt="Doctor at Dhamma Superspeciality Hospital"
+              className="w-full h-full object-cover object-center"
+            />
+            {/* Glassmorphism Panel */}
+            <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-black/30 backdrop-blur-md border border-white/20 text-white flex flex-col gap-5">
+              <div className="flex items-center gap-4">
+                <Phone className="w-5 h-5 flex-shrink-0" />
+                <div>
+                  <div className="font-bold text-base">Phone</div>
+                  <div className="text-white/80 text-sm">+91 7643990301 / +9176439 90302</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-4">
+                <Mail className="w-5 h-5 flex-shrink-0" />
+                <div>
+                  <div className="font-bold text-base">Email</div>
+                  <div className="text-white/80 text-sm">info@dhammainstitute.com</div>
+                </div>
+              </div>
+              <div className="flex items-center gap-4">
+                <MapPin className="w-5 h-5 flex-shrink-0" />
+                <div>
+                  <div className="font-bold text-base">Location</div>
+                  <div className="text-white/80 text-sm">Opposite Canara Bank, Phulwari Sharif, Near AIIMS Gate No. 1, Patna, India, Bihar</div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          {/* ── LEFT — Teal gradient form card ── */}
-          <div
-            className="rounded-3xl p-8 sm:p-10 flex flex-col justify-between gap-6"
-            style={{ background: "linear-gradient(145deg, #3ecfb8 0%, #1ab4a0 40%, #0e9d8c 100%)" }}
-          >
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4 flex-1">
-              {/* Full name */}
-              <input
-                type="text"
-                name="name"
-                placeholder="Full name *"
-                value={form.name}
-                onChange={handleChange}
-                required
-                className="w-full px-5 py-3.5 rounded-xl bg-white/20 backdrop-blur-sm text-white placeholder-white/80 text-sm font-medium border border-white/10 outline-none focus:bg-white/30 transition"
-              />
+          {/* ── RIGHT — Form ── */}
+          <div className="flex flex-col gap-6 pt-4 lg:pt-8">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-white border border-gray-200 text-[13px] font-semibold text-gray-700 shadow-sm mb-5">
+                <Bookmark className="w-4 h-4 text-emerald-800 fill-emerald-800" />
+                Book Your Visit
+              </div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-2 tracking-tight">Book Appointment</h2>
+            </div>
 
-              {/* Email */}
-              <input
-                type="email"
-                name="email"
-                placeholder="Email address *"
-                value={form.email}
-                onChange={handleChange}
-                required
-                className="w-full px-5 py-3.5 rounded-xl bg-white/20 backdrop-blur-sm text-white placeholder-white/80 text-sm font-medium border border-white/10 outline-none focus:bg-white/30 transition"
-              />
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+              {/* First Name */}
+              <div className="flex flex-col gap-2">
+                <label className="text-black font-bold text-sm">First name</label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter name"
+                  value={form.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3.5 rounded-xl bg-transparent border border-gray-300 text-black placeholder-gray-400 text-sm focus:border-emerald-700 focus:ring-1 focus:ring-emerald-700 outline-none transition"
+                />
+              </div>
 
-              {/* Phone */}
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Phone number *"
-                value={form.phone}
-                onChange={handleChange}
-                required
-                minLength={10}
-                maxLength={12}
-                className="w-full px-5 py-3.5 rounded-xl bg-white/20 backdrop-blur-sm text-white placeholder-white/80 text-sm font-medium border border-white/10 outline-none focus:bg-white/30 transition"
-              />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                {/* Email */}
+                <div className="flex flex-col gap-2">
+                  <label className="text-black font-bold text-sm">Contact Email *</label>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter Email"
+                    value={form.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3.5 rounded-xl bg-transparent border border-gray-300 text-black placeholder-gray-400 text-sm focus:border-emerald-700 focus:ring-1 focus:ring-emerald-700 outline-none transition"
+                  />
+                </div>
+
+                {/* Phone */}
+                <div className="flex flex-col gap-2">
+                  <label className="text-black font-bold text-sm">Contact Number *</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Enter Number"
+                    value={form.phone}
+                    onChange={handleChange}
+                    required
+                    minLength={10}
+                    maxLength={12}
+                    className="w-full px-4 py-3.5 rounded-xl bg-transparent border border-gray-300 text-black placeholder-gray-400 text-sm focus:border-emerald-700 focus:ring-1 focus:ring-emerald-700 outline-none transition"
+                  />
+                </div>
+              </div>
 
               {/* Message */}
-              <input
-                type="text"
-                name="message"
-                placeholder="Your message *"
-                value={form.message}
-                onChange={handleChange}
-                required
-                className="w-full px-5 py-3.5 rounded-xl bg-white/20 backdrop-blur-sm text-white placeholder-white/80 text-sm font-medium border border-white/10 outline-none focus:bg-white/30 transition"
-              />
+              <div className="flex flex-col gap-2">
+                <label className="text-black font-bold text-sm">Message</label>
+                <textarea
+                  name="message"
+                  placeholder="Type here......"
+                  value={form.message}
+                  onChange={handleChange}
+                  required
+                  rows={4}
+                  className="w-full px-4 py-3.5 rounded-xl bg-transparent border border-gray-300 text-black placeholder-gray-400 text-sm focus:border-emerald-700 focus:ring-1 focus:ring-emerald-700 outline-none transition resize-none"
+                />
+              </div>
 
-              {/* Button — inside the form so submit works correctly */}
               <button
                 type="submit"
                 disabled={loading}
-                className="self-start inline-flex items-center gap-3 bg-gray-900 hover:bg-gray-800 text-white text-sm font-bold px-6 py-3 rounded-full transition disabled:opacity-60 disabled:cursor-not-allowed shadow-md mt-2"
+                className="w-full bg-[#2d5a3f] hover:bg-[#234731] text-white font-medium px-6 py-3.5 rounded-xl transition disabled:opacity-60 disabled:cursor-not-allowed mt-2"
               >
-                {loading ? "Sending..." : "Contact Us"}
-                <span className="w-7 h-7 rounded-full bg-white flex items-center justify-center flex-shrink-0">
-                  <ArrowRight size={14} className="text-gray-900" />
-                </span>
+                {loading ? "Sending..." : "Book an Appointment"}
               </button>
+              <p className="text-center text-xs text-gray-500 font-medium mt-1">We respect your privacy. Your data is safe.</p>
             </form>
-          </div>
-
-          {/* ── RIGHT — Doctor image ── */}
-          <div className="relative rounded-3xl overflow-hidden min-h-[380px] lg:min-h-0 shadow-md group">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/contact_doctor.png"
-              alt="Doctor at BHRI"
-              className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-            />
           </div>
 
         </div>

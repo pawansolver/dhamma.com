@@ -55,7 +55,7 @@ export default function HolidaysPage() {
                         List of Holidays
                     </h1>
                     <p className="text-lg lg:text-xl text-blue-100 font-medium mb-10 leading-relaxed max-w-2xl mx-auto opacity-95">
-                        National gazetted festivals, restricted vacations, and summer/winter institutional academic recesses configured for BHRI.
+                        National gazetted festivals, restricted vacations, and summer/winter institutional academic recesses configured for Dhamma Superspeciality Hospital.
                     </p>
                     <button 
                         onClick={() => document.getElementById("holiday-deck")?.scrollIntoView({ behavior: "smooth" })}
@@ -93,7 +93,7 @@ export default function HolidaysPage() {
                         
                         <div className="flex justify-between items-center border-b border-slate-200 pb-4 mb-8">
                             <div>
-                                <span className="text-xs font-bold text-amber-600 uppercase tracking-widest block">BHRI Academic Almanac</span>
+                                <span className="text-xs font-bold text-amber-600 uppercase tracking-widest block">Dhamma Superspeciality Hospital Academic Almanac</span>
                                 <h3 className="text-2xl font-bold text-slate-900 font-montserrat">Holiday Schedule</h3>
                             </div>
                             <span className="text-xs bg-slate-100 text-slate-600 font-extrabold px-3 py-1.5 rounded-full">

@@ -387,11 +387,11 @@ export default function HospitalSubPage({ data }: { data: HospitalSubData }) {
             </p>
             <div className="flex flex-wrap gap-3 sm:gap-4 mt-6">
               <button onClick={openBooking} className="btn-inverse"><CalendarCheck size={16} /> Book Appointment</button>
-              <a href="tel:+918603048174"
+              <a href="tel:+917643990301"
                 className="inline-flex items-center gap-2 sm:gap-3 bg-white/8 hover:bg-white/15 text-white font-semibold px-4 py-2 sm:px-8 sm:py-3.5 rounded-full border border-white/15 transition-all text-[11px] sm:text-sm"
               >
                 <Phone size={12} className="flex-shrink-0 sm:w-3.5 sm:h-3.5" />
-                <span className="whitespace-nowrap">+91 8603048174 / 9060646592</span>
+                <span className="whitespace-nowrap">+91 7643990301 / +9176439 90302</span>
               </a>
             </div>
           </motion.div>

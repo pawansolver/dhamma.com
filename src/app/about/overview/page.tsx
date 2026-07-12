@@ -13,7 +13,7 @@ import {
     TrendingUp, Lightbulb, Plus, Minus
 } from "lucide-react";
 
-/* ── Animated Counter ─────────────────────────────── */
+/* -- Animated Counter ------------------------------- */
 function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
     const [count, setCount] = useState(0);
     const ref = useRef<HTMLSpanElement>(null);
@@ -33,7 +33,7 @@ function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
     return <span ref={ref}>{display}{suffix}</span>;
 }
 
-/* ── Floating orb ─────────────────────────────────── */
+/* -- Floating orb ----------------------------------- */
 function FloatOrb({ className }: { className?: string }) {
     return (
         <motion.div
@@ -44,7 +44,7 @@ function FloatOrb({ className }: { className?: string }) {
     );
 }
 
-/* ── FAQ Item ─────────────────────────────────────── */
+/* -- FAQ Item --------------------------------------- */
 function FaqItem({ q, a, isOpen, toggle }: { q: string; a: string; isOpen: boolean; toggle: () => void }) {
     return (
         <div className="border-b border-white/10 last:border-0">
@@ -101,7 +101,7 @@ export default function AboutOverview() {
 
     const services = [
         { icon: Activity, title: "Multi-Speciality OPD" },
-        { icon: ShieldCheck, title: "Emergency 24×7" },
+        { icon: ShieldCheck, title: "Emergency 24—7" },
         { icon: FlaskConical, title: "Diagnostics & Imaging" },
         { icon: Building2, title: "Modular OT Suites" },
         { icon: Baby, title: "Maternity & NICU" },
@@ -111,20 +111,20 @@ export default function AboutOverview() {
     ];
 
     const faqs = [
-        { q: "What is BHRI?", a: "Buddha Hospital & Research Institute (BHRI) is a modern multi-speciality hospital in Bodhgaya, Bihar. It provides comprehensive healthcare — from OPD consultations to emergency, surgical, critical, and diagnostic services — all under one roof." },
-        { q: "What specialities are available?", a: "BHRI covers 20+ specialities including General Medicine, Surgery, Paediatrics, Obstetrics, ENT, Ophthalmology, Orthopaedics, Psychiatry, Radiology, Pathology, Pharmacology, Dermatology, Dentistry, Anaesthesiology, and more." },
-        { q: "Is BHRI available for emergencies 24×7?", a: "Yes. Our emergency department is staffed 24 hours a day, 7 days a week, with Advanced Life Support ambulances, trauma-ready specialists, and direct ICU access. Call +91 8603048174 / 9060646592 for emergencies." },
-        { q: "How do I book an appointment?", a: "Book online via our website, call our helpline at +91 8603048174 / 9060646592, or walk in directly. Our smart token system minimises waiting time across all OPD specialities." },
-        { q: "Does BHRI accept insurance?", a: "Yes. We have cashless tie-ups with major insurance providers, TPAs, Ayushman Bharat (PMJAY), CGHS, and ECHS. Our insurance desk handles the authorisation process for you." },
+        { q: "What is Dhamma Superspeciality Hospital?", a: "Dhamma Superspeciality Hospital is a modern multi-speciality hospital in Patna, Bihar. It provides comprehensive healthcare — from OPD consultations to emergency, surgical, critical, and diagnostic services — all under one roof." },
+        { q: "What specialities are available?", a: "Dhamma Superspeciality Hospital covers 20+ specialities including General Medicine, Surgery, Paediatrics, Obstetrics, ENT, Ophthalmology, Orthopaedics, Psychiatry, Radiology, Pathology, Pharmacology, Dermatology, Dentistry, Anaesthesiology, and more." },
+        { q: "Is Dhamma Superspeciality Hospital available for emergencies 24—7?", a: "Yes. Our emergency department is staffed 24 hours a day, 7 days a week, with Advanced Life Support ambulances, trauma-ready specialists, and direct ICU access. Call +91 7643990301 / +9176439 90302 for emergencies." },
+        { q: "How do I book an appointment?", a: "Book online via our website, call our helpline at +91 7643990301 / +9176439 90302, or walk in directly. Our smart token system minimises waiting time across all OPD specialities." },
+        { q: "Does Dhamma Superspeciality Hospital accept insurance?", a: "Yes. We have cashless tie-ups with major insurance providers, TPAs, Ayushman Bharat (PMJAY), CGHS, and ECHS. Our insurance desk handles the authorisation process for you." },
     ];
 
     return (
         <div className="bg-[#0a0a0a] text-white overflow-x-hidden">
 
-            {/* ═══════ HERO ═════════════════════════════════════════ */}
+            {/* ------- HERO ----------------------------------------- */}
             <section className="relative min-h-[100dvh] pt-28 sm:pt-36 pb-12 sm:pb-16 flex flex-col justify-between overflow-hidden">
                 <div className="absolute inset-0">
-                    <Image src="/images/about-hospital.png" alt="Buddha Hospital & Research Institute" fill priority className="object-cover object-top" />
+                    <Image src="/images/about-hospital.png" alt="Dhamma Superspeciality Hospital" fill priority className="object-cover object-top" />
                     {/* Dark cinematic overlays */}
                     <div className="absolute inset-0 bg-[#0a0a0a]/75 sm:bg-[#0a0a0a]/65" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent" />
@@ -151,7 +151,7 @@ export default function AboutOverview() {
                         className="max-w-3xl"
                     >
                         <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-amber-400 mb-3 sm:mb-4 flex items-center gap-2">
-                            <span className="w-5 h-px bg-amber-400 inline-block" /> BHRI — Bodhgaya, Bihar
+                            <span className="w-5 h-px bg-amber-400 inline-block" /> Dhamma Superspeciality Hospital — PATNA, BIHAR
                         </p>
                         <h1 className="text-5xl sm:text-6xl lg:text-8xl font-extrabold leading-[1.05] sm:leading-[0.92] tracking-tight text-white">
                             Healing with<br />Purpose.
@@ -205,7 +205,7 @@ export default function AboutOverview() {
                 </div>
             </section>
 
-            {/* ═══════ INTRO — Beige + image cards ═════════════════ */}
+            {/* ------- INTRO — Beige + image cards ----------------- */}
             <section className="relative bg-[#e9e6df] text-[#1a1a1a] py-20 lg:py-28 overflow-hidden">
                 <FloatOrb className="w-72 h-72 bg-amber-100/40 blur-3xl top-0 right-1/4" />
                 <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 flex flex-col items-center text-center">
@@ -216,7 +216,7 @@ export default function AboutOverview() {
                     <motion.div {...fadeUp(0.2)} className="w-16 h-1.5 bg-amber-500 mb-6 rounded-full" />
 
                     <motion.p {...fadeUp(0.3)} className="text-sm sm:text-base font-medium text-[#1a1a1a]/70 max-w-2xl leading-relaxed mb-12">
-                        Buddha Hospital &amp; Research Institute — A legacy of healing and innovation.
+                        Dhamma Superspeciality Hospital — A legacy of healing and innovation.
                     </motion.p>
 
                     {/* 4 image cards */}
@@ -225,7 +225,7 @@ export default function AboutOverview() {
                             { img: "/hospital_interior_hd.png", value: "20+", unit: "specs", title: "Specialities", desc: "Multi-speciality care under one roof — from medicine to surgery and paediatrics." },
                             { img: "/hospital_icu_hd.png", value: "300+", unit: "beds", title: "Inpatient Capacity", desc: "Spacious wards, advanced ICU / NICU / PICU for round-the-clock care." },
                             { img: "/hospital_ot_hd.png", value: "12+", unit: "labs", title: "Diagnostic Labs", desc: "Pathology, biochemistry, microbiology and imaging — all in-house." },
-                            { img: "/hospital_emergency_hd.png", value: "24×7", unit: "ER", title: "Emergency", desc: "Trauma-ready emergency team, ALS ambulances, and direct ICU access." },
+                            { img: "/hospital_emergency_hd.png", value: "24—7", unit: "ER", title: "Emergency", desc: "Trauma-ready emergency team, ALS ambulances, and direct ICU access." },
                         ].map((card, i) => (
                             <motion.div key={i} {...fadeUp(i * 0.08)}
                                 className="group relative aspect-[3/4] rounded-3xl overflow-hidden bg-[#1a1a1a] shadow-md cursor-default"
@@ -238,7 +238,7 @@ export default function AboutOverview() {
                                         <span className="text-white/60 text-[10px] ml-1 uppercase tracking-wider">{card.unit}</span>
                                         <p className="text-white text-xs font-semibold mt-1">{card.title}</p>
                                     </div>
-                                    <span className="text-white/50 text-[10px]">●●●●</span>
+                                    <span className="text-white/50 text-[10px]">????</span>
                                 </div>
                                 <p className="absolute bottom-0 left-0 right-0 p-4 text-white/85 text-xs leading-relaxed">{card.desc}</p>
                             </motion.div>
@@ -247,7 +247,7 @@ export default function AboutOverview() {
                 </div>
             </section>
 
-            {/* ═══════ STATS BAR ════════════════════════════════════ */}
+            {/* ------- STATS BAR ------------------------------------ */}
             <section className="bg-white border-b border-gray-100">
                 <div className="max-w-7xl mx-auto px-6 lg:px-12">
                     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
@@ -268,7 +268,7 @@ export default function AboutOverview() {
                 </div>
             </section>
 
-            {/* ═══════ VISION & MISSION ════════════════════════════ */}
+            {/* ------- VISION & MISSION ---------------------------- */}
             <section className="bg-[#0a0a0a] py-24 lg:py-32 relative overflow-hidden">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(251,191,36,0.07),transparent_60%)]" />
                 <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
@@ -325,7 +325,7 @@ export default function AboutOverview() {
                 </div>
             </section>
 
-            {/* ═══════ SERVICES GRID ═══════════════════════════════ */}
+            {/* ------- SERVICES GRID ------------------------------- */}
             <section className="bg-[#0a0a0a] py-20 lg:py-24 border-t border-white/5">
                 <div className="max-w-7xl mx-auto px-6 lg:px-12">
                     <motion.div {...fadeUp()} className="mb-12">
@@ -349,7 +349,7 @@ export default function AboutOverview() {
                 </div>
             </section>
 
-            {/* ═══════ CORE VALUES ═════════════════════════════════ */}
+            {/* ------- CORE VALUES --------------------------------- */}
             <section className="bg-[#111] py-24 lg:py-32 relative overflow-hidden">
                 <FloatOrb className="w-[500px] h-[500px] bg-amber-500/6 blur-3xl -top-20 -right-20" />
                 <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
@@ -382,18 +382,18 @@ export default function AboutOverview() {
                 </div>
             </section>
 
-            {/* ═══════ SPLIT — Image + Community text ════════════════ */}
+            {/* ------- SPLIT — Image + Community text ---------------- */}
             <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
                 <div className="relative min-h-[400px] lg:min-h-0 overflow-hidden">
-                    <Image src="/hospital_hero_hd.png" alt="BHRI Care" fill className="object-cover object-center" />
+                    <Image src="/hospital_hero_hd.png" alt="Dhamma Superspeciality Hospital" fill className="object-cover object-center" />
                     <div className="absolute inset-0 bg-[#0a0a0a]/20" />
                     <motion.div
                         animate={{ y: [0, -10, 0] }}
                         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                         className="absolute bottom-8 left-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-5 py-3"
                     >
-                        <p className="text-white font-extrabold text-sm">BHRI — Bodhgaya</p>
-                        <p className="text-white/50 text-xs mt-0.5">Gaya-Dobhi Road, Bihar</p>
+                        <p className="text-white font-extrabold text-sm">Dhamma Superspeciality Hospital — Patna</p>
+                        <p className="text-white/50 text-xs mt-0.5">Phulwari Sharif, Patna, Bihar</p>
                     </motion.div>
                 </div>
 
@@ -401,10 +401,10 @@ export default function AboutOverview() {
                     <FloatOrb className="w-96 h-96 bg-amber-200/30 blur-3xl -bottom-20 -right-10" />
                     <div className="relative z-10 max-w-lg">
                         <h2 className="section-heading">
-                            Bihar.<br />Bodhgaya.<br />One Mission.
+                            Bihar.<br />Patna.<br />One Mission.
                         </h2>
                         <p className="text-[#1a1a1a]/65 text-base leading-relaxed mb-10 max-w-md">
-                            Healthcare shouldn&apos;t be limited by income, location, or time. BHRI is here to bring world-class clinical care to every family across Bihar and beyond.
+                            Healthcare shouldn&apos;t be limited by income, location, or time. Dhamma Superspeciality Hospital is here to bring world-class clinical care to every family across Bihar and beyond.
                         </p>
                         <Link href="/contact"
                             className="inline-flex items-center gap-3 bg-[#1a1a1a] hover:bg-black text-white font-bold px-5 py-3 rounded-full text-sm transition-all"
@@ -418,7 +418,7 @@ export default function AboutOverview() {
                 </div>
             </section>
 
-            {/* ═══════ FAQ ══════════════════════════════════════════ */}
+            {/* ------- FAQ ------------------------------------------ */}
             <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[560px]">
                 <div className="relative min-h-[300px] lg:min-h-0 hidden lg:block overflow-hidden">
                     <Image src="/images/about-hospital.png" alt="" fill className="object-cover object-center" />
@@ -430,7 +430,7 @@ export default function AboutOverview() {
                         <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-amber-400 mb-4 flex items-center gap-2">
                             <span className="w-5 h-px bg-amber-400" /> Quick Answers
                         </p>
-                        <h2 className="section-heading-white">About BHRI FAQs</h2>
+                        <h2 className="section-heading-white">about Dhamma Superspeciality Hospital FAQs</h2>
                         <div>
                             {faqs.map((faq, i) => (
                                 <FaqItem key={i} q={faq.q} a={faq.a} isOpen={openFaq === i} toggle={() => setOpenFaq(openFaq === i ? null : i)} />
@@ -440,7 +440,7 @@ export default function AboutOverview() {
                 </div>
             </section>
 
-            {/* ═══════ CTA ══════════════════════════════════════════ */}
+            {/* ------- CTA ------------------------------------------ */}
             <section className="relative min-h-[500px] flex items-center overflow-hidden">
                 <Image src="/images/about-hospital.png" alt="" fill className="object-cover object-top opacity-35" />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/95 via-[#0a0a0a]/75 to-[#0a0a0a]/50" />
@@ -455,7 +455,7 @@ export default function AboutOverview() {
                             Trusted care,<br />every single day.
                         </h2>
                         <p className="text-white/45 text-base leading-relaxed mb-10 max-w-lg">
-                            Visit BHRI — where expert medicine meets compassionate care. Walk in or book online for OPD, diagnostics, or emergency services.
+                            Visit Dhamma Superspeciality Hospital — where expert medicine meets compassionate care. Walk in or book online for OPD, diagnostics, or emergency services.
                         </p>
                         <div className="flex flex-wrap gap-3 sm:gap-4">
                             <button
@@ -464,11 +464,11 @@ export default function AboutOverview() {
                             >
                                 <CalendarCheck size={16} /> Book Appointment
                             </button>
-                            <a href="tel:+918603048174"
+                            <a href="tel:+917643990301"
                                 className="inline-flex items-center gap-2 sm:gap-3 bg-white/8 hover:bg-white/15 text-white font-semibold px-4 py-2 sm:px-8 sm:py-3.5 rounded-full border border-white/15 transition-all text-[11px] sm:text-sm"
                             >
                                 <Phone size={12} className="flex-shrink-0 sm:w-3.5 sm:h-3.5" />
-                                <span className="whitespace-nowrap">+91 8603048174 / 9060646592</span>
+                                <span className="whitespace-nowrap">+91 7643990301 / +9176439 90302</span>
                             </a>
                         </div>
                     </motion.div>

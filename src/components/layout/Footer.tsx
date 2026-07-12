@@ -108,7 +108,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-gradient-to-br from-[#0f2557] via-[#1a3a6b] to-[#14532d] text-white overflow-hidden">
+    <footer className="relative bg-gradient-to-r from-[#0066CC] via-[#FBB03B] to-[#FF0000] text-white overflow-hidden">
       {/* Top golden gradient strip */}
       <div className="h-[3px] w-full bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-600" />
       {/* CSS decorative background shapes */}
@@ -123,17 +123,17 @@ export default function Footer() {
         <div className="absolute top-[20%] right-[30%] w-32 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
       </div>
 
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-10 py-8 lg:py-10">
-        <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-16">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-8 py-4 lg:py-6">
+        <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-10">
           
           {/* Mobile Top / Desktop Right: About + Contact */}
-          <div className="w-full lg:w-[35%] order-first lg:order-last">
-            <Link href="/" className="inline-block mb-5">
-              <Image src="/logo.png" alt="BHRI" width={110} height={110} className="rounded-full bg-white p-1" />
+          <div className="w-full lg:w-[30%] order-first lg:order-last">
+            <Link href="/" className="inline-block mb-3">
+              <Image src="/dhamma.png" alt="Dhamma Superspeciality Hospital" width={220} height={60} className="object-contain" />
             </Link>
 
             <p className="text-[13px] sm:text-[14px] text-white/80 leading-relaxed mb-3">
-              Buddha Hospital &amp; Research Institute is a multi-Specialty hospital in Gaya
+              Dhamma Superspeciality Hospital is a premier multi-Specialty hospital
               offering world-class healthcare with the motto <span className="text-amber-400 font-semibold">&ldquo;सेवा परमो धर्म:&rdquo;</span>
             </p>
             <p className="text-[12px] text-white/50 mb-6">
@@ -143,28 +143,38 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-[13px] sm:text-[14px] text-white/70">
                 <MapPin size={18} className="mt-0.5 flex-shrink-0 text-amber-400" />
-                <span>Gaya-Dobhi Road, NH-22, Kharanti More, Tikuna Farm, Gaya (Bihar)-823004</span>
+                <span>Opposite Canara Bank, Phulwari Sharif, Near AIIMS Gate No. 1, Patna, India, Bihar</span>
               </li>
               <li className="flex items-center gap-3 text-[13px] sm:text-[14px] text-white/70">
                 <Mail size={18} className="flex-shrink-0 text-amber-400" />
-                <a href="mailto:bhribodhgaya@gmail.com" className="hover:text-white transition">bhribodhgaya@gmail.com</a>
+                <a href="mailto:info@dhammainstitute.com" className="hover:text-white transition">info@dhammainstitute.com</a>
               </li>
               <li className="flex items-center gap-3 text-[13px] sm:text-[14px] text-white/70">
                 <Phone size={18} className="flex-shrink-0 text-amber-400" />
-                <span>8603048174 / 9060646592</span>
+                <span>+91 7643990301 / +9176439 90302</span>
+              </li>
+              <li className="flex items-start gap-3 text-[13px] sm:text-[14px] text-white/70">
+                <div className="flex-shrink-0 text-amber-400 mt-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <span>
+                  <strong>VISITING HOURS</strong><br />
+                  Sunday: 08:00 AM - 10:00 PM<br />
+                  Monday - Saturday: 06:00 AM - 12:00 AM
+                </span>
               </li>
             </ul>
           </div>
 
           {/* Links Columns */}
-          <div className="w-full lg:w-[65%] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10">
+          <div className="w-full lg:w-[70%] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {[
               MENU.slice(0, 4),
               MENU.slice(4, 8),
               MENU.slice(8),
             ].map((chunk, colIdx) => (
-              <div key={colIdx} className="flex flex-col space-y-1">
-                <h3 className="text-[15px] font-bold text-amber-400 mb-4 tracking-wider uppercase">
+              <div key={colIdx} className="flex flex-col space-y-0.5">
+                <h3 className="text-[14px] font-bold text-amber-400 mb-3 tracking-wider uppercase">
                   {colIdx === 0 ? "Site Map" : colIdx === 1 ? "More Links" : "Quick Links"}
                 </h3>
 

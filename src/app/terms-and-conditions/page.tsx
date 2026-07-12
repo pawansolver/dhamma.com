@@ -3,8 +3,8 @@ import { FileText, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Terms and Conditions | BHRI Bodhgaya",
-  description: "Terms and conditions of service for Buddha Hospital & Research Institute (BHRI) Gaya.",
+  title: "Terms and Conditions | Dhamma Superspeciality Hospital Patna",
+  description: "Terms and conditions of service for Dhamma Superspeciality Hospital Patna.",
 };
 
 export default function TermsAndConditions() {
@@ -34,7 +34,7 @@ export default function TermsAndConditions() {
                 <section>
                     <h2 className="text-2xl font-bold text-slate-900 mb-4 font-montserrat">1. Introduction</h2>
                     <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-                        Welcome to Buddha Hospital &amp; Research Institute (BHRI), Bodhgaya. These Terms and Conditions govern your use of our website, hospital facilities, medical services, and academic campus. By accessing our services, physically or digitally, you agree to comply with and be bound by these terms.
+                        Welcome to Dhamma Superspeciality Hospital , Patna. These Terms and Conditions govern your use of our website, hospital facilities, medical services, and academic campus. By accessing our services, physically or digitally, you agree to comply with and be bound by these terms.
                     </p>
                 </section>
 
@@ -42,7 +42,7 @@ export default function TermsAndConditions() {
                     <h2 className="text-2xl font-bold text-slate-900 mb-4 font-montserrat">2. Medical Services &amp; Emergency Care</h2>
                     <ul className="space-y-3 text-slate-600 list-disc pl-5 text-sm md:text-base leading-relaxed">
                         <li>The medical information provided on our website is for general informational purposes only and does not substitute professional medical advice, diagnosis, or treatment from a qualified physician.</li>
-                        <li>In case of a medical emergency, do not rely solely on our website or electronic communication. Please visit our Emergency Department immediately or call our emergency hotlines: <strong>+91 9060646592</strong>.</li>
+                        <li>In case of a medical emergency, do not rely solely on our website or electronic communication. Please visit our Emergency Department immediately or call our emergency hotlines: <strong>+91 7643990302</strong>.</li>
                         <li>Hospital admission, treatment plans, surgical interventions, and discharge protocols are solely at the discretion of the attending medical professionals based on the patient&apos;s clinical condition.</li>
                     </ul>
                 </section>
@@ -50,7 +50,7 @@ export default function TermsAndConditions() {
                 <section>
                     <h2 className="text-2xl font-bold text-slate-900 mb-4 font-montserrat">3. Appointments &amp; Cancellations</h2>
                     <ul className="space-y-3 text-slate-600 list-disc pl-5 text-sm md:text-base leading-relaxed">
-                        <li>Appointments booked through our portal or phone are subject to doctor availability. BHRI reserves the right to reschedule or cancel appointments due to unforeseen medical emergencies or administrative reasons.</li>
+                        <li>Appointments booked through our portal or phone are subject to doctor availability. Dhamma Superspeciality Hospital reserves the right to reschedule or cancel appointments due to unforeseen medical emergencies or administrative reasons.</li>
                         <li>Patients are requested to arrive at least 15 minutes prior to their scheduled appointment time to complete registration formalities.</li>
                     </ul>
                 </section>
@@ -66,7 +66,7 @@ export default function TermsAndConditions() {
                 <section>
                     <h2 className="text-2xl font-bold text-slate-900 mb-4 font-montserrat">5. Academic &amp; Institute Policies</h2>
                     <ul className="space-y-3 text-slate-600 list-disc pl-5 text-sm md:text-base leading-relaxed">
-                        <li>Students enrolled in BHRI&apos;s academic and medical programs must adhere strictly to the guidelines and syllabi set by the National Medical Commission (NMC) and the affiliated university.</li>
+                        <li>Students enrolled in Dhamma Superspeciality Hospital's academic and medical programs must adhere strictly to the guidelines and syllabi set by the National Medical Commission (NMC) and the affiliated university.</li>
                         <li>The institute campus is a zero-tolerance zone for ragging, substance abuse, and discriminatory behavior. Any violations will result in immediate disciplinary action including suspension or FIR.</li>
                     </ul>
                 </section>
@@ -81,7 +81,7 @@ export default function TermsAndConditions() {
                 <section>
                     <h2 className="text-2xl font-bold text-slate-900 mb-4 font-montserrat">7. Modifications to Terms</h2>
                     <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-                        BHRI reserves the right to modify these terms at any time without prior notice. Changes will be updated on this page, and continued use of our services implies acceptance of the revised terms.
+                        Dhamma Superspeciality Hospital reserves the right to modify these terms at any time without prior notice. Changes will be updated on this page, and continued use of our services implies acceptance of the revised terms.
                     </p>
                 </section>
 
@@ -91,12 +91,12 @@ export default function TermsAndConditions() {
                         If you have any questions regarding these Terms and Conditions, please contact our administrative office:
                     </p>
                     <address className="not-italic text-sm text-slate-700 font-medium">
-                        <strong>Buddha Hospital &amp; Research Institute</strong><br />
-                        Gaya-Dobhi Road, NH-22, Kharanti More, Tikuna Farm,<br />
-                        Gaya (Bihar)-823004<br />
+                        <strong>Dhamma Superspeciality Hospital</strong><br />
+                        Opposite Canara Bank, Phulwari Sharif, Near AIIMS Gate No. 1,<br />
+                        Patna, India, Bihar<br />
                         <br />
-                        <strong>Phone:</strong> +91 8603048174 / 9060646592<br />
-                        <strong>Email:</strong> bhribodhgaya@gmail.com
+                        <strong>Phone:</strong> +91 7643990301 / +9176439 90302<br />
+                        <strong>Email:</strong> info@dhammainstitute.com
                     </address>
                 </section>
 

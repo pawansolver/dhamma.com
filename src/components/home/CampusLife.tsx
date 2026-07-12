@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -99,8 +99,8 @@ export default function CampusLife() {
               <div className="absolute bottom-0 left-0 right-0 p-4 flex items-end justify-between">
                 <div>
                   <div className="flex items-center gap-2 mb-1">
-                    <Image src="/logo.png" alt="BHRI" width={28} height={28} className="rounded-full" />
-                    <span className="text-white/80 text-xs font-semibold">Buddha Hospital &amp; Research Institute, Gaya</span>
+                    <Image src="/logo.png" alt="Dhamma Superspeciality Hospital" width={28} height={28} className="rounded-full" />
+                    <span className="text-white/80 text-xs font-semibold">Dhamma Superspeciality Hospital, Patna</span>
                   </div>
                   <h3 className="text-white font-bold text-sm md:text-base">{galleryImages[activeImg].alt}</h3>
                 </div>

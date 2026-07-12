@@ -310,7 +310,7 @@ export default function Navbar() {
       {/* Floating WhatsApp Button */}
       <div className="fixed right-4 bottom-[5.5rem] sm:bottom-24 z-[999]">
         <a
-          href="https://wa.me/919973758931?text=Hello!%20I%20am%20interested%20in%20knowing%20more%20about%20BHRI%20Bodhgaya%27s%20services."
+          href="https://wa.me/917643990301?text=Hello!%20I%20am%20interested%20in%20knowing%20more%20about%20Dhamma%20Superspeciality%20Hospital%27s%20services."
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-green-500 text-white rounded-full shadow-xl hover:bg-green-600 hover:scale-110 transition-all duration-300"

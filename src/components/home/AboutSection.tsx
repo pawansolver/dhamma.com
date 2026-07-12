@@ -26,13 +26,13 @@ export default function AboutSection() {
           </h2>
           <div className="text-gray-600 text-sm md:text-[15px] leading-[1.8] space-y-4 font-sans text-justify">
             <p>
-              Dhamma Institute of Medical Science is going to be 340 bedded hospital and Teaching Institute that is situated near AIIMS, Patna.
+              Dhamma Superspeciality Hospital is a premier multi-speciality healthcare institution located Opposite Canara Bank, Phulwari Sharif, Near AIIMS Gate No. 1, Patna, India, Bihar. We are committed to delivering world-class patient care with compassion, integrity, and clinical excellence — guided by the motto <strong className="text-brandBlue">सेवा परमो धर्म:</strong> — Service is the highest duty.
             </p>
             <p>
-              The objective of the Dhamma Institute of Medical Science, Patna is the establishment, maintenance and development of a teaching institute, where men and women shall receive an education of the highest grade in the art and science of medicine, nursing or one or other of the related professions, to equip them in the spirit of Christ, for service in the relief of suffering and in the promotion of health.
+              Our state-of-the-art facility is equipped with modern OT complexes, a 60-bed ICU with 24-hour hi-tech trauma care, NICU, PICU, advanced diagnostic imaging (CT, MRI, X-ray, USG), and a fully functional pathology laboratory. We serve patients from all walks of life, ensuring no one is denied quality healthcare.
             </p>
             <p>
-              Apart from the other facilities, there are 60 intensive care beds with the twenty-four hour hi-tech trauma care facility, serving a wide cross-section of the community, belonging to every economic segment of society. Medical services are given to the poor and needy patients. Three separate rural and urban health training centres have to establish.
+              Apart from clinical services, Dhamma Superspeciality Hospital runs dedicated community outreach programs, free eye camps, rural health camps, and health awareness initiatives — bridging the healthcare gap for underserved communities across Bihar and Eastern India.
             </p>
           </div>
         </div>

@@ -38,10 +38,10 @@ const counselingSteps: Record<StepKey, CounselingStep> = {
     choice: {
         title: "BCECEB Choice Filling",
         stage: "Stage 02 — Online Counselling Choice",
-        desc: "Eligible UGMAC candidates must log in to the official Bihar Combined Entrance Competitive Examination Board portal and select BHRI Bodhgaya as their high priority preference.",
+        desc: "Eligible UGMAC candidates must log in to the official Bihar Combined Entrance Competitive Examination Board portal and select Dhamma Superspeciality Hospital Patna as their high priority preference.",
         instructions: [
             "Log in to bceceboard.bihar.gov.in during choice schedule",
-            "Lock 'Buddha Hospital &amp; Research Institute' as primary medical seat choice",
+            "Lock 'Dhamma Superspeciality Hospital' as primary medical seat choice",
             "Download and print the Locked Choice Slip",
             "Check round timelines continuously"
         ],
@@ -50,7 +50,7 @@ const counselingSteps: Record<StepKey, CounselingStep> = {
     allotment: {
         title: "Seat Allotment Letter",
         stage: "Stage 03 — Allotment Declaration",
-        desc: "BCECEB publishes round-wise provisional seat allotment results. Candidates allotted a seat at BHRI must download their official allotment letters.",
+        desc: "BCECEB publishes round-wise provisional seat allotment results. Candidates allotted a seat at Dhamma Superspeciality Hospital must download their official allotment letters.",
         instructions: [
             "Log in to portal to check allotment status",
             "Accept the allotted seat and opt for upgrade status if desired",
@@ -62,7 +62,7 @@ const counselingSteps: Record<StepKey, CounselingStep> = {
     reporting: {
         title: "Physical Reporting &amp; Dossier Verification",
         stage: "Stage 04 — Final Admission physical round",
-        desc: "Report directly to the BHRI Bodhgaya admission cell with original academic certificates, allotment letters, biometric forms, and tuition fee drafts.",
+        desc: "Report directly to the Dhamma Superspeciality Hospital Patna admission cell with original academic certificates, allotment letters, biometric forms, and tuition fee drafts.",
         instructions: [
             "Report within the date window specified in allotment letter",
             "Submit academic documents for official physical verification",
@@ -85,25 +85,25 @@ interface FeeDetails {
 
 const feeStructure: Record<FeeQuota, FeeDetails> = {
     state: {
-        tuition: "₹ 8,50,000 / Annum",
-        hostel: "₹ 1,50,000 / Annum (Including Mess)",
-        development: "₹ 50,000 (One-Time Payment)",
-        caution: "₹ 50,000 (Refundable Deposit)",
-        total: "₹ 11,00,000 (First Year Total)"
+        tuition: "? 8,50,000 / Annum",
+        hostel: "? 1,50,000 / Annum (Including Mess)",
+        development: "? 50,000 (One-Time Payment)",
+        caution: "? 50,000 (Refundable Deposit)",
+        total: "? 11,00,000 (First Year Total)"
     },
     management: {
-        tuition: "₹ 12,50,000 / Annum",
-        hostel: "₹ 1,50,000 / Annum (Including Mess)",
-        development: "₹ 50,000 (One-Time Payment)",
-        caution: "₹ 50,000 (Refundable Deposit)",
-        total: "₹ 15,00,000 (First Year Total)"
+        tuition: "? 12,50,000 / Annum",
+        hostel: "? 1,50,000 / Annum (Including Mess)",
+        development: "? 50,000 (One-Time Payment)",
+        caution: "? 50,000 (Refundable Deposit)",
+        total: "? 15,00,000 (First Year Total)"
     },
     nri: {
         tuition: "$ 25,000 / Annum",
-        hostel: "₹ 1,50,000 / Annum (Including Mess)",
-        development: "₹ 50,000 (One-Time Payment)",
-        caution: "₹ 50,000 (Refundable Deposit)",
-        total: "$ 25,000 + ₹ 2,50,000 (First Year Total)"
+        hostel: "? 1,50,000 / Annum (Including Mess)",
+        development: "? 50,000 (One-Time Payment)",
+        caution: "? 50,000 (Refundable Deposit)",
+        total: "$ 25,000 + ? 2,50,000 (First Year Total)"
     }
 };
 
@@ -147,7 +147,7 @@ export default function AdmissionsPage() {
         "Caste Certificate (For SC, ST, EBC, OBC, EWS candidates)",
         "Recent color passport photographs (10 copies)",
         "Migration Certificate (For other board candidates)",
-        "Medical Fitness Certificate (Can be obtained at BHRI Campus)"
+        "Medical Fitness Certificate (Can be obtained at Dhamma Superspeciality Hospital Campus)"
     ];
 
     return (
@@ -168,7 +168,7 @@ export default function AdmissionsPage() {
                         Admission Hub
                     </h1>
                     <p className="text-lg lg:text-xl text-blue-100 font-medium mb-10 leading-relaxed max-w-2xl mx-auto opacity-95">
-                        Follow the structured NEET-UG counselling pathway, verify fees details, and pack standard dossiers for physical reporting at BHRI.
+                        Follow the structured NEET-UG counselling pathway, verify fees details, and pack standard dossiers for physical reporting at Dhamma Superspeciality Hospital.
                     </p>
                     <button
                         onClick={() => document.getElementById("steps")?.scrollIntoView({ behavior: "smooth" })}
@@ -351,7 +351,7 @@ export default function AdmissionsPage() {
                         <div className="bg-slate-950 text-white p-6 rounded-2xl text-center shadow-lg">
                             <span className="text-[9px] text-slate-400 font-bold block mb-1">TOTAL DEMAND DRAFT VALUE</span>
                             <h3 className="text-2xl font-black text-emerald-400 font-montserrat">{activeFee.total}</h3>
-                            <p className="text-[8px] text-slate-400 uppercase tracking-wider mt-1">Drawn in favor of Buddha Hospital &amp; Research Institute, payable at Patna</p>
+                            <p className="text-[8px] text-slate-400 uppercase tracking-wider mt-1">Drawn in favor of Dhamma Superspeciality Hospital, payable at Patna</p>
                         </div>
                     </div>
                 </div>
@@ -412,11 +412,11 @@ export default function AdmissionsPage() {
                             <div className="space-y-4 mb-8 text-xs text-slate-300">
                                 <div className="flex items-center gap-3">
                                     <Phone size={16} className="text-emerald-400" />
-                                    <span>Helpline Desk: +91 8603048174 / 9060646592</span>
+                                    <span>Helpline Desk: +91 7643990301 / +9176439 90302</span>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <MapPin size={16} className="text-emerald-400" />
-                                    <span>BHRI Admissions Desk, Gaya-Dobhi Road, Bodhgaya, Bihar</span>
+                                    <span>Dhamma Superspeciality Hospital Admissions Desk, Opposite Canara Bank, Phulwari Sharif, Near AIIMS Gate No. 1, Patna, India, Bihar</span>
                                 </div>
                             </div>
                         </div>

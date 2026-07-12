@@ -9,7 +9,7 @@ export const departments: Record<string, DeptData> = {
     splitImage: "/carousel-2.png",
     splitHeading: "Where Medicine Begins",
     splitText: "Anatomy is the cornerstone of medical education. Our department provides a rigorous, hands-on learning environment with modern cadaveric dissection facilities, 3D models, and advanced imaging-based teaching methods.",
-    overview: "The Department of Anatomy at BHRI is dedicated to providing students with a thorough understanding of the human body's structural organisation. From gross anatomy and histology to embryology and neuroanatomy, our curriculum bridges fundamental science with clinical application.",
+    overview: "The Department of Anatomy at Dhamma Superspeciality Hospital is dedicated to providing students with a thorough understanding of the human body's structural organisation. From gross anatomy and histology to embryology and neuroanatomy, our curriculum bridges fundamental science with clinical application.",
     highlights: [
       "Fully equipped dissection hall with dedicated cadaveric specimens",
       "Museum with over 500 anatomical specimens and mounted skeletons",
@@ -42,7 +42,7 @@ export const departments: Record<string, DeptData> = {
     splitImage: "/carousel-3.png",
     splitHeading: "The Science of Life in Motion",
     splitText: "Our Physiology department bridges basic science and clinical medicine by teaching how the body functions in health and adapts in disease. Modern laboratory infrastructure enables hands-on learning of physiological principles.",
-    overview: "The Department of Physiology at BHRI provides a strong foundation in understanding how the body's organ systems function individually and in coordination. From cellular physiology to systemic functions, students gain both theoretical knowledge and practical laboratory skills essential for clinical practice.",
+    overview: "The Department of Physiology at Dhamma Superspeciality Hospital provides a strong foundation in understanding how the body's organ systems function individually and in coordination. From cellular physiology to systemic functions, students gain both theoretical knowledge and practical laboratory skills essential for clinical practice.",
     highlights: [
       "Comprehensive physiology laboratory with computerised recording systems",
       "Haematology, cardiovascular, respiratory, and neurophysiology practicals",
@@ -74,7 +74,7 @@ export const departments: Record<string, DeptData> = {
     splitImage: "/biochemistry_lab.png",
     splitHeading: "Chemistry of Life",
     splitText: "Our Biochemistry department provides essential knowledge of the molecular processes underlying health and disease. Well-equipped labs allow students to perform clinical biochemistry tests and understand metabolic pathways firsthand.",
-    overview: "The Department of Biochemistry at BHRI covers the molecular basis of life — carbohydrate, lipid, protein, and nucleic acid metabolism — along with clinical biochemistry, enzymology, and nutrition. Students gain skills directly applicable to diagnostic medicine.",
+    overview: "The Department of Biochemistry at Dhamma Superspeciality Hospital covers the molecular basis of life — carbohydrate, lipid, protein, and nucleic acid metabolism — along with clinical biochemistry, enzymology, and nutrition. Students gain skills directly applicable to diagnostic medicine.",
     highlights: [
       "Fully equipped biochemistry laboratory with spectrophotometers and electrophoresis units",
       "Integration of clinical biochemistry with pathology and medicine departments",
@@ -95,7 +95,7 @@ export const departments: Record<string, DeptData> = {
     faqs: [
       { q: "What is the clinical importance of Biochemistry?", a: "Biochemistry underpins all diagnostic testing — understanding metabolic pathways helps interpret lab reports and diagnose metabolic diseases." },
       { q: "Are there practical sessions in Biochemistry?", a: "Yes. Students perform 25+ experiments including estimation of glucose, proteins, lipids, and enzyme activities." },
-      { q: "Does BHRI have a research programme in Biochemistry?", a: "Yes. Faculty are involved in research on metabolic disorders, nutritional deficiencies, and molecular diagnostic methods." },
+      { q: "Does Dhamma Superspeciality Hospital have a research programme in Biochemistry?", a: "Yes. Faculty are involved in research on metabolic disorders, nutritional deficiencies, and molecular diagnostic methods." },
     ],
   },
 
@@ -106,7 +106,7 @@ export const departments: Record<string, DeptData> = {
     splitImage: "/pharmacology_overview.png",
     splitHeading: "The Science Behind Every Treatment",
     splitText: "Pharmacology is the bridge between basic science and clinical medicine. Our department trains students to understand how drugs work, interact, and are applied safely in clinical practice through modern lab-based and simulation learning.",
-    overview: "The Department of Pharmacology at BHRI provides comprehensive training in drug mechanisms, pharmacokinetics, pharmacodynamics, and clinical pharmacology. With well-equipped labs and integrated clinical teaching, students develop the knowledge needed for rational prescribing.",
+    overview: "The Department of Pharmacology at Dhamma Superspeciality Hospital provides comprehensive training in drug mechanisms, pharmacokinetics, pharmacodynamics, and clinical pharmacology. With well-equipped labs and integrated clinical teaching, students develop the knowledge needed for rational prescribing.",
     highlights: [
       "Pharmacology lab with animal and experimental models for drug testing",
       "Clinical pharmacology integration with all major clinical departments",
@@ -138,7 +138,7 @@ export const departments: Record<string, DeptData> = {
     splitImage: "/pathology_overview.png",
     splitHeading: "The Language of Disease",
     splitText: "Pathology is the cornerstone of diagnosis. Our department combines histopathology, cytology, haematology, and clinical biochemistry to deliver accurate diagnostic information that guides clinical decision-making.",
-    overview: "The Department of Pathology at BHRI provides comprehensive diagnostic services and academic training in general pathology, systemic pathology, haematology, microbiology, and clinical biochemistry. A fully equipped pathology laboratory ensures hands-on experience.",
+    overview: "The Department of Pathology at Dhamma Superspeciality Hospital provides comprehensive diagnostic services and academic training in general pathology, systemic pathology, haematology, microbiology, and clinical biochemistry. A fully equipped pathology laboratory ensures hands-on experience.",
     highlights: [
       "Fully operational diagnostic lab with histopathology and cytology",
       "Haematology section with automated cell counters",
@@ -158,7 +158,7 @@ export const departments: Record<string, DeptData> = {
     facilities: ["Histopathology Lab", "Cytology Section", "Haematology Section", "Automated Analysers", "Grossing Room", "Museum of Specimens", "Frozen Section Facility", "Research & Teaching Lab"],
     faqs: [
       { q: "What diagnostic services does Pathology offer?", a: "Full spectrum including histopathology, cytopathology (FNAC), haematology, clinical pathology, and special staining." },
-      { q: "How long does a biopsy report take?", a: "Routine reports are available within 48–72 hours. Urgent and intraoperative frozen sections are provided within 30 minutes." },
+      { q: "How long does a biopsy report take?", a: "Routine reports are available within 48—72 hours. Urgent and intraoperative frozen sections are provided within 30 minutes." },
       { q: "Does the department train MBBS students?", a: "Yes. An extensive practical curriculum covering specimen grossing, slide interpretation, and clinical correlation is integral to the MBBS programme." },
     ],
   },
@@ -170,7 +170,7 @@ export const departments: Record<string, DeptData> = {
     splitImage: "/carousel-4.png",
     splitHeading: "Defending Against Infection",
     splitText: "Our Microbiology department provides rigorous training in the identification and management of infectious agents. From culture and sensitivity to serology and molecular diagnostics, we prepare clinicians to address infections effectively.",
-    overview: "The Department of Microbiology at BHRI is equipped for culture, identification, and sensitivity testing of bacterial, fungal, and parasitic pathogens. Serology, virology, and mycobacteriology services support clinical management of infectious diseases across all departments.",
+    overview: "The Department of Microbiology at Dhamma Superspeciality Hospital is equipped for culture, identification, and sensitivity testing of bacterial, fungal, and parasitic pathogens. Serology, virology, and mycobacteriology services support clinical management of infectious diseases across all departments.",
     highlights: [
       "Biosafety Level 2 compliant microbiology laboratory",
       "Culture & sensitivity testing for bacterial and fungal infections",
@@ -202,7 +202,7 @@ export const departments: Record<string, DeptData> = {
     splitImage: "/carousel-1.png",
     splitHeading: "Where Medicine Meets Justice",
     splitText: "Forensic Medicine and Toxicology equips medical professionals with the skills to handle medicolegal cases, prepare evidence, conduct post-mortem examinations, and provide expert testimony in legal proceedings.",
-    overview: "The Department of Forensic Medicine & Toxicology at BHRI provides comprehensive training in medicolegal examination, forensic pathology, toxicology, and clinical forensic medicine. Students gain practical skills essential for handling MLC cases, injury documentation, and participation in legal processes.",
+    overview: "The Department of Forensic Medicine & Toxicology at Dhamma Superspeciality Hospital provides comprehensive training in medicolegal examination, forensic pathology, toxicology, and clinical forensic medicine. Students gain practical skills essential for handling MLC cases, injury documentation, and participation in legal processes.",
     highlights: [
       "Autopsy hall with full post-mortem facilities",
       "Toxicology laboratory for poison identification and analysis",
@@ -222,7 +222,7 @@ export const departments: Record<string, DeptData> = {
     facilities: ["Autopsy Hall", "Toxicology Lab", "MLC Documentation Room", "Teaching Museum", "Forensic Photography Setup", "Evidence Storage", "Seminar Room", "Court Hall (Practice)"],
     faqs: [
       { q: "What is the role of Forensic Medicine in clinical practice?", a: "Every doctor may encounter medicolegal situations. This department trains students to handle MLC documentation, injury reporting, and court appearances correctly." },
-      { q: "Does the department handle post-mortem examinations?", a: "Yes. The department conducts medico-legal autopsies and provides post-mortem reports for the Gaya district." },
+      { q: "Does the department handle post-mortem examinations?", a: "Yes. The department conducts medico-legal autopsies and provides post-mortem reports for the Patna district." },
       { q: "What toxicology services are available?", a: "Identification of common poisons in suspected poisoning cases and guidance on antidote therapy." },
     ],
   },
@@ -234,7 +234,7 @@ export const departments: Record<string, DeptData> = {
     splitImage: "/carousel-5.png",
     splitHeading: "Health for Every Community",
     splitText: "Community Medicine extends healthcare beyond hospital walls. Our department trains students in epidemiology, public health, and primary care, enabling them to address healthcare needs of entire communities and underserved populations.",
-    overview: "The Department of Community Medicine at BHRI combines epidemiology, public health, biostatistics, social and preventive medicine, and nutrition to equip future doctors with population health skills. Field postings, rural camps, and UHSC/CHC rotations provide real-world exposure.",
+    overview: "The Department of Community Medicine at Dhamma Superspeciality Hospital combines epidemiology, public health, biostatistics, social and preventive medicine, and nutrition to equip future doctors with population health skills. Field postings, rural camps, and UHSC/CHC rotations provide real-world exposure.",
     highlights: [
       "Urban and rural health sub-centre field postings",
       "Epidemiology and biostatistics training with data analysis",
@@ -266,7 +266,7 @@ export const departments: Record<string, DeptData> = {
     splitImage: "/carousel-2.png",
     splitHeading: "Precision ENT Care",
     splitText: "Our ENT department offers comprehensive diagnosis and surgical management of disorders affecting the ear, nose, throat, larynx, and neck. With modern endoscopic and audiological equipment, we deliver accurate diagnosis and minimally invasive treatments.",
-    overview: "The Department of ENT at BHRI provides full-spectrum care for ear diseases (hearing loss, CSOM, otitis media), nasal conditions (sinusitis, polyps, DNS), throat and laryngeal disorders, and head-neck tumours. Our team handles both emergency and elective ENT cases.",
+    overview: "The Department of ENT at Dhamma Superspeciality Hospital provides full-spectrum care for ear diseases (hearing loss, CSOM, otitis media), nasal conditions (sinusitis, polyps, DNS), throat and laryngeal disorders, and head-neck tumours. Our team handles both emergency and elective ENT cases.",
     highlights: [
       "Endoscopic sinus surgery (FESS) and nasal endoscopy",
       "Comprehensive audiometry and hearing evaluation services",
@@ -285,7 +285,7 @@ export const departments: Record<string, DeptData> = {
     stats: [{ value: "500+", label: "ENT OPD/Month" }, { value: "50+", label: "Surgeries/Month" }, { value: "24/7", label: "ENT Emergency" }, { value: "10+", label: "Faculty & Residents" }],
     facilities: ["ENT OPD", "Endoscopy Suite", "Audiometry Unit", "Hearing Aid Centre", "Operation Theatre", "Voice Clinic", "BERA Lab", "Emergency ENT Care"],
     faqs: [
-      { q: "What ENT surgeries are performed at BHRI?", a: "Tympanoplasty, FESS, septoplasty, tonsillectomy, adenoidectomy, microlaryngoscopy, and head-neck surgeries are performed regularly." },
+      { q: "What ENT surgeries are performed at Dhamma Superspeciality Hospital?", a: "Tympanoplasty, FESS, septoplasty, tonsillectomy, adenoidectomy, microlaryngoscopy, and head-neck surgeries are performed regularly." },
       { q: "Is audiometry available for children?", a: "Yes. We offer paediatric audiological evaluation including BERA for infants and newborn hearing screening." },
       { q: "Can sinusitis be treated without surgery?", a: "Mild to moderate sinusitis is treated medically. Chronic or recurrent cases may require endoscopic sinus surgery (FESS)." },
     ],
@@ -298,7 +298,7 @@ export const departments: Record<string, DeptData> = {
     splitImage: "/carousel-3.png",
     splitHeading: "See the World Clearly",
     splitText: "Our Ophthalmology department offers comprehensive eye care from routine refraction to complex retinal surgery. Modern equipment ensures accurate diagnosis and effective treatment for all conditions of the eye and visual pathway.",
-    overview: "The Department of Ophthalmology at BHRI provides complete eye care services including cataract surgery, glaucoma management, diabetic retinopathy care, corneal diseases, paediatric ophthalmology, and low vision aids. We serve both urban and rural patients with quality eye care.",
+    overview: "The Department of Ophthalmology at Dhamma Superspeciality Hospital provides complete eye care services including cataract surgery, glaucoma management, diabetic retinopathy care, corneal diseases, paediatric ophthalmology, and low vision aids. We serve both urban and rural patients with quality eye care.",
     highlights: [
       "Phacoemulsification cataract surgery with intraocular lens implant",
       "Glaucoma clinic with IOP monitoring and visual field analysis",
@@ -317,9 +317,9 @@ export const departments: Record<string, DeptData> = {
     stats: [{ value: "300+", label: "OPD/Month" }, { value: "40+", label: "Surgeries/Month" }, { value: "5+", label: "Sub-specialities" }, { value: "Free", label: "Camp Eye Surgeries" }],
     facilities: ["Eye OPD", "Operation Theatre", "Slit Lamp Units", "OCT Machine", "Visual Field Analyser", "Laser Photocoagulation Unit", "Phacoemulsification System", "Low Vision Aid Clinic"],
     faqs: [
-      { q: "Is cataract surgery safe at BHRI?", a: "Yes. We perform phacoemulsification with modern intraocular lenses. The procedure is safe, quick, and requires minimal recovery time." },
+      { q: "Is cataract surgery safe at Dhamma Superspeciality Hospital?", a: "Yes. We perform phacoemulsification with modern intraocular lenses. The procedure is safe, quick, and requires minimal recovery time." },
       { q: "Are diabetic eye complications managed here?", a: "Yes. We offer complete diabetic eye screening and management including laser photocoagulation and intravitreal injections." },
-      { q: "Does BHRI conduct eye camps?", a: "Yes. Regular free eye camps are organised in rural areas with cataract surgeries, spectacle distribution, and eye health education." },
+      { q: "Does Dhamma Superspeciality Hospital conduct eye camps?", a: "Yes. Regular free eye camps are organised in rural areas with cataract surgeries, spectacle distribution, and eye health education." },
     ],
   },
 
@@ -330,7 +330,7 @@ export const departments: Record<string, DeptData> = {
     splitImage: "/carousel-1.png",
     splitHeading: "Back to Motion",
     splitText: "Our Orthopaedics department specialises in the complete spectrum of bone and joint conditions — from acute trauma to complex reconstructive surgery. We restore function, reduce pain, and enable patients to return to normal life.",
-    overview: "The Department of Orthopaedics at BHRI handles trauma, fractures, joint replacements, sports injuries, spine surgery, and paediatric orthopaedics. A fully equipped operation theatre with C-arm imaging, implant storage, and dedicated physiotherapy enables comprehensive orthopaedic care.",
+    overview: "The Department of Orthopaedics at Dhamma Superspeciality Hospital handles trauma, fractures, joint replacements, sports injuries, spine surgery, and paediatric orthopaedics. A fully equipped operation theatre with C-arm imaging, implant storage, and dedicated physiotherapy enables comprehensive orthopaedic care.",
     highlights: [
       "Trauma care with emergency fracture fixation and polytrauma management",
       "Joint replacement surgery — hip and knee arthroplasty",
@@ -349,9 +349,9 @@ export const departments: Record<string, DeptData> = {
     stats: [{ value: "100+", label: "Surgeries/Month" }, { value: "24/7", label: "Trauma Emergency" }, { value: "15+", label: "Faculty & Residents" }, { value: "C-Arm", label: "Intraoperative Imaging" }],
     facilities: ["Ortho OT with C-Arm", "Trauma ICU", "Implant Store", "Cast & Splint Room", "Physiotherapy Department", "Spine Surgery Suite", "Arthroscopy Setup", "Fracture Clinic"],
     faqs: [
-      { q: "Does BHRI handle emergency fractures?", a: "Yes. Our trauma team is available 24/7 for emergency fracture fixation including road traffic accidents and polytrauma cases." },
+      { q: "Does Dhamma Superspeciality Hospital handle emergency fractures?", a: "Yes. Our trauma team is available 24/7 for emergency fracture fixation including road traffic accidents and polytrauma cases." },
       { q: "Are joint replacement surgeries performed?", a: "Yes. We perform total knee and hip replacements using high-quality prostheses with full physiotherapy support." },
-      { q: "What is the recovery time after knee replacement?", a: "Patients typically begin walking with support within 24–48 hours and achieve full function within 6–12 weeks." },
+      { q: "What is the recovery time after knee replacement?", a: "Patients typically begin walking with support within 24—48 hours and achieve full function within 6—12 weeks." },
     ],
   },
 
@@ -362,7 +362,7 @@ export const departments: Record<string, DeptData> = {
     splitImage: "/carousel-2.png",
     splitHeading: "The Heart of Clinical Care",
     splitText: "General Medicine is the largest clinical department, managing the broadest spectrum of diseases. Our team of internists provides holistic, evidence-based care for acute and chronic medical conditions with a focus on patient outcomes.",
-    overview: "The Department of General Medicine at BHRI manages all common and complex medical conditions including cardiovascular diseases, respiratory disorders, neurological conditions, endocrine diseases, infections, and critical care. As the backbone of clinical services, it provides round-the-clock inpatient and outpatient care.",
+    overview: "The Department of General Medicine at Dhamma Superspeciality Hospital manages all common and complex medical conditions including cardiovascular diseases, respiratory disorders, neurological conditions, endocrine diseases, infections, and critical care. As the backbone of clinical services, it provides round-the-clock inpatient and outpatient care.",
     highlights: [
       "ICU and HDU for medical emergencies and critical care",
       "Dedicated clinics for diabetes, hypertension, and asthma management",
@@ -383,7 +383,7 @@ export const departments: Record<string, DeptData> = {
     faqs: [
       { q: "What types of cases are managed in General Medicine?", a: "All non-surgical acute and chronic medical conditions — cardiovascular, respiratory, neurological, endocrine, gastrointestinal, renal, and infectious diseases." },
       { q: "Is ICU care available?", a: "Yes. Our medical ICU manages critical conditions including sepsis, respiratory failure, cardiac events, and multi-organ dysfunction." },
-      { q: "Does BHRI have a diabetes management programme?", a: "Yes. We have a dedicated diabetes clinic with HbA1c testing, dietitian support, and complication screening." },
+      { q: "Does Dhamma Superspeciality Hospital have a diabetes management programme?", a: "Yes. We have a dedicated diabetes clinic with HbA1c testing, dietitian support, and complication screening." },
     ],
   },
 
@@ -394,7 +394,7 @@ export const departments: Record<string, DeptData> = {
     splitImage: "/hospital_ipd_hero.png",
     splitHeading: "Surgical Excellence at Every Level",
     splitText: "Our General Surgery department delivers evidence-based, patient-centric surgical care for a wide range of conditions. With experienced surgeons and a modern operation theatre, we handle both emergency and elective cases with precision and safety.",
-    overview: "The Department of General Surgery at BHRI provides comprehensive surgical services covering abdominal, breast, thyroid, hernia, anorectal, vascular, and trauma surgery. A modern operation theatre with laparoscopic equipment supports both open and minimally invasive surgical procedures.",
+    overview: "The Department of General Surgery at Dhamma Superspeciality Hospital provides comprehensive surgical services covering abdominal, breast, thyroid, hernia, anorectal, vascular, and trauma surgery. A modern operation theatre with laparoscopic equipment supports both open and minimally invasive surgical procedures.",
     highlights: [
       "Laparoscopic surgery — cholecystectomy, appendicectomy, and hernia repair",
       "Breast surgery — wide local excision, mastectomy, and oncoplasty",
@@ -413,9 +413,9 @@ export const departments: Record<string, DeptData> = {
     stats: [{ value: "150+", label: "Surgeries/Month" }, { value: "24/7", label: "Emergency Surgery" }, { value: "15+", label: "Faculty & Residents" }, { value: "Lap+Open", label: "Surgical Techniques" }],
     facilities: ["Modular OT Suite", "Laparoscopic Tower", "ICU & Recovery Ward", "Pre-op Assessment Clinic", "Surgical Oncology Suite", "Endoscopy Suite", "Wound Care Clinic", "Day Surgery Unit"],
     faqs: [
-      { q: "Is laparoscopic surgery available at BHRI?", a: "Yes. We perform laparoscopic cholecystectomy, appendicectomy, hernia repair, and other minimally invasive procedures with faster recovery." },
+      { q: "Is laparoscopic surgery available at Dhamma Superspeciality Hospital?", a: "Yes. We perform laparoscopic cholecystectomy, appendicectomy, hernia repair, and other minimally invasive procedures with faster recovery." },
       { q: "Does the department handle emergency surgical cases?", a: "Yes. Our emergency surgical team is available 24/7 for acute abdomen, perforations, trauma, and other surgical emergencies." },
-      { q: "What is the typical hospital stay after laparoscopic surgery?", a: "Most laparoscopic procedures require only 1–2 days of hospitalisation with return to normal activities within a week." },
+      { q: "What is the typical hospital stay after laparoscopic surgery?", a: "Most laparoscopic procedures require only 1—2 days of hospitalisation with return to normal activities within a week." },
     ],
   },
 
@@ -426,7 +426,7 @@ export const departments: Record<string, DeptData> = {
     splitImage: "/carousel-5.png",
     splitHeading: "Every Child Deserves the Best Care",
     splitText: "Our Paediatrics department provides holistic child health services from the NICU to adolescent medicine. We combine clinical expertise with a child-friendly environment to ensure the best possible outcomes for our youngest patients.",
-    overview: "The Department of Paediatrics at BHRI provides comprehensive healthcare for neonates, infants, children, and adolescents. NICU, PICU, and dedicated paediatric wards ensure specialised care at every stage of childhood with round-the-clock specialist coverage.",
+    overview: "The Department of Paediatrics at Dhamma Superspeciality Hospital provides comprehensive healthcare for neonates, infants, children, and adolescents. NICU, PICU, and dedicated paediatric wards ensure specialised care at every stage of childhood with round-the-clock specialist coverage.",
     highlights: [
       "Neonatal Intensive Care Unit (NICU) for preterm and sick neonates",
       "Paediatric Intensive Care Unit (PICU) for critically ill children",
@@ -445,8 +445,8 @@ export const departments: Record<string, DeptData> = {
     stats: [{ value: "20", label: "NICU Beds" }, { value: "10", label: "PICU Beds" }, { value: "24/7", label: "Specialist Cover" }, { value: "100%", label: "Immunisation Programme" }],
     facilities: ["NICU", "PICU", "Paediatric Wards", "Immunisation Room", "Growth Monitoring Clinic", "Neonatal Resuscitation", "Phototherapy Units", "Paediatric Emergency"],
     faqs: [
-      { q: "What is the capacity of BHRI's NICU?", a: "Our NICU has 20 beds equipped for ventilatory support, phototherapy, parenteral nutrition, and advanced neonatal monitoring." },
-      { q: "Does BHRI follow the national immunisation schedule?", a: "Yes. We follow the Universal Immunisation Programme (UIP) and also offer additional vaccines as recommended by the IAP." },
+      { q: "What is the capacity of Dhamma Superspeciality Hospital's NICU?", a: "Our NICU has 20 beds equipped for ventilatory support, phototherapy, parenteral nutrition, and advanced neonatal monitoring." },
+      { q: "Does Dhamma Superspeciality Hospital follow the national immunisation schedule?", a: "Yes. We follow the Universal Immunisation Programme (UIP) and also offer additional vaccines as recommended by the IAP." },
       { q: "Are paediatric emergencies handled 24/7?", a: "Yes. Our paediatric team including NICU and PICU specialists are available round the clock for all emergencies." },
     ],
   },
@@ -458,7 +458,7 @@ export const departments: Record<string, DeptData> = {
     splitImage: "/carousel-4.png",
     splitHeading: "Celebrating Every Birth, Supporting Every Woman",
     splitText: "Our Obstetrics and Gynecology department is committed to ensuring safe motherhood and comprehensive women's health care. From high-risk pregnancy management to minimally invasive gynaecological surgery, we provide expert, compassionate care.",
-    overview: "The Department of Obstetrics & Gynecology at BHRI delivers comprehensive maternal and women's healthcare. Our services encompass high-risk pregnancy, labour and delivery, LSCS, laparoscopic gynaecological surgery, infertility evaluation, and menstrual disorder management.",
+    overview: "The Department of Obstetrics & Gynecology at Dhamma Superspeciality Hospital delivers comprehensive maternal and women's healthcare. Our services encompass high-risk pregnancy, labour and delivery, LSCS, laparoscopic gynaecological surgery, infertility evaluation, and menstrual disorder management.",
     highlights: [
       "High-risk pregnancy management and antenatal care",
       "Labour ward with continuous foetal monitoring",
@@ -477,7 +477,7 @@ export const departments: Record<string, DeptData> = {
     stats: [{ value: "100+", label: "Deliveries/Month" }, { value: "24/7", label: "Labour Ward Cover" }, { value: "20+", label: "Gynaec Surgeries/Month" }, { value: "15+", label: "Faculty & Residents" }],
     facilities: ["Labour Room Suite", "LSCS OT", "Antenatal Clinic", "Gynaecology OPD", "Laparoscopy Suite", "Colposcopy Clinic", "Foetal Monitoring Unit", "Postnatal Wards"],
     faqs: [
-      { q: "Does BHRI handle high-risk pregnancies?", a: "Yes. We have a dedicated high-risk obstetrics clinic and facility for management of pre-eclampsia, GDM, multiple pregnancies, and foetal complications." },
+      { q: "Does Dhamma Superspeciality Hospital handle high-risk pregnancies?", a: "Yes. We have a dedicated high-risk obstetrics clinic and facility for management of pre-eclampsia, GDM, multiple pregnancies, and foetal complications." },
       { q: "Is laparoscopic gynaecological surgery available?", a: "Yes. Laparoscopic procedures including ovarian cystectomy, myomectomy, ectopic surgery, and diagnostic laparoscopy are performed regularly." },
       { q: "What cancer screening services are available?", a: "Cervical cancer screening with PAP smear and colposcopy is available. VIA/VILI screening is also offered for early detection." },
     ],
@@ -490,7 +490,7 @@ export const departments: Record<string, DeptData> = {
     splitImage: "/carousel-1.png",
     splitHeading: "Mental Health is Health",
     splitText: "Our Psychiatry department provides a full spectrum of mental health services in a supportive, non-judgmental environment. From assessment and therapy to pharmacological management, we are committed to mental wellbeing for every patient.",
-    overview: "The Department of Psychiatry at BHRI provides comprehensive mental health services including assessment, diagnosis, and management of psychiatric disorders. Services cover depression, anxiety, schizophrenia, substance abuse, psychosomatic disorders, and liaison psychiatry across all clinical departments.",
+    overview: "The Department of Psychiatry at Dhamma Superspeciality Hospital provides comprehensive mental health services including assessment, diagnosis, and management of psychiatric disorders. Services cover depression, anxiety, schizophrenia, substance abuse, psychosomatic disorders, and liaison psychiatry across all clinical departments.",
     highlights: [
       "Outpatient and inpatient psychiatric services with dedicated wards",
       "Psychotherapy including CBT and supportive therapy",
@@ -510,7 +510,7 @@ export const departments: Record<string, DeptData> = {
     facilities: ["Outpatient Clinic", "Psychiatric Ward", "Psychotherapy Rooms", "De-addiction Centre", "ECT Suite", "Group Therapy Room", "Child Psychiatry Clinic", "Liaison Psychiatry Services"],
     faqs: [
       { q: "Is psychiatric consultation confidential?", a: "Absolutely. All consultations, records, and treatment information are strictly confidential and governed by medical ethics and Indian law." },
-      { q: "Does BHRI offer de-addiction services?", a: "Yes. We have a structured de-addiction and rehabilitation programme for alcohol, opioid, and other substance use disorders." },
+      { q: "Does Dhamma Superspeciality Hospital offer de-addiction services?", a: "Yes. We have a structured de-addiction and rehabilitation programme for alcohol, opioid, and other substance use disorders." },
       { q: "Are psychotherapy services available?", a: "Yes. We offer CBT, supportive psychotherapy, and relaxation therapy. Our trained therapists work alongside psychiatrists for holistic care." },
     ],
   },
@@ -522,7 +522,7 @@ export const departments: Record<string, DeptData> = {
     splitImage: "/biochemistry_diagnostics.png",
     splitHeading: "Where Diagnosis Begins",
     splitText: "Modern radiology is the backbone of clinical medicine. Our Radiology department provides a full suite of imaging services — from plain X-rays to advanced MRI and CT scans — enabling fast and accurate diagnosis to guide treatment.",
-    overview: "The Department of Radiology at BHRI provides comprehensive diagnostic imaging and interventional radiology services including X-ray, ultrasonography, CT scan, MRI, and fluoroscopy. Detailed reporting by experienced radiologists supports all clinical departments.",
+    overview: "The Department of Radiology at Dhamma Superspeciality Hospital provides comprehensive diagnostic imaging and interventional radiology services including X-ray, ultrasonography, CT scan, MRI, and fluoroscopy. Detailed reporting by experienced radiologists supports all clinical departments.",
     highlights: [
       "Multidetector CT scanner with thin-slice imaging",
       "1.5 Tesla MRI for neurological, musculoskeletal, and abdominal imaging",
@@ -541,8 +541,8 @@ export const departments: Record<string, DeptData> = {
     stats: [{ value: "200+", label: "Scans/Day" }, { value: "24/7", label: "Emergency Imaging" }, { value: "1.5T", label: "MRI Strength" }, { value: "<4h", label: "Report Turnaround" }],
     facilities: ["Digital X-Ray", "CT Scanner", "MRI Machine", "Ultrasound Suites", "Mammography Unit", "Fluoroscopy Suite", "PACS System", "Interventional Suite"],
     faqs: [
-      { q: "Is MRI available at BHRI?", a: "Yes. We have a 1.5 Tesla MRI providing high-resolution imaging for brain, spine, joints, and abdominal organs." },
-      { q: "How soon are reports available?", a: "Routine reports are available within 4–6 hours. Emergency reports (trauma, stroke, acute abdomen) are prioritised immediately." },
+      { q: "Is MRI available at Dhamma Superspeciality Hospital?", a: "Yes. We have a 1.5 Tesla MRI providing high-resolution imaging for brain, spine, joints, and abdominal organs." },
+      { q: "How soon are reports available?", a: "Routine reports are available within 4—6 hours. Emergency reports (trauma, stroke, acute abdomen) are prioritised immediately." },
       { q: "Is radiation safe in CT scans?", a: "CT scans use low doses of ionising radiation and are considered safe when clinically indicated. Our radiologists optimise protocols to minimise dose." },
     ],
   },
@@ -554,7 +554,7 @@ export const departments: Record<string, DeptData> = {
     splitImage: "/carousel-3.png",
     splitHeading: "Healthy Skin, Confident Life",
     splitText: "Our Dermatology department provides specialised care for all skin, hair, and nail conditions. From acne and eczema to psoriasis and sexually transmitted infections, we deliver evidence-based dermatological care with modern treatment modalities.",
-    overview: "The Department of Dermatology, Venereology & Leprosy at BHRI provides comprehensive care for skin diseases including common inflammatory dermatoses, infectious skin conditions, STIs, leprosy, pigmentation disorders, and procedural dermatology.",
+    overview: "The Department of Dermatology, Venereology & Leprosy at Dhamma Superspeciality Hospital provides comprehensive care for skin diseases including common inflammatory dermatoses, infectious skin conditions, STIs, leprosy, pigmentation disorders, and procedural dermatology.",
     highlights: [
       "Dermatoscopy for pigmented lesion analysis and skin cancer screening",
       "Phototherapy (NBUVB) for psoriasis and vitiligo",
@@ -575,18 +575,18 @@ export const departments: Record<string, DeptData> = {
     faqs: [
       { q: "Is phototherapy available for vitiligo and psoriasis?", a: "Yes. Narrowband UVB (NBUVB) phototherapy is available and is an effective treatment for vitiligo, psoriasis, and other chronic skin diseases." },
       { q: "Are STI and HIV skin manifestations managed here?", a: "Yes. We have a dedicated STI clinic following national protocols for diagnosis, treatment, contact tracing, and counselling." },
-      { q: "Does BHRI treat leprosy?", a: "Yes. We provide complete leprosy care including diagnosis, multi-drug therapy (MDT), reaction management, and disability prevention." },
+      { q: "Does Dhamma Superspeciality Hospital treat leprosy?", a: "Yes. We provide complete leprosy care including diagnosis, multi-drug therapy (MDT), reaction management, and disability prevention." },
     ],
   },
 
   dentistry: {
     name: "Dentistry",
-    tagline: "Healthy smiles, confident lives — comprehensive oral and dental healthcare at BHRI.",
+    tagline: "Healthy smiles, confident lives — comprehensive oral and dental healthcare at Dhamma Superspeciality Hospital.",
     heroImage: "/carousel-4.png",
     splitImage: "/carousel-2.png",
     splitHeading: "Your Smile is Our Priority",
     splitText: "Our Dentistry department provides a full range of dental and oral health services. From routine fillings to oral surgery and cosmetic dentistry, our qualified dentists ensure every patient leaves with a healthier, brighter smile.",
-    overview: "The Department of Dentistry at BHRI provides comprehensive oral health services including dental caries management, periodontal care, oral surgery, prosthetics, orthodontics, and oral pathology. A fully equipped dental clinic ensures quality care for all dental conditions.",
+    overview: "The Department of Dentistry at Dhamma Superspeciality Hospital provides comprehensive oral health services including dental caries management, periodontal care, oral surgery, prosthetics, orthodontics, and oral pathology. A fully equipped dental clinic ensures quality care for all dental conditions.",
     highlights: [
       "Digital OPG X-ray for full oral and maxillofacial assessment",
       "Oral surgery including wisdom tooth extraction and implants",
@@ -606,8 +606,8 @@ export const departments: Record<string, DeptData> = {
     facilities: ["Modern Dental Chairs", "Digital OPG X-Ray", "Dental Surgery Suite", "Sterilisation Unit", "RCT Suite", "Orthodontic Clinic", "Dental Lab", "Oral Cancer Screening"],
     faqs: [
       { q: "Is root canal treatment painful?", a: "Modern RCT with local anaesthesia is virtually painless. Most patients experience minimal discomfort during and after the procedure." },
-      { q: "Are dental implants available at BHRI?", a: "Yes. We offer dental implant placement and restoration as a permanent solution for missing teeth." },
-      { q: "Does BHRI provide orthodontic treatment?", a: "Yes. We offer fixed braces and aligners for correction of crowded, spaced, or misaligned teeth." },
+      { q: "Are dental implants available at Dhamma Superspeciality Hospital?", a: "Yes. We offer dental implant placement and restoration as a permanent solution for missing teeth." },
+      { q: "Does Dhamma Superspeciality Hospital provide orthodontic treatment?", a: "Yes. We offer fixed braces and aligners for correction of crowded, spaced, or misaligned teeth." },
     ],
   },
 
@@ -618,7 +618,7 @@ export const departments: Record<string, DeptData> = {
     splitImage: "/carousel-3.png",
     splitHeading: "Your Safety is Our Priority",
     splitText: "Our Anaesthesiology department ensures the safety and comfort of every patient undergoing surgery or procedure. From pre-operative assessment to post-operative care, our anaesthetists are present at every critical step.",
-    overview: "The Department of Anaesthesiology at BHRI is responsible for safe anaesthesia delivery across all surgical specialities, critical care management in the ICU, pain clinic services, and emergency resuscitation. Our team of experienced anaesthesiologists ensures optimal patient safety.",
+    overview: "The Department of Anaesthesiology at Dhamma Superspeciality Hospital is responsible for safe anaesthesia delivery across all surgical specialities, critical care management in the ICU, pain clinic services, and emergency resuscitation. Our team of experienced anaesthesiologists ensures optimal patient safety.",
     highlights: [
       "General, regional, and neuraxial anaesthesia for all surgical specialities",
       "Anaesthesia for high-risk patients — cardiac, obstetric, and paediatric",

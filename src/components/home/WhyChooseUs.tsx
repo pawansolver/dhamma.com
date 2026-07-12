@@ -117,7 +117,7 @@ export default function WhyChooseUs() {
               Centre of Excellence
             </div>
           </div>
-          <h2 className="section-heading">Why Choose <span className="text-brandSaffron">BHRI?</span></h2>
+          <h2 className="section-heading">Why Choose <span className="text-brandSaffron">Dhamma Superspeciality Hospital?</span></h2>
           <span className="section-heading-line" />
           <p className="section-subheading">
             With a state of the art technology and infrastructure the institute is well equipped for every treatment and emergency

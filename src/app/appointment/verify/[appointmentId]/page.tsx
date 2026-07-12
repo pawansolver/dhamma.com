@@ -100,7 +100,7 @@ export default function VerifyAppointmentPage() {
             <CheckCircle size={36} className="text-green-500" />
           </div>
           <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">Appointment Verified</h1>
-          <p className="text-blue-100">Official BHRI Bodhgaya Hospital Record</p>
+          <p className="text-blue-100">Official BHRI Patna Hospital Record</p>
         </div>
 
         {/* Content */}
@@ -175,8 +175,8 @@ export default function VerifyAppointmentPage() {
           </div>
 
           <div className="bg-gray-50 rounded-xl p-4 text-center border border-gray-100">
-            <h3 className="font-bold text-gray-800 mb-1">BHRI Bodhgaya Hospital</h3>
-            <p className="text-sm text-gray-500 mb-3">Buddha Institute of Health Sciences, Bodhgaya</p>
+            <h3 className="font-bold text-gray-800 mb-1">BHRI Patna Hospital</h3>
+            <p className="text-sm text-gray-500 mb-3">Dhamma Institute of Health Sciences, Patna</p>
             <Link 
               href={`${API_BASE}/appointments/slip/${appointment.appointmentId}`} 
               target="_blank"

@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { ParticleButton } from "@/components/ui/particle-button";
+import { NoiseButton } from "@/components/ui/noise-button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 
@@ -10,8 +10,8 @@ const imageSlides = [
   {
     image: "/images/herrroo/gfs.png",
     overhead: "ABOUT DHAMMA",
-    titleLine1: "भगवान बुद्ध के विचारों से प्रेरित..",
-    titleLine2: "We Provide Finest Patient's Care & Amenities",
+    titleLine1: "Compassionate Care, World-Class Excellence",
+    titleLine2: "Dhamma Superspeciality Hospital — Where Healing Begins",
     subtitle: "Embrace a world of comprehensive healthcare where your well-being takes center stage. At Dhamma, we're dedicated to providing you with personalized and compassionate medical services.",
   },
   {
@@ -86,25 +86,25 @@ export default function HeroSection() {
               ABOUT DHAMMA
             </p>
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-extrabold leading-tight mb-3 md:mb-5 text-[#1a1a2e]">
-              भगवान बुद्ध के विचारों से प्रेरित.. <br />
-              We Provide Finest Patient's Care &amp; Amenities
+              Compassionate Care, World-Class Excellence <br />
+              We Provide Finest Patient&apos;s Care &amp; Amenities
             </h1>
             <p className="text-gray-500 text-sm sm:text-base md:text-lg max-w-xl mb-6 mx-auto lg:mx-0 leading-relaxed">
               Embrace a world of comprehensive healthcare where your well-being takes center stage. At Dhamma, we're dedicated to providing you with personalized and compassionate medical services.
             </p>
             <div className="flex flex-wrap gap-3 md:gap-4 justify-center lg:justify-start">
-              <ParticleButton 
+              <NoiseButton
                 onClick={() => router.push("#about-section")}
-                className="bg-brandBlue text-white hover:bg-brandBlueDark rounded-full px-6 shadow-lg shadow-brandBlue/30"
+                className="shadow-lg shadow-brandBlue/30"
               >
                 Explore More
-              </ParticleButton>
-              <ParticleButton 
+              </NoiseButton>
+              <NoiseButton
                 onClick={() => router.push("#contact-form")}
-                className="bg-brandSaffron text-white hover:bg-orange-600 rounded-full px-6 shadow-lg shadow-brandSaffron/30"
+                className="shadow-lg shadow-brandSaffron/30"
               >
                 Contact Us
-              </ParticleButton>
+              </NoiseButton>
             </div>
 
 
@@ -198,7 +198,6 @@ export default function HeroSection() {
         <span className="mx-1">/</span>
         <span>{String(TOTAL).padStart(2, "0")}</span>
       </div>
-
 
     </section>
   );
