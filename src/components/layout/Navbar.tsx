@@ -92,80 +92,37 @@ export default function Navbar() {
   const { openBooking } = useBooking();
 
   return (
-    <header className="w-full sticky top-0 z-50 shadow-md">
-      {/* ───── TIER 2: Logo strip ───── */}
-      <div className="relative border-b border-border bg-white overflow-hidden">
-        <div className="absolute right-0 top-0 bottom-0 w-[55%] z-[1]">
-          <Image
-            src="/images/navbar-art.png"
-            alt=""
-            fill
-            sizes="55vw"
-            className="object-cover object-right opacity-70"
-            aria-hidden="true"
-            priority
-          />
-        </div>
-
-        {/* Adjusted padding and layout so button always fits on mobile */}
-        <div className="relative z-[2] w-full max-w-[1440px] mx-auto px-3 sm:px-4 md:px-6 flex items-center justify-between h-16 sm:h-20 md:h-24 lg:h-28">
-
-          <Link href="/" className="flex items-center gap-2 md:gap-3 flex-shrink max-w-[80%] lg:max-w-none h-full py-1 sm:py-2">
-            <div className="w-40 sm:w-56 md:w-72 lg:w-96 h-full relative flex-shrink-0">
-              <Image
-                src="/dhamma.png"
-                alt="logo"
-                fill
-                priority
-                className="object-contain object-left"
-              />
-            </div>
-
-
-          </Link>
-
-          {/* Desktop Actions */}
-          <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
-            <button onClick={openBooking} className="nav-action-btn nav-btn-green">
-              <Clock size={14} />
-              Appointment Booking
-            </button>
-            <a href="/hospital/emergency" className="nav-action-btn nav-btn-red">
-              <ShieldAlert size={14} />
-              Emergency
-            </a>
+    <header className="w-full sticky top-0 z-50 bg-white shadow-sm border-l-[8px] border-[#005587]">
+      <div className="w-full max-w-[1600px] mx-auto px-2 lg:px-4 flex items-center justify-between h-20 md:h-24">
+        
+        {/* Left: Logo */}
+        <Link href="/" className="flex items-center flex-shrink-0 h-full py-3">
+          <div className="w-48 sm:w-64 lg:w-56 xl:w-72 2xl:w-80 h-full relative">
+            <Image
+              src="/dhamma.png"
+              alt="logo"
+              fill
+              priority
+              className="object-contain object-left"
+            />
           </div>
+        </Link>
 
-          {/* Fully Visible Hamburger Button */}
-          <button
-            className="lg:hidden flex items-center justify-center p-2 rounded-md bg-[#0056b3] text-white flex-shrink-0 ml-auto z-50 transition-colors"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? <Menu size={22} className="opacity-0" /> : <Menu size={22} />}
-          </button>
-        </div>
-      </div>
-
-      {/* ───── TIER 3: Main navigation ───── */}
-      <nav className="relative" style={{ background: 'linear-gradient(135deg, #BF953F)', backgroundSize: '200% auto' }}>
-        <div className="absolute left-0 bottom-0 w-full h-px bg-gradient-to-r from-transparent via-brandSaffron/20 to-transparent pointer-events-none" />
-
-        {/* Desktop Menu */}
-        <div className="container-custom hidden lg:flex items-center justify-evenly w-full">
+        {/* Center: Desktop Menu */}
+        <nav className="hidden lg:flex items-center justify-center gap-0.5 xl:gap-2 flex-1 h-full px-2">
           {MENU.map((item, idx) => (
             <div
               key={item.label}
-              className={item.children && item.children.length > 8 ? "" : "relative"}
+              className={`h-full flex items-center ${item.children && item.children.length > 8 ? "" : "relative"}`}
               onMouseEnter={() => setOpenDropdown(item.label)}
               onMouseLeave={() => setOpenDropdown(null)}
             >
               <Link
                 href={item.href}
-                className="flex items-center gap-1 px-3 xl:px-4 py-3 text-[13px] font-semibold uppercase text-white hover:text-red-500 transition-colors whitespace-nowrap"
+                className="flex items-center gap-1 px-1.5 xl:px-2 py-2 text-[12px] xl:text-[14px] 2xl:text-[15px] font-bold text-[#003B5C] hover:text-[#005587] transition-all whitespace-nowrap group border-b-2 border-transparent hover:border-[#005587]"
               >
-                {item.label}
-                {item.children && <ChevronDown size={13} className="opacity-70" />}
+                <span className="capitalize">{item.label.toLowerCase()}</span>
+                {item.children && <ChevronDown size={14} className="text-[#003B5C] group-hover:text-[#005587]" />}
               </Link>
 
               {item.children && openDropdown === item.label && (
@@ -179,15 +136,15 @@ export default function Navbar() {
                             <Link
                               key={child.label}
                               href={child.href}
-                              className="text-[14px] text-gray-700 hover:text-blue-600 font-medium transition-colors"
+                              className="text-[14px] text-gray-700 hover:text-[#005587] font-medium transition-colors"
                             >
                               {child.label}
                             </Link>
                           ))}
                         </div>
                       </div>
-                      <div className="bg-gray-100 px-8 py-4 border-t border-gray-200">
-                        <Link href="/departments" className="text-[14px] text-gray-900 font-semibold hover:text-blue-600 flex items-center gap-1 transition-colors">
+                      <div className="bg-gray-50 px-8 py-4 border-t border-gray-200">
+                        <Link href="/departments" className="text-[14px] text-[#005587] font-bold hover:text-[#003B5C] flex items-center gap-1 transition-colors">
                           View all {item.label.toLowerCase()} <ChevronDown size={14} className="-rotate-90" />
                         </Link>
                       </div>
@@ -195,13 +152,13 @@ export default function Navbar() {
                   </div>
                 ) : (
                   /* ── STANDARD DROPDOWN ── */
-                  <div className={`absolute top-full ${idx > MENU.length / 2 ? 'right-0' : 'left-0'} min-w-[220px] bg-white border border-gray-200 shadow-xl z-50 rounded-b-lg overflow-hidden transition-all duration-200 opacity-100 translate-y-0`}>
+                  <div className={`absolute top-full ${idx > MENU.length / 2 ? 'right-0' : 'left-0'} min-w-[240px] bg-white border border-gray-100 shadow-xl z-50 rounded-b-md overflow-hidden transition-all duration-200`}>
                     <div className="py-2">
-                      {item.children.map((child, idx) => (
+                      {item.children.map((child) => (
                         <Link
                           key={child.label}
                           href={child.href}
-                          className="flex items-center px-5 py-2.5 text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-all text-[14px] font-medium"
+                          className="block px-5 py-3 text-gray-700 hover:text-[#005587] hover:bg-blue-50/50 transition-all text-[14px] font-medium"
                         >
                           {child.label}
                         </Link>
@@ -212,100 +169,118 @@ export default function Navbar() {
               )}
             </div>
           ))}
+        </nav>
+
+        {/* Right: Desktop Actions */}
+        <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
+          <button onClick={openBooking} className="bg-[#FFD100] hover:bg-[#F2C700] text-[#003B5C] font-bold px-6 py-2.5 rounded-sm transition-all flex items-center gap-2 shadow-sm">
+            <Clock size={16} />
+            Book Appointment
+          </button>
+          <a href="/hospital/emergency" className="text-red-600 font-bold px-2 py-2 hover:text-red-700 transition-colors flex items-center gap-1.5">
+            <ShieldAlert size={16} />
+            Emergency
+          </a>
         </div>
 
-        {/* ───── Mobile menu ───── */}
-        {/* ───── Mobile Sidebar Overlay ───── */}
-        <div
-          className={`lg:hidden fixed inset-0 z-[60] bg-black/50 transition-opacity duration-300 ${mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"
-            }`}
-          onClick={() => setMobileOpen(false)}
-          aria-hidden="true"
-        />
+        {/* Mobile Toggle Button */}
+        <button
+          className="lg:hidden flex items-center justify-center p-2 rounded-md bg-[#005587] text-white flex-shrink-0 z-50 transition-colors"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle menu"
+        >
+          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
 
-        {/* ───── Mobile Sidebar ───── */}
-        <div className={`lg:hidden fixed top-0 left-0 h-screen w-[85%] max-w-[320px] bg-[#0056b3] shadow-2xl z-[70] transition-transform duration-300 ease-in-out flex flex-col ${mobileOpen ? "translate-x-0" : "-translate-x-full"
-          }`}>
-          {/* Sidebar Header */}
-          <div className="flex items-center justify-between p-4 border-b border-white/10 bg-[#0f2557] flex-shrink-0">
-            <span className="font-extrabold text-white text-lg">Menu</span>
-            <button
-              onClick={() => setMobileOpen(false)}
-              className="p-2 bg-white/10 rounded-md text-white hover:bg-white/20 transition-colors"
-              aria-label="Close menu"
-            >
-              <X size={20} />
-            </button>
-          </div>
+      {/* ───── Mobile menu ───── */}
+      {/* ───── Mobile Sidebar Overlay ───── */}
+      <div
+        className={`lg:hidden fixed inset-0 z-[60] bg-black/50 transition-opacity duration-300 ${mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
+        onClick={() => setMobileOpen(false)}
+        aria-hidden="true"
+      />
 
-          {/* Menu Items */}
-          <div className="flex-1 overflow-y-auto py-2">
-            {MENU.map((item) => (
-              <div key={item.label} className="border-b border-white/5">
-                {item.children ? (
-                  <>
-                    <button
-                      className="w-full flex items-center justify-between px-5 py-3.5 text-[14px] font-semibold text-white text-left focus:outline-none"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setMobileSubmenu(mobileSubmenu === item.label ? null : item.label);
-                      }}
-                    >
-                      {item.label}
-                      <ChevronDown
-                        size={18}
-                        className={`transition-transform duration-300 ${mobileSubmenu === item.label ? "rotate-180" : ""
-                          }`}
-                      />
-                    </button>
-                    {mobileSubmenu === item.label && (
-                      <div className="bg-black/20">
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.label}
-                            href={child.href}
-                            className="block px-8 py-3 text-[13px] text-white/80 hover:text-white border-b border-white/5 last:border-0"
-                            onClick={() => setMobileOpen(false)}
-                          >
-                            {child.label}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className="block px-5 py-3.5 text-[14px] font-semibold text-white hover:bg-white/5 transition-colors"
-                    onClick={() => setMobileOpen(false)}
+      {/* ───── Mobile Sidebar ───── */}
+      <div className={`lg:hidden fixed top-0 left-0 h-screen w-[85%] max-w-[320px] bg-white shadow-2xl z-[70] transition-transform duration-300 ease-in-out flex flex-col ${mobileOpen ? "translate-x-0" : "-translate-x-full"}`}>
+        {/* Sidebar Header */}
+        <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-gray-50 flex-shrink-0">
+          <span className="font-extrabold text-[#003B5C] text-lg">Menu</span>
+          <button
+            onClick={() => setMobileOpen(false)}
+            className="p-2 bg-gray-200 rounded-md text-gray-700 hover:bg-gray-300 transition-colors"
+            aria-label="Close menu"
+          >
+            <X size={20} />
+          </button>
+        </div>
+
+        {/* Menu Items */}
+        <div className="flex-1 overflow-y-auto py-2">
+          {MENU.map((item) => (
+            <div key={item.label} className="border-b border-gray-100">
+              {item.children ? (
+                <>
+                  <button
+                    className="w-full flex items-center justify-between px-5 py-3.5 text-[15px] font-bold text-[#003B5C] text-left focus:outline-none"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setMobileSubmenu(mobileSubmenu === item.label ? null : item.label);
+                    }}
                   >
-                    {item.label}
-                  </Link>
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* Sidebar Footer Buttons */}
-          <div className="p-5 bg-[#0f2557] flex flex-col gap-3 flex-shrink-0 border-t border-white/10">
-            <button
-              className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-md text-sm font-semibold text-white bg-green-600 hover:bg-green-700 transition"
-              onClick={() => { setMobileOpen(false); openBooking(); }}
-            >
-              <Clock size={16} />
-              Book Appointment
-            </button>
-            <a
-              href="/hospital/emergency"
-              className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-md text-sm font-semibold text-white bg-red-600 hover:bg-red-700 transition"
-              onClick={() => setMobileOpen(false)}
-            >
-              <ShieldAlert size={16} />
-              Emergency
-            </a>
-          </div>
+                    <span className="capitalize">{item.label.toLowerCase()}</span>
+                    <ChevronDown
+                      size={18}
+                      className={`transition-transform duration-300 ${mobileSubmenu === item.label ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                  {mobileSubmenu === item.label && (
+                    <div className="bg-gray-50">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.label}
+                          href={child.href}
+                          className="block px-8 py-3 text-[14px] font-medium text-gray-600 hover:text-[#005587] border-b border-gray-100 last:border-0"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <Link
+                  href={item.href}
+                  className="block px-5 py-3.5 text-[15px] font-bold text-[#003B5C] hover:bg-gray-50 transition-colors capitalize"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {item.label.toLowerCase()}
+                </Link>
+              )}
+            </div>
+          ))}
         </div>
-      </nav>
+
+        {/* Sidebar Footer Buttons */}
+        <div className="p-5 bg-gray-50 flex flex-col gap-3 flex-shrink-0 border-t border-gray-200">
+          <button
+            className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-sm text-sm font-bold text-[#003B5C] bg-[#FFD100] hover:bg-[#F2C700] shadow-sm transition"
+            onClick={() => { setMobileOpen(false); openBooking(); }}
+          >
+            <Clock size={16} />
+            Book Appointment
+          </button>
+          <a
+            href="/hospital/emergency"
+            className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-sm text-sm font-bold text-white bg-red-600 hover:bg-red-700 shadow-sm transition"
+            onClick={() => setMobileOpen(false)}
+          >
+            <ShieldAlert size={16} />
+            Emergency
+          </a>
+        </div>
+      </div>
 
       {/* Floating WhatsApp Button */}
       <div className="fixed right-4 bottom-[5.5rem] sm:bottom-24 z-[999]">
@@ -322,17 +297,7 @@ export default function Navbar() {
         </a>
       </div>
 
-      {/* Floating Book OPD Button - Right Side */}
-      <div className="fixed right-4 bottom-6 z-[999]">
-        <button
-          onClick={openBooking}
-          className="group flex items-center gap-2 px-5 py-3 bg-teal-600 text-white font-bold rounded-full shadow-xl hover:bg-teal-700 hover:scale-105 transition-all duration-200 animate-bounce"
-          style={{ animationDuration: "2s" }}
-        >
-          <Calendar size={18} />
-          <span className="hidden sm:inline">Book OPD</span>
-        </button>
-      </div>
+
 
     </header>
   );

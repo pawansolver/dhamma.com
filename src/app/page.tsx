@@ -17,13 +17,13 @@ export default function Home() {
     <>
       <HeroSection />
       <NewsTicker />
+      <DepartmentsGrid />
       <AboutSection />
       <Capabilities />
       <Services />
       <WhyChooseDhamma />
       <Announcements />
       <TestimonialSection />
-      <DepartmentsGrid />
       <CtaBanner />
       <TpaSection />
       <GallerySection />

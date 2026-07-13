@@ -2,201 +2,203 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
-import { NoiseButton } from "@/components/ui/noise-button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { MessageCircle, Pause, Play, ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-const imageSlides = [
+const slides = [
+  {
+    image: "/images/hero/hero-3.png",
+    title: (
+      <>
+        <span className="text-[#003B5C] uppercase">KEEP ON</span>
+        <span className="text-[#1D70B8] uppercase">CHANGING</span>
+        <span className="text-[#1D70B8] uppercase">LIVES FOR THE BETTER</span>
+      </>
+    ),
+    description: "World-class healthcare driven by compassion, dedicated to making a real difference in your journey to wellness.",
+  },
+  {
+    image: "/images/facilities/operation-theatre.png",
+    title: (
+      <>
+        <span className="text-[#061836]">Safeguarding Tomorrow:</span>
+        <span className="text-[#061836]">Our Oath to Preserve Lives</span>
+      </>
+    ),
+    description: "Embrace a world of comprehensive healthcare where your well-being takes center stage. At Dhamma Superspeciality Hospital, we're dedicated to providing you with personalized medical services.",
+  },
   {
     image: "/images/herrroo/gfs.png",
-    overhead: "ABOUT DHAMMA",
-    titleLine1: "Compassionate Care, World-Class Excellence",
-    titleLine2: "Dhamma Superspeciality Hospital — Where Healing Begins",
-    subtitle: "Embrace a world of comprehensive healthcare where your well-being takes center stage. At Dhamma, we're dedicated to providing you with personalized and compassionate medical services.",
+    title: (
+      <>
+        <span className="text-[#061836]">Transforming Lives,</span>
+        <span className="text-[#061836]">Restoring Your Health</span>
+      </>
+    ),
+    description: "Embrace a world of comprehensive healthcare where your well-being takes center stage. At Dhamma Superspeciality Hospital, we're dedicated to providing you with personalized medical services.",
+    button: "Learn More",
   },
   {
     image: "/images/herrroo/917A1613-scaled.jpg",
-    title: "Expert Medical Team",
-    subtitle: "250+ experienced doctors & faculty across 20+ departments",
+    title: (
+      <>
+        <span className="text-[#003B5C] uppercase">Expert</span>
+        <span className="text-[#1D70B8] uppercase">Medical Team</span>
+      </>
+    ),
+    description: "250+ experienced doctors & faculty across 20+ departments ensuring you receive the best care possible.",
   },
   {
     image: "/images/herrroo/917A1641-scaled.jpg",
-    title: "Advanced Surgical Care",
-    subtitle: "Equipped with modern OT, ICU, NICU & PICU with ventilator support",
-  },
+    title: (
+      <>
+        <span className="text-[#003B5C] uppercase">Advanced</span>
+        <span className="text-[#1D70B8] uppercase">Surgical Care</span>
+      </>
+    ),
+    description: "Equipped with modern OT, ICU, NICU & PICU with ventilator support for critical emergencies.",
+  }
 ];
 
-const TOTAL = 1 + imageSlides.length;
-
 export default function HeroSection() {
-  const [current, setCurrent] = useState(0);
+  const [currentIdx, setCurrentIdx] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true);
   const router = useRouter();
 
-  const next = useCallback(() => {
-    setCurrent((p) => (p + 1) % TOTAL);
-  }, []);
-
-  const prev = useCallback(() => {
-    setCurrent((p) => (p - 1 + TOTAL) % TOTAL);
+  const nextSlide = useCallback(() => {
+    setCurrentIdx((prev) => (prev + 1) % slides.length);
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(next, 5000);
+    if (!isPlaying) return;
+    const timer = setInterval(nextSlide, 5000); // Slightly longer for the animation to complete
     return () => clearInterval(timer);
-  }, [next]);
+  }, [isPlaying, nextSlide]);
 
   return (
-    <section className="relative w-full h-[650px] sm:h-[650px] md:h-[500px] lg:h-[550px] overflow-hidden">
+    <section className="relative w-full h-[calc(100vh-80px)] md:h-[calc(100vh-96px)] min-h-[500px] bg-[#f5f4ef] overflow-hidden flex items-center">
 
-      {/* ── Slide 0: Light theme static hero ── */}
+      {/* ── Custom Animation Styles for the Circular Wipe ── */}
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        @keyframes wipe-up {
+          0% {
+            clip-path: circle(0% at 50% 100%);
+          }
+          100% {
+            clip-path: circle(150% at 50% 100%);
+          }
+        }
+        .slide-animate-in {
+          animation: wipe-up 1.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+          z-index: 10;
+        }
+        .slide-hidden {
+          opacity: 0;
+          z-index: 0;
+        }
+        .slide-visible {
+          opacity: 1;
+          z-index: 1;
+        }
+      `}} />
+
+      {/* Main Container for the Image area (Left curve, flush top/right/bottom) */}
       <div
-        className="absolute inset-0 transition-opacity duration-[900ms] ease-in-out bg-[#eef4fb]"
-        style={{ opacity: current === 0 ? 1 : 0, zIndex: current === 0 ? 2 : 1 }}
+        className="absolute top-0 right-0 w-[80%] md:w-[70%] lg:w-[65%] xl:w-[60%] h-full z-0"
+        style={{ clipPath: 'ellipse(100% 100% at 100% 50%)' }}
       >
-        {/* Decorative bg shapes */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -top-20 -right-20 w-[450px] h-[450px] rounded-full border-2 border-brandBlue/10" />
-          <div className="absolute -top-10 -right-10 w-[350px] h-[350px] rounded-full border border-brandBlue/[0.06]" />
-          <div className="absolute bottom-10 left-[5%] w-[200px] h-[200px] rounded-full bg-brandBlue/[0.04]" />
-          <div className="absolute top-[20%] left-[30%] w-3 h-3 rounded-full bg-brandBlue/10" />
-          <div className="absolute top-[60%] left-[15%] w-2 h-2 rounded-full bg-brandSaffron/15" />
-          <div className="absolute bottom-[30%] right-[40%] w-2.5 h-2.5 rounded-full bg-brandGreen/10" />
-          <svg className="absolute bottom-0 left-0 w-full h-16 opacity-[0.05]" viewBox="0 0 1440 64" fill="none" preserveAspectRatio="none">
-            <path d="M0 32 L200 32 L220 8 L240 56 L260 16 L280 48 L300 32 L600 32 L620 10 L640 54 L660 18 L680 46 L700 32 L1440 32" stroke="#1a3a6b" strokeWidth="2.5" fill="none" />
-          </svg>
-        </div>
+        {/* Yellow gradient overlay matching the image */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#e3d081] via-[#e3d081]/30 to-transparent z-20 w-[40%] h-full pointer-events-none mix-blend-multiply"></div>
 
-        <div className="relative z-10 h-full w-full max-w-[1440px] mx-auto px-6 sm:px-14 md:px-16 lg:px-10 flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-10 pt-16 pb-32 sm:pt-20 sm:pb-24 lg:py-6">
-
-          {/* Logo is now visible on mobile, positioned neatly */}
-          <div className="flex-shrink-0 relative order-first lg:order-last mb-2 lg:mb-0">
-            <div className="absolute -inset-2 lg:-inset-4 rounded-full border-2 border-dashed border-brandBlue/10 animate-[spin_40s_linear_infinite]" />
-            <Image
-              src="/images/herrroo/gfs.png"
-              alt="Dhamma Logo"
-              width={220}
-              height={220}
-              priority
-              className="drop-shadow-xl relative z-10 w-24 h-24 sm:w-28 sm:h-28 lg:w-[220px] lg:h-[220px] object-contain"
-            />
+        {/* Sliding Images */}
+        {slides.map((slide, idx) => (
+          <div
+            key={`mask-${idx}`}
+            className={`absolute inset-0 ${currentIdx === idx ? 'slide-animate-in' : 'slide-visible'}`}
+            style={{ display: currentIdx === idx ? 'block' : 'none' }}
+          >
           </div>
+        ))}
+        {/* Proper layering for animation: previous slide stays, new slide wipes over it */}
+        {slides.map((slide, idx) => {
+          let className = "absolute inset-0 slide-hidden";
+          if (idx === currentIdx) {
+            className = "absolute inset-0 slide-animate-in";
+          } else if (idx === (currentIdx - 1 + slides.length) % slides.length) {
+            // Previous slide stays visible behind the wiping one
+            className = "absolute inset-0 slide-visible";
+          }
 
-          <div className="flex-1 text-center lg:text-left mt-2 lg:mt-0">
-            <p className="text-brandBlue font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] mb-2 md:mb-3 flex items-center gap-2 justify-center lg:justify-start">
-              ABOUT DHAMMA
-            </p>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-extrabold leading-tight mb-3 md:mb-5 text-[#1a1a2e]">
-              Compassionate Care, World-Class Excellence <br />
-              We Provide Finest Patient&apos;s Care &amp; Amenities
-            </h1>
-            <p className="text-gray-500 text-sm sm:text-base md:text-lg max-w-xl mb-6 mx-auto lg:mx-0 leading-relaxed">
-              Embrace a world of comprehensive healthcare where your well-being takes center stage. At Dhamma, we're dedicated to providing you with personalized and compassionate medical services.
-            </p>
-            <div className="flex flex-wrap gap-3 md:gap-4 justify-center lg:justify-start">
-              <NoiseButton
-                onClick={() => router.push("#about-section")}
-                className="shadow-lg shadow-brandBlue/30"
-              >
-                Explore More
-              </NoiseButton>
-              <NoiseButton
-                onClick={() => router.push("#contact-form")}
-                className="shadow-lg shadow-brandSaffron/30"
-              >
-                Contact Us
-              </NoiseButton>
+          return (
+            <div key={`img-${idx}`} className={className}>
+              <Image
+                src={slide.image}
+                alt={`Slide ${idx + 1}`}
+                fill
+                className="object-cover object-center"
+                priority={idx === 0 || idx === 1}
+              />
             </div>
-
-
-          </div>
-        </div>
+          );
+        })}
       </div>
 
-      {/* ── Slides 1-4: Full image slides with light overlay ── */}
-      {imageSlides.map((slide, i) => {
-        const slideIdx = i + 1;
-        return (
-          <div
-            key={i}
-            className="absolute inset-0 overflow-hidden transition-opacity duration-[900ms] ease-in-out"
-            style={{ opacity: current === slideIdx ? 1 : 0, zIndex: current === slideIdx ? 2 : 1 }}
+      {/* Left Content - Typography */}
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto px-6 sm:px-12 md:px-20 lg:px-24 flex flex-col justify-center">
+        {slides.map((slide, idx) => (
+          <div 
+            key={idx}
+            className="absolute transition-all duration-1000 ease-in-out flex flex-col items-start"
+            style={{ 
+              opacity: currentIdx === idx ? 1 : 0,
+              transform: currentIdx === idx ? 'translateY(0)' : 'translateY(20px)',
+              pointerEvents: currentIdx === idx ? 'auto' : 'none',
+              zIndex: currentIdx === idx ? 20 : 0
+            }}
           >
-            <div
-              className="absolute inset-0 bg-no-repeat bg-[#1a3a6b]"
-              style={{
-                backgroundImage: `url('${slide.image}')`,
-                backgroundPosition: "center",
-                backgroundSize: "100% 100%",
-              }}
-              role="img"
-              aria-label={slide.title}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-white/90 via-white/70 md:via-white/40 to-transparent" />
-            <div className="absolute inset-0 pointer-events-none hidden md:block">
-              <div className="absolute -top-16 -right-16 w-[350px] h-[350px] rounded-full border-2 border-brandBlue/10" />
-              <div className="absolute bottom-8 left-[8%] w-[150px] h-[150px] rounded-full bg-brandBlue/[0.05]" />
-            </div>
-
-            <div className="relative z-10 h-full w-full max-w-[1440px] mx-auto px-6 sm:px-14 md:px-16 lg:px-10 flex flex-col justify-center text-center md:text-left items-center md:items-start pt-12 pb-24 md:py-0">
-              <div className="max-w-xl">
-                <p className="text-brandBlue font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] mb-2 md:mb-3 flex items-center gap-2 justify-center md:justify-start">
-                  {!slide.overhead && <span className="w-2 h-2 rounded-full bg-brandSaffron inline-block" />}
-                  {slide.overhead || "Dhamma Institute"}
-                </p>
-                {slide.titleLine1 ? (
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-extrabold text-[#1a1a2e] leading-[1.2] md:leading-[1.15] mb-3 md:mb-4">
-                    {slide.titleLine1} <br /> {slide.titleLine2}
-                  </h2>
-                ) : (
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1a1a2e] leading-[1.2] md:leading-[1.1] mb-3 md:mb-4">
-                    {slide.title}
-                  </h2>
-                )}
-                <p className="text-gray-700 md:text-gray-600 text-sm sm:text-base md:text-lg max-w-md mx-auto md:mx-0 leading-relaxed">
-                  {slide.subtitle}
-                </p>
-              </div>
-            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4.5rem] font-black leading-[1.05] tracking-tight flex flex-col mb-4 sm:mb-6 max-w-2xl">
+              {slide.title}
+            </h1>
+            <p className="text-base sm:text-lg text-[#061836]/70 font-medium max-w-xl leading-relaxed mb-8">
+              {slide.description}
+            </p>
+            {slide.button && (
+              <button 
+                onClick={() => router.push('/about')}
+                className="flex items-center gap-2 bg-[#0d6efd] hover:bg-[#0b5ed7] text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-transform hover:scale-105"
+              >
+                <span className="bg-white text-[#0d6efd] rounded-full p-1"><ArrowRight size={16} strokeWidth={3} /></span>
+                <span className="text-[15px]">{slide.button}</span>
+              </button>
+            )}
           </div>
-        );
-      })}
-
-      {/* ── Navigation arrows ── */}
-      <button
-        onClick={prev}
-        className="absolute left-2 sm:left-4 lg:left-8 top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-full bg-brandBlue/10 backdrop-blur-sm border border-brandBlue/20 flex items-center justify-center text-brandBlue hover:bg-brandBlue hover:text-white transition-all"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft size={20} className="sm:w-[22px] sm:h-[22px]" />
-      </button>
-      <button
-        onClick={next}
-        className="absolute right-2 sm:right-4 lg:right-8 top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-full bg-brandBlue/10 backdrop-blur-sm border border-brandBlue/20 flex items-center justify-center text-brandBlue hover:bg-brandBlue hover:text-white transition-all"
-        aria-label="Next slide"
-      >
-        <ChevronRight size={20} className="sm:w-[22px] sm:h-[22px]" />
-      </button>
-
-      {/* ── Dot indicators ── */}
-      {/* Shifted up to avoid bottom strip on mobile */}
-      <div className="absolute bottom-[80px] sm:bottom-[70px] lg:bottom-16 left-1/2 -translate-x-1/2 z-10 flex items-center gap-1.5 sm:gap-2">
-        {Array.from({ length: TOTAL }).map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className={`h-1.5 sm:h-2 rounded-full transition-all duration-500 ${i === current ? "w-6 sm:w-8 bg-brandBlue" : "w-2 sm:w-3 bg-brandBlue/25 hover:bg-brandBlue/40"
-              }`}
-            aria-label={`Go to slide ${i + 1}`}
-          />
         ))}
       </div>
 
-      {/* ── Slide counter ── */}
-      {/* Shifted up as well */}
-      <div className="absolute bottom-[76px] sm:bottom-[66px] lg:bottom-[60px] right-4 lg:right-10 z-10 text-gray-500 text-xs sm:text-sm font-mono">
-        <span className="text-brandBlue font-bold text-base sm:text-lg">{String(current + 1).padStart(2, "0")}</span>
-        <span className="mx-1">/</span>
-        <span>{String(TOTAL).padStart(2, "0")}</span>
+      {/* Bottom Right Floating Buttons */}
+      <div className="absolute bottom-8 right-8 lg:bottom-12 lg:right-16 z-30 flex flex-col items-end gap-4">
+        {/* Pause/Play Button */}
+        <button
+          onClick={() => setIsPlaying(!isPlaying)}
+          className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-[#003B5C] text-white flex items-center justify-center hover:bg-[#002840] transition-transform hover:scale-110 shadow-lg mr-2"
+          aria-label={isPlaying ? "Pause slider" : "Play slider"}
+        >
+          {isPlaying ? (
+            <Pause size={18} fill="currentColor" />
+          ) : (
+            <Play size={20} fill="currentColor" className="ml-1" />
+          )}
+        </button>
+
+        {/* Ask Me Anything Button */}
+        <button
+          onClick={() => router.push('/contact')}
+          className="flex items-center justify-center gap-2 lg:gap-3 bg-[#FFC107] hover:bg-[#FFB300] text-[#003B5C] font-semibold py-3 lg:py-3.5 px-6 lg:px-8 rounded-full shadow-lg transition-transform hover:scale-105"
+        >
+          <MessageCircle size={20} strokeWidth={2} className="rotate-y-180" style={{ transform: 'scaleX(-1)' }} />
+          <span className="text-[14px] lg:text-[15px]">Ask Me Anything</span>
+        </button>
       </div>
 
     </section>
