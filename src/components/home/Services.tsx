@@ -1,48 +1,48 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight, ArrowRight, BriefcaseMedical, Dna, Activity, Stethoscope, Pill, Landmark } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight, Activity, Stethoscope, Pill, Brain, Bone, Baby, Scissors, Droplets } from "lucide-react";
 
 const services = [
   {
     title: "Urology",
     description: "Expert urological care for kidney, bladder, and male reproductive health.",
-    icon: BriefcaseMedical,
+    icon: Droplets,
   },
   {
     title: "Neuro Surgery",
     description: "Advanced surgical care for complex neurological conditions with precision and expertise.",
-    icon: Dna,
+    icon: Brain,
   },
   {
     title: "Rheumatology",
     description: "Comprehensive care for autoimmune and joint diseases to reduce inflammation.",
-    icon: BriefcaseMedical,
+    icon: Bone,
   },
   {
     title: "Obs. & Gynae.",
     description: "Comprehensive care for women's health, including pregnancy, fertility, and wellness.",
-    icon: Activity,
+    icon: Baby,
   },
   {
     title: "Gastroenterology",
     description: "Digestive health services for GI disorders with endoscopic and surgical solutions.",
-    icon: BriefcaseMedical,
+    icon: Activity,
   },
   {
     title: "Pediatric",
     description: "Comprehensive child healthcare from newborns to adolescents, focusing on wellness.",
-    icon: Stethoscope,
+    icon: Baby,
   },
   {
     title: "Plastic Surgery",
     description: "Aesthetic and reconstructive surgery for facial, body, and hand conditions.",
-    icon: Activity,
+    icon: Scissors,
   },
   {
     title: "General Medicine",
     description: "Primary healthcare managing chronic and acute diseases with personalized care.",
-    icon: Pill,
+    icon: Stethoscope,
   },
 ];
 
@@ -101,10 +101,13 @@ export default function Services() {
             {visibleServices.map((service) => (
               <div 
                 key={service.title} 
-                className="group cursor-pointer bg-[#c2ebe5] relative p-5 md:p-6 aspect-square flex flex-col justify-between border-b-[8px] border-[#009b9b] overflow-hidden transition-colors hover:bg-[#b0dfd8]"
+                className="group cursor-pointer bg-[#e6f0fa] relative p-5 md:p-6 aspect-square flex flex-col justify-between border-b-[8px] border-[#0072CE] overflow-hidden transition-colors hover:bg-[#cce0f5]"
               >
-                {/* Watermark Icon */}
-                <Landmark strokeWidth={1} className="absolute -bottom-4 -left-4 w-28 h-28 text-white/40 z-0 pointer-events-none" />
+                {/* Duotone Watermark Icon (Content-Specific) */}
+                <service.icon 
+                  strokeWidth={1.5} 
+                  className="absolute -bottom-4 -left-4 w-32 h-32 text-[#0072CE]/15 fill-[#FFC107]/30 z-0 pointer-events-none transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-2 group-hover:rotate-3" 
+                />
                 
                 {/* Content */}
                 <div className="relative z-10 w-11/12">

@@ -54,57 +54,68 @@ export default function DepartmentsGrid() {
     const interval = setInterval(() => {
       if (scrollRef.current) {
         const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-        // If we've reached the end of the scroll container
         if (scrollLeft + clientWidth >= scrollWidth - 10) {
-          // Loop back to the start
           scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
-          // Otherwise, scroll right automatically
           scroll('right');
         }
       }
-    }, 3500); // Slide every 3.5 seconds
+    }, 3500);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-white">
+    <section className="py-12 sm:py-16 md:py-20 bg-[#fafafa]">
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="flex justify-between items-end mb-10 border-b pb-4">
-          <h2 className="text-2xl md:text-3xl lg:text-[32px] font-medium text-[#1A202C]">
-            Speciality
-          </h2>
+        <div className="flex justify-between items-end mb-8">
+          <div>
+            <h2 className="section-heading !text-left !mb-2 !w-auto">
+              Speciality
+            </h2>
+            <span className="section-heading-line !ml-0 !mb-0" />
+          </div>
           <Link 
             href="/departments" 
-            className="text-orange-500 font-medium hover:text-orange-600 transition-colors pb-1"
+            className="text-[#0072CE] font-normal text-[15px] hover:underline transition-all pb-1 border-b border-transparent"
           >
             View all
           </Link>
         </div>
 
+        {/* Divider */}
+        <div className="w-full h-[1px] bg-gray-200 mb-10"></div>
+
         {/* Slider Container */}
         <div className="relative">
           <div 
             ref={scrollRef}
-            className="flex overflow-x-auto gap-4 sm:gap-6 pb-8 snap-x snap-mandatory hide-scrollbar"
+            className="flex overflow-x-auto gap-4 sm:gap-6 pb-4 snap-x snap-mandatory hide-scrollbar"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {allDepts.map((dept, idx) => (
               <Link
                 key={idx}
                 href={dept.href}
-                className="flex-shrink-0 w-[140px] sm:w-[160px] md:w-[180px] snap-start group"
+                className="flex-shrink-0 w-[140px] sm:w-[150px] md:w-[160px] snap-start group"
               >
-                <div className="bg-white rounded-xl p-5 sm:p-6 h-[180px] sm:h-[200px] flex flex-col items-center text-center justify-center border border-gray-100 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-[#003B5C] flex items-center justify-center mb-4 text-white shadow-md group-hover:scale-110 group-hover:bg-[#002842] transition-all duration-300">
-                    <dept.icon size={28} strokeWidth={2} />
+                <div className="bg-white rounded-xl p-5 h-[180px] sm:h-[190px] flex flex-col items-center text-center justify-center border border-gray-100 shadow-sm hover:shadow-md hover:border-gray-200 transition-all duration-300">
+                  
+                  {/* Duotone Icon Matching Screenshot Style */}
+                  <div className="mb-5 relative flex items-center justify-center">
+                    <dept.icon 
+                      size={56} 
+                      strokeWidth={1.5} 
+                      className="text-[#0072CE] fill-[#FFC107]/80 relative z-10 transition-transform duration-300 group-hover:scale-110" 
+                    />
                   </div>
-                  <h3 className="text-[#333] font-medium text-[13px] sm:text-[14px] leading-snug">
+                  
+                  <h3 className="text-[#333] font-medium text-[13px] sm:text-[14px] leading-tight">
                     {dept.name}
                   </h3>
+                  
                 </div>
               </Link>
             ))}
@@ -112,20 +123,20 @@ export default function DepartmentsGrid() {
         </div>
 
         {/* Navigation Arrows */}
-        <div className="flex justify-center items-center gap-4 mt-2">
+        <div className="flex justify-center items-center gap-2 mt-8">
           <button 
             onClick={() => scroll('left')}
-            className="text-[#d87c53] hover:text-[#c4683f] transition-colors p-2"
+            className="text-[#0072CE] hover:text-[#00509E] transition-colors p-1"
             aria-label="Scroll left"
           >
-            <ChevronLeft size={32} strokeWidth={1.5} />
+            <ChevronLeft size={28} strokeWidth={1.5} />
           </button>
           <button 
             onClick={() => scroll('right')}
-            className="text-[#d87c53] hover:text-[#c4683f] transition-colors p-2"
+            className="text-[#0072CE] hover:text-[#00509E] transition-colors p-1"
             aria-label="Scroll right"
           >
-            <ChevronRight size={32} strokeWidth={1.5} />
+            <ChevronRight size={28} strokeWidth={1.5} />
           </button>
         </div>
         

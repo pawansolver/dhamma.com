@@ -61,9 +61,9 @@ const MENU: MenuItem[] = [
     ]
   },
   { label: "Contact Us", href: "/contact" },
-  { label: "FACULTY & DOCTORS", href: "/doctors" },
+  { label: "Faculty & Doctors", href: "/doctors" },
   {
-    label: "DEPARTMENTS",
+    label: "Departments",
     href: "#",
     children: [
       { label: "All Services", href: "/departments", doctors: "32+" },
@@ -92,24 +92,56 @@ export default function Navbar() {
   const { openBooking } = useBooking();
 
   return (
-    <header className="w-full sticky top-0 z-50 bg-white shadow-sm border-l-[8px] border-[#005587]">
-      <div className="w-full max-w-[1600px] mx-auto px-2 lg:px-4 flex items-center justify-between h-20 md:h-24">
+    <header className="w-full sticky top-0 z-50 bg-white shadow-sm border-l-[8px] border-[#0072CE] flex flex-col font-sans">
+      {/* ── Top Row: Action Buttons ── */}
+      <div className="hidden lg:flex w-full bg-[#fdfaf8] border-b border-gray-200 py-1.5">
+        <div className="w-full max-w-[1600px] mx-auto px-4 flex justify-end xl:justify-center items-center gap-10">
+          
+          <button className="flex items-center gap-2 text-gray-700 font-medium hover:text-[#00509E] transition-colors">
+            <span className="flex items-center justify-center w-8 h-8 rounded-full border border-gray-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </span>
+            Request a Callback
+          </button>
+
+          <button 
+            onClick={openBooking} 
+            className="flex items-center gap-2 bg-[#FDECEE] text-[#2d1b19] px-6 py-2 rounded-full font-semibold hover:bg-[#FAD7DC] transition-colors"
+          >
+            <Calendar size={18} className="text-[#E63946]" />
+            Book Appointment
+          </button>
+
+          <a href="/health-checkup" className="flex items-center gap-2 text-gray-700 font-medium hover:text-[#0072CE] transition-colors">
+            <span className="flex items-center justify-center w-8 h-8 rounded-full border border-gray-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 2.05h-.1a10 10 0 0 0-9.8 10A10 10 0 0 0 11 22h.1M17 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10zM12 10l5-5M15 17a2 2 0 1 0 4 0 2 2 0 1 0-4 0zM17 19v3"></path></svg>
+            </span>
+            Get Health Checkup
+          </a>
+
+        </div>
+      </div>
+
+      {/* ── Main Row: Logo & Menu ── */}
+      <div className="w-full max-w-[1600px] mx-auto px-4 flex items-center justify-between py-2 md:py-3">
         
-        {/* Left: Logo */}
-        <Link href="/" className="flex items-center flex-shrink-0 h-full py-3">
-          <div className="w-48 sm:w-64 lg:w-56 xl:w-72 2xl:w-80 h-full relative">
-            <Image
-              src="/dhamma.png"
-              alt="logo"
-              fill
-              priority
-              className="object-contain object-left"
-            />
-          </div>
-        </Link>
+        {/* Left: Logo (Fixed width basis so center is truly centered if we had a right element) */}
+        <div className="flex items-center flex-shrink-0 w-[20%]">
+          <Link href="/" className="flex items-center">
+            <div className="w-56 sm:w-64 xl:w-72 h-12 md:h-16 relative">
+              <Image
+                src="/dhamma.png"
+                alt="logo"
+                fill
+                priority
+                className="object-contain object-left"
+              />
+            </div>
+          </Link>
+        </div>
 
         {/* Center: Desktop Menu */}
-        <nav className="hidden lg:flex items-center justify-center gap-0.5 xl:gap-2 flex-1 h-full px-2">
+        <nav className="hidden lg:flex items-center justify-center gap-2 xl:gap-4 flex-1 h-full">
           {MENU.map((item, idx) => (
             <div
               key={item.label}
@@ -119,10 +151,10 @@ export default function Navbar() {
             >
               <Link
                 href={item.href}
-                className="flex items-center gap-1 px-1.5 xl:px-2 py-2 text-[12px] xl:text-[14px] 2xl:text-[15px] font-bold text-[#003B5C] hover:text-[#005587] transition-all whitespace-nowrap group border-b-2 border-transparent hover:border-[#005587]"
+                className="flex items-center gap-1 px-1.5 xl:px-3 py-1 text-[13px] xl:text-[15px] font-medium text-gray-700 hover:text-black transition-all whitespace-nowrap group border-b-2 border-transparent hover:border-gray-300"
               >
-                <span className="capitalize">{item.label.toLowerCase()}</span>
-                {item.children && <ChevronDown size={14} className="text-[#003B5C] group-hover:text-[#005587]" />}
+                <span className="capitalize">{item.label}</span>
+                {item.children && <ChevronDown size={14} className="text-gray-500 group-hover:text-black" />}
               </Link>
 
               {item.children && openDropdown === item.label && (
@@ -136,7 +168,7 @@ export default function Navbar() {
                             <Link
                               key={child.label}
                               href={child.href}
-                              className="text-[14px] text-gray-700 hover:text-[#005587] font-medium transition-colors"
+                              className="text-[14px] text-gray-700 hover:text-[#0072CE] font-medium transition-colors"
                             >
                               {child.label}
                             </Link>
@@ -144,7 +176,7 @@ export default function Navbar() {
                         </div>
                       </div>
                       <div className="bg-gray-50 px-8 py-4 border-t border-gray-200">
-                        <Link href="/departments" className="text-[14px] text-[#005587] font-bold hover:text-[#003B5C] flex items-center gap-1 transition-colors">
+                        <Link href="/departments" className="text-[14px] text-[#0072CE] font-bold hover:text-[#00509E] flex items-center gap-1 transition-colors">
                           View all {item.label.toLowerCase()} <ChevronDown size={14} className="-rotate-90" />
                         </Link>
                       </div>
@@ -158,7 +190,7 @@ export default function Navbar() {
                         <Link
                           key={child.label}
                           href={child.href}
-                          className="block px-5 py-3 text-gray-700 hover:text-[#005587] hover:bg-blue-50/50 transition-all text-[14px] font-medium"
+                          className="block px-5 py-3 text-gray-700 hover:text-[#0072CE] hover:bg-blue-50/50 transition-all text-[14px] font-medium"
                         >
                           {child.label}
                         </Link>
@@ -171,27 +203,16 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Right: Desktop Actions */}
-        <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
-          <button onClick={openBooking} className="bg-[#FFD100] hover:bg-[#F2C700] text-[#003B5C] font-bold px-6 py-2.5 rounded-sm transition-all flex items-center gap-2 shadow-sm">
-            <Clock size={16} />
-            Book Appointment
-          </button>
-          <a href="/hospital/emergency" className="text-red-600 font-bold px-2 py-2 hover:text-red-700 transition-colors flex items-center gap-1.5">
-            <ShieldAlert size={16} />
-            Emergency
-          </a>
-        </div>
-
         {/* Mobile Toggle Button */}
         <button
-          className="lg:hidden flex items-center justify-center p-2 rounded-md bg-[#005587] text-white flex-shrink-0 z-50 transition-colors"
+          className="lg:hidden flex items-center justify-center p-2 rounded-md bg-[#0072CE] text-white flex-shrink-0 z-50 transition-colors ml-4"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
+
 
       {/* ───── Mobile menu ───── */}
       {/* ───── Mobile Sidebar Overlay ───── */}
@@ -205,7 +226,7 @@ export default function Navbar() {
       <div className={`lg:hidden fixed top-0 left-0 h-screen w-[85%] max-w-[320px] bg-white shadow-2xl z-[70] transition-transform duration-300 ease-in-out flex flex-col ${mobileOpen ? "translate-x-0" : "-translate-x-full"}`}>
         {/* Sidebar Header */}
         <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-gray-50 flex-shrink-0">
-          <span className="font-extrabold text-[#003B5C] text-lg">Menu</span>
+          <span className="font-extrabold text-[#00509E] text-lg">Menu</span>
           <button
             onClick={() => setMobileOpen(false)}
             className="p-2 bg-gray-200 rounded-md text-gray-700 hover:bg-gray-300 transition-colors"
@@ -222,7 +243,7 @@ export default function Navbar() {
               {item.children ? (
                 <>
                   <button
-                    className="w-full flex items-center justify-between px-5 py-3.5 text-[15px] font-bold text-[#003B5C] text-left focus:outline-none"
+                    className="w-full flex items-center justify-between px-5 py-3.5 text-[15px] font-bold text-[#00509E] text-left focus:outline-none"
                     onClick={(e) => {
                       e.preventDefault();
                       setMobileSubmenu(mobileSubmenu === item.label ? null : item.label);
@@ -240,7 +261,7 @@ export default function Navbar() {
                         <Link
                           key={child.label}
                           href={child.href}
-                          className="block px-8 py-3 text-[14px] font-medium text-gray-600 hover:text-[#005587] border-b border-gray-100 last:border-0"
+                          className="block px-8 py-3 text-[14px] font-medium text-gray-600 hover:text-[#0072CE] border-b border-gray-100 last:border-0"
                           onClick={() => setMobileOpen(false)}
                         >
                           {child.label}
@@ -252,7 +273,7 @@ export default function Navbar() {
               ) : (
                 <Link
                   href={item.href}
-                  className="block px-5 py-3.5 text-[15px] font-bold text-[#003B5C] hover:bg-gray-50 transition-colors capitalize"
+                  className="block px-5 py-3.5 text-[15px] font-bold text-[#00509E] hover:bg-gray-50 transition-colors capitalize"
                   onClick={() => setMobileOpen(false)}
                 >
                   {item.label.toLowerCase()}
@@ -265,7 +286,7 @@ export default function Navbar() {
         {/* Sidebar Footer Buttons */}
         <div className="p-5 bg-gray-50 flex flex-col gap-3 flex-shrink-0 border-t border-gray-200">
           <button
-            className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-sm text-sm font-bold text-[#003B5C] bg-[#FFD100] hover:bg-[#F2C700] shadow-sm transition"
+            className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-sm text-sm font-bold text-[#00509E] bg-[#FFC107] hover:bg-[#E0A800] shadow-sm transition"
             onClick={() => { setMobileOpen(false); openBooking(); }}
           >
             <Clock size={16} />

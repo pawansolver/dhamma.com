@@ -25,17 +25,18 @@ const features = [
 
 export default function WhyChooseDhamma() {
   return (
-    <section className="w-full bg-[#003B5C] py-16 md:py-24">
+    <section className="w-full bg-[#00509E] py-16 md:py-24">
       <div className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-12">
         
         {/* Header Section */}
-        <div className="text-center mb-16 max-w-4xl mx-auto">
-          <p className="text-brandSaffron font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] mb-4">
-            WHY CHOOSE DHAMMA SUPERSPECIALITY HOSPITAL
-          </p>
-          <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-white mb-6 tracking-tight leading-tight">
+        <div className="text-center mb-16 max-w-4xl mx-auto flex flex-col items-center">
+          <h2 className="section-heading-white">
             We Are Different To Protect Your Health
           </h2>
+          <span className="section-heading-line-white" />
+          <p className="text-brandSaffron font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] mb-4 mt-2">
+            WHY CHOOSE DHAMMA SUPERSPECIALITY HOSPITAL
+          </p>
         </div>
 
         {/* Cards Grid */}
@@ -46,12 +47,12 @@ export default function WhyChooseDhamma() {
               className="bg-white rounded-md p-8 md:p-10 flex flex-col items-center text-center shadow-lg transition-transform hover:-translate-y-1"
             >
               {/* Icon */}
-              <div className="mb-5 text-[#003B5C]">
+              <div className="mb-5 text-[#00509E]">
                 <item.icon size={48} strokeWidth={1.5} />
               </div>
               
               {/* Title */}
-              <h3 className="text-[#003B5C] text-xl md:text-[22px] font-medium mb-4">
+              <h3 className="text-[#00509E] text-xl md:text-[22px] font-medium mb-4">
                 {item.title}
               </h3>
               
@@ -61,7 +62,7 @@ export default function WhyChooseDhamma() {
               </p>
               
               {/* Button */}
-              <button className="w-full border-2 border-[#003B5C] text-[#003B5C] font-semibold py-3 px-6 rounded hover:bg-[#003B5C] hover:text-white transition-colors duration-300 text-[15px]">
+              <button className="w-full border-2 border-[#00509E] text-[#00509E] font-semibold py-3 px-6 rounded hover:bg-[#00509E] hover:text-white transition-colors duration-300 text-[15px]">
                 {item.linkText}
               </button>
             </div>

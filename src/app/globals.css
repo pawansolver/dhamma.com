@@ -5,13 +5,13 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-brandBlue: #1a3a6b;
-  --color-brandBlueDark: #0f2557;
-  --color-brandBlueLight: #2d5ba0;
+  --color-brandBlue: #0072CE;
+  --color-brandBlueDark: #00509E;
+  --color-brandBlueLight: #338DE0;
   --color-brandGreen: #1a7a4a;
   --color-brandGreenLight: #22a05e;
-  --color-brandSaffron: #e6960a;
-  --color-brandSaffronLight: #f5b731;
+  --color-brandSaffron: #FFC107;
+  --color-brandSaffronLight: #FFD54F;
   --color-bgLight: #f5f8fc;
   --color-textmain: #0f172a;
 
@@ -92,7 +92,7 @@ body {
 .section-heading {
   text-align: center;
   font-weight: 700;
-  color: #e6960a;
+  color: #FFC107;
   letter-spacing: -0.02em;
   font-size: clamp(1.5rem, 4vw, 2.1rem);
   line-height: 1.2;
@@ -106,7 +106,7 @@ body {
   height: 4px;
   margin: 0 auto 1.5rem;
   border-radius: 9999px;
-  background: linear-gradient(90deg, #e6960a, #f5b731);
+  background: linear-gradient(90deg, #FFC107, #FFD54F);
 }
 
 .section-subheading {
@@ -643,19 +643,19 @@ h5:not(nav *, header *, footer *, button *, .btn-primary *, .btn-inverse *, .nav
 h6:not(nav *, header *, footer *, button *, .btn-primary *, .btn-inverse *, .nav-action-btn *, .nav-action-btn-mobile *),
 .section-heading:not(footer *),
 .heading-xl {
-  color: #e6960a !important;
-  /* Dhamma Golden Saffron */
+  color: var(--color-brandBlueDark) !important;
+  /* Dhamma Blue */
 }
 
 /* For section headings on dark backgrounds, make them a bright gold/yellow for readability */
 .section-heading-white {
-  color: #f5b731 !important;
+  color: #FFD54F !important;
   /* Dhamma Bright Saffron */
 }
 
 /* Make section lines use the golden gradient */
 .section-heading-line {
-  background: linear-gradient(90deg, #e6960a, #f5b731) !important;
+  background: linear-gradient(90deg, #FFC107, #FFD54F) !important;
 }
 
 /* Ensure strong, b, and bold text in body/content regions are golden yellow */
@@ -664,8 +664,8 @@ b:not(nav *, header *, footer *, button *, .btn-primary *, .btn-inverse *, .nav-
 p strong,
 li strong,
 span strong {
-  color: #e6960a !important;
-  /* Dhamma Golden Saffron for bold text */
+  color: var(--color-brandBlueDark) !important;
+  /* Dhamma Blue for bold text */
 }
 
 /* ═══════════════════════════════════════════════════════

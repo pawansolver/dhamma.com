@@ -32,7 +32,7 @@ export default function PhotoGalleryPage() {
       <section className="relative h-[65vh] min-h-[480px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/80 to-transparent z-10" />
-          <Image 
+          <Image
             src="/images/gallery/gallery-1.png"
             alt="Dhamma Superspeciality Hospital Photo Gallery"
             fill
@@ -40,7 +40,7 @@ export default function PhotoGalleryPage() {
             priority
           />
         </div>
-        
+
         <div className="relative z-20 container mx-auto px-6 lg:px-12 text-left max-w-6xl">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -56,9 +56,9 @@ export default function PhotoGalleryPage() {
             <p className="text-xl lg:text-2xl text-slate-300 font-medium max-w-2xl mb-10 leading-relaxed drop-shadow-md">
               Explore our modern campus, advanced clinical facilities, and state-of-the-art academic infrastructure.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4">
-              <motion.button 
+              <motion.button
                 whileHover={{ scale: 1.05 }}
                 onClick={scrollToGallery}
                 className="px-10 py-4 bg-white text-slate-900 font-bold rounded-full hover:bg-slate-100 transition-all shadow-xl flex items-center justify-center gap-2 max-w-xs"

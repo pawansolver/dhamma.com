@@ -124,7 +124,7 @@ export default function AboutOverview() {
             {/* ------- HERO ----------------------------------------- */}
             <section className="relative min-h-[100dvh] pt-28 sm:pt-36 pb-12 sm:pb-16 flex flex-col justify-between overflow-hidden">
                 <div className="absolute inset-0">
-                    <Image src="/images/about-hospital.png" alt="Dhamma Superspeciality Hospital" fill priority className="object-cover object-top" />
+                    <Image src="/images/herrroo/gfs.png" alt="Dhamma Superspeciality Hospital" fill priority className="object-cover object-top" />
                     {/* Dark cinematic overlays */}
                     <div className="absolute inset-0 bg-[#0a0a0a]/75 sm:bg-[#0a0a0a]/65" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent" />
@@ -421,7 +421,7 @@ export default function AboutOverview() {
             {/* ------- FAQ ------------------------------------------ */}
             <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[560px]">
                 <div className="relative min-h-[300px] lg:min-h-0 hidden lg:block overflow-hidden">
-                    <Image src="/images/about-hospital.png" alt="" fill className="object-cover object-center" />
+                    <Image src="/images/herrroo/917A1613-scaled.jpg" alt="" fill className="object-cover object-center" />
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#111]/60" />
                 </div>
                 <div className="bg-[#111] flex flex-col justify-center px-8 lg:px-14 py-20 relative overflow-hidden">

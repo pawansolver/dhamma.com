@@ -17,8 +17,8 @@ export default function Home() {
     <>
       <HeroSection />
       <NewsTicker />
-      <DepartmentsGrid />
       <AboutSection />
+      <DepartmentsGrid />
       <Capabilities />
       <Services />
       <WhyChooseDhamma />

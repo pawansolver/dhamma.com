@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ImageIcon, Video, ArrowRight } from "lucide-react";
 import { InfiniteSlider } from "@/components/ui/infinite-slider-horizontal";
+import { CometCard } from "@/components/ui/comet-card";
 
 const galleryImages = [
   { src: "/images/gallery/gallery-1.png", title: "Hospital Campus" },
@@ -26,22 +27,22 @@ export default function GallerySection() {
   const [activeTab, setActiveTab] = useState<"gallery" | "video">("gallery");
 
   return (
-    <section className="py-12 md:py-16 bg-bgLight">
+    <section className="py-8 md:py-10 bg-bgLight">
       <div className="w-full max-w-[1440px] mx-auto px-4 md:px-6">
         <h2 className="section-heading">Gallery &amp; Media</h2>
         <span className="section-heading-line" />
-        <p className="section-subheading">
+        <p className="section-subheading mb-4">
           Explore our campus, facilities, and life at Dhamma Superspeciality Hospital through photos and videos
         </p>
 
         {/* Toggle tabs */}
-        <div className="flex justify-center gap-3 mb-10">
+        <div className="flex justify-center gap-3 mb-6">
           <button
             onClick={() => setActiveTab("gallery")}
             className={`flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-sm uppercase tracking-wide transition-all ${
               activeTab === "gallery"
-                ? "bg-[#0f766e] text-white shadow-lg"
-                : "bg-white text-gray-500 border border-gray-200 hover:border-[#0f766e] hover:text-[#0f766e]"
+                ? "bg-[#0072CE] text-white shadow-lg"
+                : "bg-white text-gray-500 border border-gray-200 hover:border-[#0072CE] hover:text-[#0072CE]"
             }`}
           >
             <ImageIcon size={16} />
@@ -51,8 +52,8 @@ export default function GallerySection() {
             onClick={() => setActiveTab("video")}
             className={`flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-sm uppercase tracking-wide transition-all ${
               activeTab === "video"
-                ? "bg-[#0f766e] text-white shadow-lg"
-                : "bg-white text-gray-500 border border-gray-200 hover:border-[#0f766e] hover:text-[#0f766e]"
+                ? "bg-[#0072CE] text-white shadow-lg"
+                : "bg-white text-gray-500 border border-gray-200 hover:border-[#0072CE] hover:text-[#0072CE]"
             }`}
           >
             <Video size={16} />
@@ -63,28 +64,31 @@ export default function GallerySection() {
         {/* Gallery content */}
         {activeTab === "gallery" && (
           <div>
-            <div className="space-y-5">
-              <InfiniteSlider direction="horizontal" duration={35} durationOnHover={9999} gap={16}>
+            <div className="py-4">
+              <InfiniteSlider direction="horizontal" duration={45} durationOnHover={9999} gap={24}>
                 {galleryImages.map((img) => (
-                  <div key={img.title} className="relative w-[160px] sm:w-[200px] md:w-[280px] aspect-[4/3] rounded-lg overflow-hidden shadow-md group flex-shrink-0">
-                    <Image src={img.src} alt={img.title} fill sizes="(max-width: 640px) 160px, (max-width: 1024px) 200px, 280px" className="object-cover transition-transform duration-500 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <p className="absolute bottom-0 left-0 right-0 p-3 text-white text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">{img.title}</p>
-                  </div>
-                ))}
-              </InfiniteSlider>
-              <InfiniteSlider direction="horizontal" reverse duration={38} durationOnHover={9999} gap={16}>
-                {galleryImages.map((img) => (
-                  <div key={`r-${img.title}`} className="relative w-[160px] sm:w-[200px] md:w-[280px] aspect-[4/3] rounded-lg overflow-hidden shadow-md group flex-shrink-0">
-                    <Image src={img.src} alt={img.title} fill sizes="(max-width: 640px) 160px, (max-width: 1024px) 200px, 280px" className="object-cover transition-transform duration-500 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <p className="absolute bottom-0 left-0 right-0 p-3 text-white text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">{img.title}</p>
-                  </div>
+                  <CometCard key={img.title} className="w-[280px] sm:w-[340px] md:w-[420px] flex-shrink-0">
+                    <div className="flex w-full cursor-pointer flex-col items-stretch rounded-[16px] border border-gray-100 bg-white p-2.5 shadow-md transition-all md:p-3">
+                      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[12px]">
+                        <Image
+                          src={img.src}
+                          alt={img.title}
+                          fill
+                          sizes="(max-width: 640px) 280px, (max-width: 1024px) 340px, 420px"
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="mt-3 flex items-center justify-between px-2 pb-1 font-sans text-gray-800">
+                        <div className="text-[13px] sm:text-[14px] font-bold">{img.title}</div>
+                        <div className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">View</div>
+                      </div>
+                    </div>
+                  </CometCard>
                 ))}
               </InfiniteSlider>
             </div>
-            <div className="text-center mt-8">
-              <Link href="/gallery/photos" className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#0f766e] text-white font-bold text-sm rounded-full hover:bg-[#115e59] transition-colors shadow-md">
+            <div className="text-center mt-6">
+              <Link href="/gallery/photos" className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#0072CE] text-white font-bold text-sm rounded-full hover:bg-[#00509E] transition-colors shadow-md">
                 View All Photos <ArrowRight size={16} />
               </Link>
             </div>
@@ -108,7 +112,7 @@ export default function GallerySection() {
               ))}
             </div>
             <div className="text-center mt-8">
-              <Link href="/gallery/videos" className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#0f766e] text-white font-bold text-sm rounded-full hover:bg-[#115e59] transition-colors shadow-md">
+              <Link href="/gallery/videos" className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#0072CE] text-white font-bold text-sm rounded-full hover:bg-[#00509E] transition-colors shadow-md">
                 View All Videos <ArrowRight size={16} />
               </Link>
             </div>

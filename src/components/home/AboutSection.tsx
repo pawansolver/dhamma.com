@@ -21,9 +21,10 @@ export default function AboutSection() {
           <p className="text-brandBlue font-bold text-[10px] md:text-xs uppercase tracking-[0.2em] mb-2 md:mb-3">
             ABOUT DHAMMA
           </p>
-          <h2 className="text-3xl md:text-[40px] font-bold text-[#0a1930] mb-6 leading-[1.2]">
+          <h2 className="section-heading !text-left !mb-3">
             We Provide Finest Patient&apos;s Care &amp; Amenities
           </h2>
+          <span className="section-heading-line !ml-0 !mb-6" />
           <div className="text-gray-600 text-sm md:text-[15px] leading-[1.8] space-y-4 font-sans text-justify">
             <p>
               Dhamma Superspeciality Hospital is a premier multi-speciality healthcare institution located Opposite Canara Bank, Phulwari Sharif, Near AIIMS Gate No. 1, Patna, India, Bihar. We are committed to delivering world-class patient care with compassion, integrity, and clinical excellence — guided by the motto <strong className="text-brandBlue">सेवा परमो धर्म:</strong> — Service is the highest duty.

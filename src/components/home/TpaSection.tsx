@@ -4,15 +4,15 @@ export default function TpaSection() {
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
       <div className="container-custom">
-        <div className="text-center mb-10">
+        <div className="text-center mb-10 flex flex-col items-center">
           <div className="inline-flex items-center gap-2 bg-brandSaffron/10 text-brandSaffron text-xs font-bold uppercase tracking-[0.2em] px-5 py-2 rounded-full border border-brandSaffron/20 mb-4">
             Cashless Facilities
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-brandBlue mb-4">
+          <h2 className="section-heading">
             Our Insurance Partners
           </h2>
-          <div className="w-24 h-1 bg-brandSaffron mx-auto rounded-full"></div>
-          <p className="mt-4 text-gray-500 max-w-2xl mx-auto">
+          <span className="section-heading-line" />
+          <p className="section-subheading !mb-0 !mt-2">
             We are empanelled with major health insurance providers and TPAs to offer seamless cashless treatments and superior healthcare experience.
           </p>
         </div>
