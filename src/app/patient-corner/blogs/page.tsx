@@ -250,13 +250,6 @@ export default function BlogListingPage() {
           </div>
         </div>
       </div>
-      
-      {/* ═══ HELP WIDGET PLACEHOLDER ═══ */}
-      <div className="fixed bottom-6 right-6 z-50">
-          <div className="bg-black text-white px-4 py-3 rounded-t-lg rounded-bl-lg shadow-xl text-xs font-medium cursor-pointer hover:bg-gray-900 transition-colors">
-              Need Assistance?<br/>'Click' to chat!
-          </div>
-      </div>
 
       <style dangerouslySetInnerHTML={{__html: `
         .hide-scrollbar::-webkit-scrollbar {

@@ -106,12 +106,17 @@ export default function Navbar() {
       <div className="hidden lg:flex w-full bg-[#fdfaf8] border-b border-gray-200 py-1.5">
         <div className="w-full max-w-[1600px] mx-auto px-4 flex justify-end xl:justify-center items-center gap-10">
           
-          <button className="flex items-center gap-2 text-gray-700 font-medium hover:text-[#00509E] transition-colors">
+          <a 
+            href="https://wa.me/917643990301?text=Hello%2C%20I%20would%20like%20to%20request%20a%20callback%20from%20Dhamma%20Superspeciality%20Hospital."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-gray-700 font-medium hover:text-[#00509E] transition-colors"
+          >
             <span className="flex items-center justify-center w-8 h-8 rounded-full border border-gray-300">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
             </span>
             Request a Callback
-          </button>
+          </a>
 
           <button 
             onClick={openBooking} 

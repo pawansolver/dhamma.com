@@ -915,16 +915,7 @@ export default function DynamicDepartmentPage({ params }: { params: Promise<{ sl
                         />
                     </div>
 
-                    {/* Side Appointment Ribbon */}
-                    <div className="hidden lg:flex fixed right-0 top-1/2 -translate-y-1/2 z-50">
-                        <div
-                            onClick={openBooking}
-                            className="flex items-center justify-center text-white text-[11px] font-bold tracking-widest uppercase py-4 px-2 cursor-pointer hover:opacity-90 transition-opacity"
-                            style={{ background: "#CC2027", writingMode: "vertical-rl", letterSpacing: "0.2em", borderRadius: "8px 0 0 8px" }}
-                        >
-                            📅 &nbsp; BOOK AN APPOINTMENT
-                        </div>
-                    </div>
+
                 </div>
             </section>
 
