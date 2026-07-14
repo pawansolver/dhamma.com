@@ -45,14 +45,6 @@ const MENU: MenuItem[] = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about/overview" },
   {
-    label: "Area Of Care",
-    href: "#",
-    children: [
-      { label: "Overview", href: "#" }
-    ],
-  },
-  { label: "Health Professionals", href: "/doctors" },
-  {
     label: "Gallery",
     href: "/gallery/photos",
     children: [
@@ -82,6 +74,23 @@ const MENU: MenuItem[] = [
       { label: "Gastroenterology", href: "/departments/gastroenterology", doctors: "1+" },
       { label: "Ophthalmology", href: "/departments/ophthalmology", doctors: "2+" },
     ],
+  },
+  {
+    label: "Media Centre",
+    href: "#",
+    children: [
+      { label: "Press Release", href: "/media/press-release" },
+      { label: "Media Coverage", href: "/media/media-coverage" },
+      { label: "Newsletters", href: "/media/newsletters" },
+      { label: "Media Connect", href: "/media/media-connect" }
+    ]
+  },
+  {
+    label: "Patient Corner",
+    href: "#",
+    children: [
+      { label: "Blogs", href: "/patient-corner/blogs" }
+    ]
   },
 ];
 
@@ -160,41 +169,49 @@ export default function Navbar() {
               {item.children && openDropdown === item.label && (
                 item.children.length > 8 ? (
                   /* ── MEGA MENU (Departments) ── */
-                  <div className="absolute left-0 w-full top-full bg-white border-t border-gray-200 shadow-xl z-50">
-                    <div className="max-w-7xl mx-auto">
-                      <div className="flex px-8 py-8 gap-10">
-                        <div className="flex-1 grid grid-cols-4 gap-x-8 gap-y-4">
-                          {item.children.map((child) => (
-                            <Link
-                              key={child.label}
-                              href={child.href}
-                              className="text-[14px] text-gray-700 hover:text-[#0072CE] font-medium transition-colors"
-                            >
-                              {child.label}
-                            </Link>
-                          ))}
+                  <div className="absolute left-0 w-full top-full z-50">
+                    {/* Invisible Hover Bridge */}
+                    <div className="absolute w-full h-10 -top-10 bg-transparent" />
+                    <div className="bg-white border-t border-gray-200 shadow-xl relative">
+                      <div className="max-w-7xl mx-auto">
+                        <div className="flex px-8 py-8 gap-10">
+                          <div className="flex-1 grid grid-cols-4 gap-x-8 gap-y-4">
+                            {item.children.map((child) => (
+                              <Link
+                                key={child.label}
+                                href={child.href}
+                                className="text-[14px] text-gray-700 hover:text-[#0072CE] font-medium transition-colors"
+                              >
+                                {child.label}
+                              </Link>
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                      <div className="bg-gray-50 px-8 py-4 border-t border-gray-200">
-                        <Link href="/departments" className="text-[14px] text-[#0072CE] font-bold hover:text-[#00509E] flex items-center gap-1 transition-colors">
-                          View all {item.label.toLowerCase()} <ChevronDown size={14} className="-rotate-90" />
-                        </Link>
+                        <div className="bg-gray-50 px-8 py-4 border-t border-gray-200">
+                          <Link href="/departments" className="text-[14px] text-[#0072CE] font-bold hover:text-[#00509E] flex items-center gap-1 transition-colors">
+                            View all {item.label.toLowerCase()} <ChevronDown size={14} className="-rotate-90" />
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   </div>
                 ) : (
                   /* ── STANDARD DROPDOWN ── */
-                  <div className={`absolute top-full ${idx > MENU.length / 2 ? 'right-0' : 'left-0'} min-w-[240px] bg-white border border-gray-100 shadow-xl z-50 rounded-b-md overflow-hidden transition-all duration-200`}>
-                    <div className="py-2">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.label}
-                          href={child.href}
-                          className="block px-5 py-3 text-gray-700 hover:text-[#0072CE] hover:bg-blue-50/50 transition-all text-[14px] font-medium"
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
+                  <div className={`absolute top-full ${idx > MENU.length / 2 ? 'right-0' : 'left-0'} min-w-[240px] z-50 transition-all duration-200`}>
+                    {/* Invisible Hover Bridge */}
+                    <div className="absolute w-full h-10 -top-10 bg-transparent" />
+                    <div className="bg-white border border-gray-100 shadow-xl rounded-b-md overflow-hidden relative">
+                      <div className="py-2">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.label}
+                            href={child.href}
+                            className="block px-5 py-3 text-gray-700 hover:text-[#0072CE] hover:bg-blue-50/50 transition-all text-[14px] font-medium"
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 )
