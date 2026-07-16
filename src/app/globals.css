@@ -1,0 +1,745 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-brandBlue: #0072CE;
+  --color-brandBlueDark: #00509E;
+  --color-brandBlueLight: #338DE0;
+  --color-brandGreen: #1a7a4a;
+  --color-brandGreenLight: #22a05e;
+  --color-brandSaffron: #FFC107;
+  --color-brandSaffronLight: #FFD54F;
+  --color-bgLight: #f5f8fc;
+  --color-textmain: #0f172a;
+
+  --color-background: white;
+  --color-foreground: #0f172a;
+  --color-border: #e2e8f0;
+
+  --animate-sparkle: sparkle 2s ease-in-out infinite;
+}
+
+/* Base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-textmain antialiased m-0 p-0;
+  font-family: 'bold', sans-serif;
+  overflow-x: hidden;
+}
+
+/* --- 🚀 Optimized Section & Layout --- */
+.section {
+  @apply py-12 px-6 flex flex-col items-center justify-center;
+  min-height: auto;
+}
+
+@media (min-width: 768px) {
+  .section {
+    @apply py-20 px-12;
+    min-height: auto;
+  }
+}
+
+/* --- 📏 Section Padding Utility --- */
+.section-padding {
+  @apply py-12 md:py-24;
+}
+
+/* Container */
+.container-custom {
+  @apply max-w-7xl mx-auto px-6 md:px-12 w-full;
+}
+
+/* --- 📱 Mobile Specific Fixes --- */
+@media (max-width: 640px) {
+  .section {
+    @apply py-10 px-4;
+  }
+
+  .container-custom {
+    @apply px-4;
+  }
+}
+
+/* --- 🚀 Global Responsive Grid Utility --- */
+.responsive-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full;
+}
+
+.heading-xl {
+  @apply text-brandBlue font-bold tracking-tight uppercase text-center;
+  font-size: clamp(1.8rem, 6vw, 2rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.text-muted {
+  @apply text-brandGreen font-medium text-center mx-auto max-w-2xl;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════
+   SECTION HEADING & SUBHEADING — Global
+═══════════════════════════════════════ */
+
+.section-heading {
+  text-align: center;
+  font-weight: 700;
+  color: #FFC107;
+  letter-spacing: -0.02em;
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.section-heading-line {
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 0 auto 1.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #FFC107, #FFD54F);
+}
+
+.section-subheading {
+  text-align: center;
+  color: #64748b;
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  line-height: 1.6;
+  font-weight: 400;
+  width: 100%;
+}
+
+/* White variants for dark backgrounds */
+.section-heading-white {
+  text-align: center;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.section-heading-line-white {
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 0 auto 1.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #e6960a, #f5b731);
+}
+
+.section-subheading-white {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  line-height: 1.6;
+  font-weight: 400;
+  width: 100%;
+}
+
+/* =========================================
+   🎯 BUTTON FIXES (Grid-Safe & Overflow Free) 
+========================================= */
+
+/* 1. Primary Button (Desktop Base - BLACK bg, WHITE text) */
+.btn-primary {
+  @apply bg-brandBlue text-white px-8 py-3 rounded-full font-bold transition duration-300 hover:bg-brandGreen hover:scale-105 flex items-center justify-center flex-row gap-2;
+  line-height: 1.2;
+  text-align: center;
+  font-size: 16px;
+  /* Desktop font size */
+}
+
+/* 2. Inverse Button (Desktop Base - WHITE bg, BLACK text) */
+.btn-inverse {
+  @apply bg-white text-brandBlue px-8 py-3 rounded-full font-bold transition duration-300 hover:bg-brandSaffron hover:text-white hover:scale-105 flex items-center justify-center flex-row gap-2;
+  line-height: 1.2;
+  text-align: center;
+  box-shadow: 0 4px 14px 0 rgba(255, 255, 255, 0.2);
+  font-size: 16px;
+  /* Desktop font size */
+}
+
+/* Shared Arrow/Icon Alignment */
+.btn-primary svg,
+.btn-primary i,
+.btn-primary span.arrow,
+.btn-inverse svg,
+.btn-inverse i,
+.btn-inverse span.arrow {
+  @apply flex-shrink-0;
+  display: flex;
+  align-items: center;
+  margin-top: 1px;
+  width: 20px;
+  height: 20px;
+}
+
+/* =========================================
+   📱 MOBILE BUTTON FIX (Shrink Text & Size)
+========================================= */
+@media (max-width: 640px) {
+
+  .btn-primary,
+  .btn-inverse {
+    /* Ultra compact size for mobile */
+    padding: 8px 16px !important;
+    font-size: 12px !important;
+  }
+
+  /* Icon ko bhi text ke hisaab se thoda chhota kar diya */
+  .btn-primary svg,
+  .btn-primary i,
+  .btn-inverse svg,
+  .btn-inverse i {
+    width: 16px !important;
+    height: 16px !important;
+  }
+}
+
+/* --- 🚫 Custom Scrollbar Utility --- */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes heroScan {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* Vertical auto-scroll (ticker) for Announcements / Events boxes */
+@keyframes vScroll {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-vscroll {
+  animation: vScroll 22s linear infinite;
+}
+
+.animate-vscroll:hover {
+  animation-play-state: paused;
+}
+
+@keyframes sparkle {
+
+  0%,
+  100% {
+    opacity: 0.75;
+    transform: scale(0.9) rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.1) rotate(180deg);
+  }
+}
+
+/* ═══════════════════════════════════════
+   NAVBAR ACTION BUTTONS — Square, Bold, Blinking
+═══════════════════════════════════════ */
+
+@keyframes navBtnGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 4px 12px var(--glow-color), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  50% {
+    box-shadow: 0 4px 28px var(--glow-color), 0 0 40px var(--glow-color), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  }
+}
+
+@keyframes navBtnShine {
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 120%;
+  }
+}
+
+.nav-action-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 140px;
+  padding: 12px 22px;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+  text-decoration: none;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s cubic-bezier(.25, .8, .25, 1), box-shadow 0.2s;
+  animation: navBtnGlow 2.2s ease-in-out infinite;
+}
+
+.nav-action-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.35),
+      transparent);
+  transform: skewX(-20deg);
+  animation: navBtnShine 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.nav-action-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.nav-action-btn:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 8px 32px var(--glow-color), 0 0 48px var(--glow-color);
+}
+
+.nav-action-btn:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 2px 8px var(--glow-color);
+}
+
+.nav-btn-green {
+  background: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  background-size: 200% auto;
+  --glow-color: rgba(212, 175, 55, 0.6);
+  color: #ef4444 !important;
+  font-weight: 800;
+}
+
+.nav-btn-red {
+  background: linear-gradient(180deg, #ef4444 0%, #b91c1c 100%);
+  --glow-color: rgba(239, 68, 68, 0.5);
+}
+
+.nav-btn-saffron {
+  background: linear-gradient(180deg, #fbbf24 0%, #d97706 100%);
+  --glow-color: rgba(251, 191, 36, 0.45);
+}
+
+/* Mobile */
+.nav-action-btn-mobile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  overflow: hidden;
+  text-decoration: none;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  animation: navBtnGlow 2.2s ease-in-out infinite;
+}
+
+.nav-action-btn-mobile::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: skewX(-20deg);
+  animation: navBtnShine 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.nav-action-btn-mobile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════
+   CAPABILITY CARDS — Premium Glass
+═══════════════════════════════════════ */
+
+.capability-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 36px 24px 32px;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s cubic-bezier(.25, .8, .25, 1), box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.capability-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent, #1a3a6b), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.capability-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.capability-card:hover::before {
+  opacity: 1;
+}
+
+.capability-card:nth-child(1) {
+  --accent: #16a34a;
+}
+
+.capability-card:nth-child(2) {
+  --accent: #ef4444;
+}
+
+.capability-card:nth-child(3) {
+  --accent: #3b82f6;
+}
+
+.capability-card:nth-child(4) {
+  --accent: #8b5cf6;
+}
+
+.capability-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.capability-card:hover .capability-icon {
+  transform: scale(1.1) rotate(-3deg);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ═══════════════════════════════════════
+   SERVICE CARDS — Premium 3D Tiles
+═══════════════════════════════════════ */
+
+.service-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(.25, .8, .25, 1), box-shadow 0.35s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.service-card-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 32px 16px 28px;
+  min-height: 180px;
+  position: relative;
+  z-index: 1;
+}
+
+.service-card-inner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.service-icon-box {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.35s cubic-bezier(.25, .8, .25, 1), box-shadow 0.35s;
+}
+
+.service-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.service-card:hover .service-icon-box {
+  transform: scale(1.12) rotate(-5deg);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.service-hover-desc {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 2;
+  border-radius: inherit;
+}
+
+.service-card:hover .service-hover-desc {
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .service-card-inner {
+    min-height: 150px;
+    padding: 24px 12px 20px;
+  }
+
+  .service-icon-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+  }
+}
+
+/* ═══════════════════════════════════════
+   SKEW GRADIENT CARDS — Blob Animations
+═══════════════════════════════════════ */
+
+@keyframes skewBlob {
+
+  0%,
+  100% {
+    transform: translateY(10px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.skew-blob {
+  animation: skewBlob 2.5s ease-in-out infinite;
+}
+
+.skew-blob-delay {
+  animation-delay: -1s;
+}
+
+.skew-card {
+  perspective: 600px;
+}
+
+@media (max-width: 640px) {
+  .skew-card {
+    width: 100% !important;
+    height: 280px !important;
+  }
+}
+
+/* ==============================================================
+   ☸️ DHAMMA THEME GOLDEN ACCENTS (Global Headings & Bold Text)
+   ============================================================== */
+
+/* Target headings globally with exclusion of navigation, header actions, footers and buttons */
+h1:not(nav *, header *, footer *, button *, .btn-primary *, .btn-inverse *, .nav-action-btn *, .nav-action-btn-mobile *),
+h2:not(nav *, header *, footer *, button *, .btn-primary *, .btn-inverse *, .nav-action-btn *, .nav-action-btn-mobile *),
+h3:not(nav *, header *, footer *, button *, .btn-primary *, .btn-inverse *, .nav-action-btn *, .nav-action-btn-mobile *),
+h4:not(nav *, header *, footer *, button *, .btn-primary *, .btn-inverse *, .nav-action-btn *, .nav-action-btn-mobile *),
+h5:not(nav *, header *, footer *, button *, .btn-primary *, .btn-inverse *, .nav-action-btn *, .nav-action-btn-mobile *),
+h6:not(nav *, header *, footer *, button *, .btn-primary *, .btn-inverse *, .nav-action-btn *, .nav-action-btn-mobile *),
+.section-heading:not(footer *),
+.heading-xl {
+  color: var(--color-brandBlueDark) !important;
+  /* Dhamma Blue */
+}
+
+/* Keep section headings white on dark backgrounds for maximum contrast */
+h2.section-heading-white,
+.section-heading-white {
+  color: #ffffff !important;
+}
+
+/* Make section lines use the golden gradient */
+.section-heading-line {
+  background: linear-gradient(90deg, #FFC107, #FFD54F) !important;
+}
+
+/* Ensure strong, b, and bold text in body/content regions are golden yellow */
+strong:not(nav *, header *, footer *, button *, .btn-primary *, .btn-inverse *, .nav-action-btn *, .nav-action-btn-mobile *),
+b:not(nav *, header *, footer *, button *, .btn-primary *, .btn-inverse *, .nav-action-btn *, .nav-action-btn-mobile *),
+p strong,
+li strong,
+span strong {
+  color: var(--color-brandBlueDark) !important;
+  /* Dhamma Blue for bold text */
+}
+
+/* ═══════════════════════════════════════════════════════
+   📱 COMPREHENSIVE MOBILE RESPONSIVE — Global Overrides
+   ═══════════════════════════════════════════════════════ */
+
+/* --- 🔒 Prevent ALL horizontal overflow globally --- */
+body {
+  max-width: 100vw;
+}
+
+/* Force long words to break instead of overflowing */
+h1, h2, h3, h4, h5, h6,
+p, span, a, li, td, th, label {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* --- 📱 MOBILE TYPOGRAPHY & LAYOUT (max 768px) --- */
+@media (max-width: 768px) {
+  /* All headings: clamp so they never overflow */
+  h1, .text-5xl, .text-6xl, .text-7xl, .text-8xl {
+    font-size: clamp(1.6rem, 6vw, 2.2rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  h2, .text-4xl, .section-heading, .section-heading-white {
+    font-size: clamp(1.4rem, 5vw, 1.8rem) !important;
+    line-height: 1.25 !important;
+  }
+
+  h3, .text-3xl {
+    font-size: clamp(1.2rem, 4vw, 1.5rem) !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Subheadings & Body text */
+  p, li, span, a, .section-subheading, .section-subheading-white {
+    font-size: clamp(0.85rem, 3.5vw, 1rem) !important;
+  }
+
+  /* Navbar Submenus Specific Fix */
+  nav .group-hover\:block a, 
+  nav .hidden.md\:block a,
+  .mobile-menu a {
+    font-size: 14px !important;
+    padding: 8px 12px !important;
+    white-space: normal !important;
+  }
+
+  /* Fix for overlapping Hero & Header elements */
+  [class*="absolute"][class*="top-"] h1,
+  [class*="absolute"][class*="top-"] h2 {
+    max-width: 90vw !important;
+  }
+
+  /* Make sure buttons don't break layout */
+  button, a[class*="btn-"], .btn-primary, .btn-inverse {
+    max-width: 100%;
+    white-space: normal;
+  }
+}
+
+/* --- 📱 ULTRA SMALL MOBILE (max 380px) --- */
+@media (max-width: 380px) {
+  h1, .text-5xl, .text-6xl, .text-7xl, .text-8xl {
+    font-size: 1.5rem !important;
+  }
+
+  h2, .text-4xl, .section-heading, .section-heading-white {
+    font-size: 1.3rem !important;
+  }
+}
+
+/* Fix for mobile overscroll white space at bottom */
+html { background-color: #14532d; }
+body { background-color: white; }
