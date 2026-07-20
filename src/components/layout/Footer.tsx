@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail, MapPin, ChevronDown, Calendar } from "lucide-react";
@@ -53,6 +53,28 @@ const NAVBAR_DEPARTMENTS = [
 export default function Footer() {
   const [openMenus, setOpenMenus] = useState<Set<string>>(new Set());
   const { openBooking } = useBooking();
+  const [dynamicDepartments, setDynamicDepartments] = useState<{ label: string; href: string }[]>([
+    { label: "All Services", href: "/departments" }
+  ]);
+
+  useEffect(() => {
+    async function fetchDepartments() {
+      try {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/departments`);
+        const data = await res.json();
+        if (data.success && data.data) {
+          const fetchedDepts = data.data.map((dept: any) => ({
+            label: dept.name,
+            href: `/departments/${dept.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`
+          }));
+          setDynamicDepartments([{ label: "All Services", href: "/departments" }, ...fetchedDepts]);
+        }
+      } catch (error) {
+        console.error("Failed to fetch departments for footer", error);
+      }
+    }
+    fetchDepartments();
+  }, []);
 
   const toggleMenu = (label: string) => {
     setOpenMenus((prev) => {
@@ -157,7 +179,7 @@ export default function Footer() {
             {/* Toggleable Mega Menu inside Footer */}
             <div className={`transition-all duration-300 overflow-hidden ${openMenus.has("Departments") ? "max-h-[1000px] opacity-100 mt-4" : "max-h-0 opacity-0"}`}>
               <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-6">
-                {NAVBAR_DEPARTMENTS.map((dept) => (
+                {dynamicDepartments.map((dept) => (
                   <Link
                     key={dept.label}
                     href={dept.href}

@@ -115,7 +115,7 @@ export default function AppointmentModal({ isOpen, onClose }: AppointmentModalPr
       fetch(`${API_BASE}/slots?departmentId=${selectedDept}&date=${selectedDate}`)
         .then(r => r.json())
         .then(data => { if (data.success) setSlots(data.data); })
-        .catch(() => {})
+        .catch(() => { })
         .finally(() => setLoading(false));
     }
   }, [selectedDept, selectedDate]);
@@ -228,7 +228,7 @@ export default function AppointmentModal({ isOpen, onClose }: AppointmentModalPr
 
       <div className="relative w-[98%] sm:w-[95%] max-w-[900px] h-[95vh] sm:h-auto sm:max-h-[90vh] bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col">
         {/* Header */}
-        <div className="bg-gradient-to-r from-[#1a3a6b] to-[#2d5ba0] px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between flex-shrink-0">
+        <div className="px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between flex-shrink-0" style={{ background: "linear-gradient(135deg, #0072CE 0%, #00509E 100%)" }}>
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
               <Calendar size={20} className="text-white" />
@@ -244,22 +244,21 @@ export default function AppointmentModal({ isOpen, onClose }: AppointmentModalPr
         </div>
 
         {/* Step Progress */}
-        <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-100 bg-gray-50 flex-shrink-0">
+        <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-blue-100 flex-shrink-0" style={{ background: "#EBF5FF" }}>
           <div className="flex items-center justify-between max-w-[600px] mx-auto">
             {steps.map((s, i) => (
               <div key={s.num} className="flex items-center">
                 <div className="flex flex-col items-center">
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${
-                    step >= s.num ? "bg-green-500 text-white shadow-md shadow-green-200" : "bg-gray-200 text-gray-500"
-                  }`}>
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${step >= s.num ? "text-white shadow-md" : "bg-gray-200 text-gray-500"
+                    }`} style={step >= s.num ? { background: "#0072CE", boxShadow: "0 4px 12px rgba(0,114,206,0.3)" } : {}}>
                     {step > s.num ? <CheckCircle size={16} /> : s.num}
                   </div>
-                  <span className={`text-[10px] mt-1 whitespace-nowrap hidden sm:block ${step >= s.num ? "text-green-600 font-semibold" : "text-gray-400"}`}>
+                  <span className={`text-[10px] mt-1 whitespace-nowrap hidden sm:block ${step >= s.num ? "font-semibold" : "text-gray-400"}`} style={step >= s.num ? { color: "#0072CE" } : {}}>
                     {s.label}
                   </span>
                 </div>
                 {i < steps.length - 1 && (
-                  <div className={`w-6 sm:w-10 h-0.5 mx-1 transition-all duration-300 ${step > s.num ? "bg-green-500" : "bg-gray-200"}`} />
+                  <div className={`w-6 sm:w-10 h-0.5 mx-1 transition-all duration-300`} style={{ background: step > s.num ? "#0072CE" : "#d1d5db" }} />
                 )}
               </div>
             ))}
@@ -282,16 +281,18 @@ export default function AppointmentModal({ isOpen, onClose }: AppointmentModalPr
                     <button
                       key={dept.id}
                       onClick={() => setSelectedDept(dept.id)}
-                      className={`p-3 sm:p-4 rounded-xl border-2 transition-all duration-200 text-left hover:shadow-md ${
-                        selectedDept === dept.id
-                          ? "border-green-500 bg-green-50 shadow-md"
-                          : "border-gray-200 hover:border-[#1a3a6b]/30 bg-white"
-                      }`}
+                      className={`p-3 sm:p-4 rounded-xl border-2 transition-all duration-200 text-left hover:shadow-md ${selectedDept === dept.id
+                          ? "shadow-md"
+                          : "border-gray-200 bg-white"
+                        }`}
+                      style={selectedDept === dept.id ? { borderColor: "#0072CE", background: "#EBF5FF" } : { border: "2px solid #e5e7eb" }}
+                      onMouseEnter={e => { if (selectedDept !== dept.id) (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(0,114,206,0.4)"; }}
+                      onMouseLeave={e => { if (selectedDept !== dept.id) (e.currentTarget as HTMLButtonElement).style.borderColor = "#e5e7eb"; }}
                     >
                       <span className="text-2xl block mb-2">{dept.icon}</span>
                       <span className="text-sm font-semibold text-gray-800 block leading-tight">{dept.name}</span>
                       <span className="text-[11px] text-gray-400 block mt-0.5">{dept.nameHi}</span>
-                      <span className="inline-flex mt-2 text-[11px] font-bold text-green-700 bg-green-100 px-2 py-0.5 rounded-full">
+                      <span className="inline-flex mt-2 text-[11px] font-bold px-2 py-0.5 rounded-full" style={{ color: "#0072CE", background: "#EBF5FF" }}>
                         ₹{Number(dept.consultationFee || 0)}
                       </span>
                     </button>
@@ -322,18 +323,17 @@ export default function AppointmentModal({ isOpen, onClose }: AppointmentModalPr
                     <button
                       key={doc.id}
                       onClick={() => setSelectedDoctor(doc.id)}
-                      className={`w-full p-4 rounded-xl border-2 transition-all duration-200 flex items-center gap-4 text-left hover:shadow-md ${
-                        selectedDoctor === doc.id
+                      className={`w-full p-4 rounded-xl border-2 transition-all duration-200 flex items-center gap-4 text-left hover:shadow-md ${selectedDoctor === doc.id
                           ? "border-green-500 bg-green-50 shadow-md"
                           : "border-gray-200 hover:border-[#1a3a6b]/30 bg-white"
-                      }`}
+                        }`}
                     >
                       <div className="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-br from-[#1a3a6b] to-[#2d5ba0] flex items-center justify-center flex-shrink-0">
                         {doc.photo ? (
-                          <img 
-                            src={`${API_BASE.replace("/api", "")}${doc.photo}`} 
-                            alt={doc.name} 
-                            className="w-full h-full object-cover" 
+                          <img
+                            src={`${API_BASE.replace("/api", "")}${doc.photo}`}
+                            alt={doc.name}
+                            className="w-full h-full object-cover"
                           />
                         ) : (
                           <User size={28} className="text-white" />
@@ -403,11 +403,9 @@ export default function AppointmentModal({ isOpen, onClose }: AppointmentModalPr
                 <div className="flex gap-1 overflow-x-auto no-scrollbar flex-1">
                   {getNext7DaysFrom(dateStripStart).map((d) => (
                     <button key={d.date} onClick={() => setSelectedDate(d.date)} disabled={d.isSunday}
-                      className={`flex-shrink-0 px-3 sm:px-4 py-2 rounded-lg border text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
-                        d.isSunday ? "bg-gray-50 text-gray-300 border-gray-100 cursor-not-allowed"
-                          : selectedDate === d.date ? "bg-[#1a3a6b] text-white border-[#1a3a6b] shadow-md"
-                          : "bg-white text-gray-700 border-gray-300 hover:border-[#1a3a6b] hover:bg-blue-50"
-                      }`}
+                      className={`flex-shrink-0 px-3 sm:px-4 py-2 rounded-lg border text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${d.isSunday ? "bg-gray-50 text-gray-300 border-gray-100 cursor-not-allowed" : "bg-white text-gray-700 border-gray-300"
+                        }`}
+                      style={!d.isSunday && selectedDate === d.date ? { background: "#0072CE", color: "#fff", borderColor: "#0072CE", boxShadow: "0 4px 12px rgba(0,114,206,0.3)" } : {}}
                     >
                       {d.dayName}, {d.monthShort} {d.dayNum}
                     </button>
@@ -444,20 +442,21 @@ export default function AppointmentModal({ isOpen, onClose }: AppointmentModalPr
                     {slots.map((slot) => (
                       <button key={slot.id}
                         onClick={() => { setSelectedSlot(slot.id); setSelectedSlotTime(slot.startTime); }}
-                        className={`py-2.5 px-1 rounded-md border text-[13px] font-semibold transition-all ${
-                          selectedSlot === slot.id
-                            ? "border-[#1a3a6b] bg-[#1a3a6b] text-white shadow-lg"
-                            : "border-gray-200 text-gray-700 hover:border-[#1a3a6b] hover:bg-blue-50"
-                        }`}
+                        className={`py-2.5 px-1 rounded-md border text-[13px] font-semibold transition-all`}
+                        style={selectedSlot === slot.id
+                          ? { borderColor: "#0072CE", background: "#0072CE", color: "#fff", boxShadow: "0 4px 12px rgba(0,114,206,0.3)" }
+                          : { borderColor: "#e5e7eb", color: "#374151" }}
+                        onMouseEnter={e => { if (selectedSlot !== slot.id) { (e.currentTarget as HTMLButtonElement).style.borderColor = "#0072CE"; (e.currentTarget as HTMLButtonElement).style.background = "#EBF5FF"; } }}
+                        onMouseLeave={e => { if (selectedSlot !== slot.id) { (e.currentTarget as HTMLButtonElement).style.borderColor = "#e5e7eb"; (e.currentTarget as HTMLButtonElement).style.background = "#fff"; } }}
                       >
                         {formatTime(slot.startTime)}
                       </button>
                     ))}
                   </div>
                   {selectedSlot && (
-                    <div className="mt-4 p-3 bg-green-50 rounded-lg border border-green-200 flex items-center gap-3">
-                      <CheckCircle size={18} className="text-green-600 flex-shrink-0" />
-                      <p className="text-sm font-semibold text-green-800">
+                    <div className="mt-4 p-3 rounded-lg border flex items-center gap-3" style={{ background: "#EBF5FF", borderColor: "#B8D4F0" }}>
+                      <CheckCircle size={18} style={{ color: "#0072CE" }} className="flex-shrink-0" />
+                      <p className="text-sm font-semibold" style={{ color: "#00509E" }}>
                         Selected: {selectedDate} at {formatTime(selectedSlotTime)}
                       </p>
                     </div>
@@ -525,15 +524,15 @@ export default function AppointmentModal({ isOpen, onClose }: AppointmentModalPr
           {/* STEP 4: Confirmation */}
           {step === 4 && bookingResult && (
             <div className="flex flex-col items-center justify-center py-2 sm:py-4">
-              <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-2 animate-bounce shadow-sm">
-                <CheckCircle size={32} className="text-green-600" />
+              <div className="w-14 h-14 rounded-full flex items-center justify-center mb-2 animate-bounce shadow-sm" style={{ background: "#EBF5FF" }}>
+                <CheckCircle size={32} style={{ color: "#0072CE" }} />
               </div>
-              <h3 className="text-xl font-bold text-green-700 mb-0.5 !text-green-700">Appointment Confirmed!</h3>
+              <h3 className="text-xl font-bold mb-0.5 !text-[#0072CE]" style={{ color: "#0072CE" }}>Appointment Confirmed!</h3>
               <p className="text-xs text-gray-500 mb-4">अपॉइंटमेंट कन्फर्म हो गई</p>
 
               {/* Compact Ticket Layout */}
-              <div className="w-full max-w-md bg-gray-50 rounded-xl border border-gray-200 p-3 sm:p-4 flex items-center gap-4 shadow-sm">
-                
+              <div className="w-full max-w-md rounded-xl border p-3 sm:p-4 flex items-center gap-4 shadow-sm" style={{ background: "#F4F7FB", borderColor: "#B8D4F0" }}>
+
                 {/* Details Section */}
                 <div className="flex-1 space-y-1.5 sm:space-y-2">
                   <div className="flex flex-col sm:flex-row sm:justify-between">
@@ -542,7 +541,7 @@ export default function AppointmentModal({ isOpen, onClose }: AppointmentModalPr
                   </div>
                   <div className="flex flex-col sm:flex-row sm:justify-between">
                     <span className="text-xs text-gray-500">Token No.</span>
-                    <span className="text-[13px] font-bold text-green-700">#{String(bookingResult.tokenNumber).padStart(2, "0")}</span>
+                    <span className="text-[13px] font-bold" style={{ color: "#0072CE" }}>#{String(bookingResult.tokenNumber).padStart(2, "0")}</span>
                   </div>
                   <div className="flex flex-col sm:flex-row sm:justify-between">
                     <span className="text-xs text-gray-500">Department</span>
@@ -580,7 +579,7 @@ export default function AppointmentModal({ isOpen, onClose }: AppointmentModalPr
                     </div>
                   ) : (
                     <div className="w-20 h-20 bg-white border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center">
-                      <span className="text-[9px] text-gray-400 text-center">QR Code<br/>Loading...</span>
+                      <span className="text-[9px] text-gray-400 text-center">QR Code<br />Loading...</span>
                     </div>
                   )}
                   <span className="text-[9px] text-gray-400 mt-1.5 font-medium">Scan to Verify</span>
@@ -597,7 +596,8 @@ export default function AppointmentModal({ isOpen, onClose }: AppointmentModalPr
                       alert("WhatsApp link not available. Please check your mobile number.");
                     }
                   }}
-                  className="px-4 py-2 bg-green-600 text-white text-sm font-semibold rounded-lg hover:bg-green-700 active:scale-95 transition-all flex items-center gap-2 shadow-md"
+                  className="px-4 py-2 text-white text-sm font-semibold rounded-lg active:scale-95 transition-all flex items-center gap-2 shadow-md"
+                  style={{ background: "#25D366" }}
                 >
                   <Phone size={14} /> WhatsApp
                 </button>
@@ -611,7 +611,8 @@ export default function AppointmentModal({ isOpen, onClose }: AppointmentModalPr
                       alert("Slip URL not available.");
                     }
                   }}
-                  className="px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-lg hover:bg-blue-700 active:scale-95 transition-all shadow-md"
+                  className="px-4 py-2 text-white text-sm font-semibold rounded-lg active:scale-95 transition-all shadow-md"
+                  style={{ background: "#0072CE" }}
                 >
                   Download Slip
                 </button>
@@ -622,7 +623,7 @@ export default function AppointmentModal({ isOpen, onClose }: AppointmentModalPr
 
         {/* Footer Navigation */}
         {step < 4 && (
-          <div className="border-t border-gray-100 px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between bg-gray-50 flex-shrink-0">
+          <div className="border-t border-blue-100 px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between flex-shrink-0" style={{ background: "#F4F7FB" }}>
             <button onClick={() => setStep(Math.max(1, step - 1))} disabled={step === 1}
               className="flex items-center gap-1 px-3 sm:px-4 py-2 sm:py-2.5 text-sm font-medium text-gray-600 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition disabled:opacity-40 disabled:cursor-not-allowed">
               <ChevronLeft size={16} /> Back
@@ -636,15 +637,17 @@ export default function AppointmentModal({ isOpen, onClose }: AppointmentModalPr
                 (step === 2 && (!selectedDate || !selectedSlot)) ||
                 (step === 3 && (!formData.fullName || !formData.gender || !formData.age || !formData.mobile || !formData.address || !formData.symptoms))
               }
-              className="flex items-center gap-1 px-4 sm:px-6 py-2 sm:py-2.5 text-sm font-bold text-white bg-green-600 rounded-lg hover:bg-green-700 transition disabled:opacity-40 disabled:cursor-not-allowed shadow-md whitespace-nowrap">
+              className="flex items-center gap-1 px-4 sm:px-6 py-2 sm:py-2.5 text-sm font-bold text-white rounded-lg transition disabled:opacity-40 disabled:cursor-not-allowed shadow-md whitespace-nowrap"
+              style={{ background: "#0072CE" }}
+            >
               {loading ? "Please wait..." : step === 3 ? "Confirm Booking" : "Next"} <ChevronRight size={16} />
             </button>
           </div>
         )}
 
         {step === 4 && (
-          <div className="border-t border-gray-100 px-4 sm:px-6 py-3 sm:py-4 flex justify-center bg-gray-50 flex-shrink-0">
-            <button onClick={resetAndClose} className="px-8 py-2.5 text-sm font-bold text-white bg-[#1a3a6b] rounded-lg hover:bg-[#0f2557] transition">
+          <div className="border-t border-blue-100 px-4 sm:px-6 py-3 sm:py-4 flex justify-center flex-shrink-0" style={{ background: "#F4F7FB" }}>
+            <button onClick={resetAndClose} className="px-8 py-2.5 text-sm font-bold text-white rounded-lg transition" style={{ background: "#00509E" }}>
               Done — Close
             </button>
           </div>

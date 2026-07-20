@@ -98,7 +98,40 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileSubmenu, setMobileSubmenu] = useState<string | null>(null);
+  const [dynamicMenu, setDynamicMenu] = useState<MenuItem[]>(MENU);
   const { openBooking } = useBooking();
+
+  useEffect(() => {
+    async function fetchDepartments() {
+      try {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/departments`);
+        const data = await res.json();
+        if (data.success && data.data) {
+          const fetchedDepts = data.data.map((dept: any) => ({
+            label: dept.name,
+            href: `/departments/${dept.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
+            doctors: "1+" // Dummy fallback, dynamic logic could fetch real count
+          }));
+          
+          setDynamicMenu(prevMenu => prevMenu.map(menuItem => {
+            if (menuItem.label === "Departments") {
+              return {
+                ...menuItem,
+                children: [
+                  { label: "All Services", href: "/departments", doctors: "32+" },
+                  ...fetchedDepts
+                ]
+              };
+            }
+            return menuItem;
+          }));
+        }
+      } catch (error) {
+        console.error("Failed to fetch departments for navbar", error);
+      }
+    }
+    fetchDepartments();
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -183,7 +216,7 @@ export default function Navbar() {
 
         {/* Center: Desktop Menu */}
         <nav className="hidden lg:flex items-center justify-center gap-2 xl:gap-4 flex-1 h-full">
-          {MENU.map((item, idx) => (
+          {dynamicMenu.map((item, idx) => (
             <div
               key={item.label}
               className={`h-full flex items-center ${item.children && item.children.length > 8 ? "" : "relative"}`}
@@ -229,7 +262,7 @@ export default function Navbar() {
                   </div>
                 ) : (
                   /* ── STANDARD DROPDOWN ── */
-                  <div className={`absolute top-full ${idx > MENU.length / 2 ? 'right-0' : 'left-0'} min-w-[240px] z-50 transition-all duration-200`}>
+                  <div className={`absolute top-full ${idx > dynamicMenu.length / 2 ? 'right-0' : 'left-0'} min-w-[240px] z-50 transition-all duration-200`}>
                     {/* Invisible Hover Bridge */}
                     <div className="absolute w-full h-10 -top-10 bg-transparent" />
                     <div className="bg-white border border-gray-100 shadow-xl rounded-b-md overflow-hidden relative">
@@ -320,7 +353,7 @@ export default function Navbar() {
           <p className="px-3 pb-1 pt-2 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
             Navigation
           </p>
-          {MENU.map((item) => (
+          {dynamicMenu.map((item) => (
             <div key={item.label} className="overflow-hidden rounded-xl bg-white shadow-[0_1px_3px_rgba(15,23,42,0.06)]">
               {item.children ? (
                 <>
