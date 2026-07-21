@@ -13,14 +13,6 @@ const NAVBAR_MENU: MenuItem[] = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about/overview" },
   {
-    label: "Area Of Care",
-    href: "#",
-    children: [
-      { label: "Overview", href: "#" }
-    ],
-  },
-  { label: "Health Professionals", href: "/doctors" },
-  {
     label: "Gallery",
     href: "/gallery/photos",
     children: [
@@ -29,7 +21,24 @@ const NAVBAR_MENU: MenuItem[] = [
     ]
   },
   { label: "Contact Us", href: "/contact" },
-  { label: "FACULTY & DOCTORS", href: "/doctors" },
+  { label: "Faculty & Doctors", href: "/doctors" },
+  {
+    label: "Media Centre",
+    href: "#",
+    children: [
+      { label: "Press Release", href: "/media/press-release" },
+      { label: "Media Coverage", href: "/media/media-coverage" },
+      { label: "Newsletters", href: "/media/newsletters" },
+      { label: "Media Connect", href: "/media/media-connect" }
+    ]
+  },
+  {
+    label: "Patient Corner",
+    href: "#",
+    children: [
+      { label: "Blogs", href: "/patient-corner/blogs" }
+    ]
+  },
 ];
 
 const NAVBAR_DEPARTMENTS = [
